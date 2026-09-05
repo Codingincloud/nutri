@@ -1,10 +1,10 @@
 {
   "Chicken Momo": {
     "ingredients": {
-      "flour": 100,
-      "raw_chicken": 150,
-      "mustard_oil": 10,
-      "onion": 50
+      "flour": 50,
+      "raw_chicken": 70,
+      "mustard_oil": 5,
+      "onion": 25
     },
     "cuisine": "Nepali",
     "is_veg": false
