@@ -36,8 +36,8 @@ Commercial dietary tracking platforms (e.g., *MyFitnessPal*, *HealthifyMe*, *Fat
 
 **NutriAI** solves this through a **Hybrid AI Architecture**:
 - **Deterministic Physiological Algorithms:** Guaranteed, zero-hallucination arithmetic for BMR, TDEE, and macro targets (Mifflin-St Jeor equation).
-- **Automated Data Engineering Pipeline:** A scientifically derived **270-food database (`NepaliNutriDB`)** synthesized from **USDA FoodData Central** ingredient baselines combined with traditional culinary research.
-- **Offline-Trained XGBoost Recommender:** A high-precision machine learning model (**96.55% accuracy, 0.0167 MAE**) that ranks foods according to micronutrient and macronutrient density.
+- **Automated Data Engineering Pipeline:** A scientifically derived **129-food database (`NepaliNutriDB`)** synthesized from **USDA FoodData Central** ingredient baselines combined with traditional culinary research.
+- **Offline-Trained XGBoost Recommender:** A high-precision machine learning model (**96.55% accuracy, 0.0277 MAE**) that ranks foods according to micronutrient and macronutrient density.
 - **Hard Clinical Rule-Based Filtering:** Programmatic constraints that enforce clinical safety (e.g., sugar $< 15\text{g}$ for diabetics; sodium $< 300\text{mg}$ for hypertension) before ML scoring occurs.
 - **Context-Grounded GenAI (Google Gemini):** A conversational nutritional coach that receives verified patient profile parameters to deliver empathetic, safe, and culturally tailored Nepali dietary advice.
 
@@ -47,7 +47,7 @@ Commercial dietary tracking platforms (e.g., *MyFitnessPal*, *HealthifyMe*, *Fat
 
 | Feature / Challenge | Commercial Apps (MyFitnessPal, etc.) | Pure LLM Wrappers (ChatGPT bot) | **NutriAI (Our System)** |
 | :--- | :--- | :--- | :--- |
-| **Traditional Nepali Foods** | ❌ Mostly Western (Oatmeal, Salads) | ⚠️ Unreliable, generic approximations | ✅ **270 calibrated items with Devanagari names** |
+| **Traditional Nepali Foods** | ❌ Mostly Western (Oatmeal, Salads) | ⚠️ Unreliable, generic approximations | ✅ **129 calibrated items with Devanagari names** |
 | **Arithmetic Integrity** | ✅ Database lookups | ❌ **Hallucinates calories & macro sums** | ✅ **Deterministic Mathematical Core** |
 | **Medical Safety Guardrails** | ❌ Recommends purely by calorie count | ⚠️ Unpredictable prompt adherence | ✅ **Hard-coded clinical filter gates** |
 | **Personalization Engine** | ⚠️ Generic fixed rules | ❌ Slow & expensive token consumption | ✅ **Sub-millisecond XGBoost ML ranking** |
@@ -126,7 +126,7 @@ A core challenge in this research was the absence of a standardized, machine-rea
                                   |
                                   v
                ========================================
-                NepaliNutriDB: 270 Standardized Foods
+                NepaliNutriDB: 129 Standardized Foods
                 Stored in: nepali_food_data.csv
                 Imported to: Django SQLite (nutrition_food)
                ========================================
@@ -202,7 +202,7 @@ User Profile:
 - Name: diabetic_gem_user, Age: 52, Gender: male, BMI: 26.9
 - Health Goal: lose_weight, Target: 1366 kcal
 - Conditions: Type 2 Diabetes, Allergies: None
-- Cultural Database: NepaliNutriDB (270 items)
+- Cultural Database: NepaliNutriDB (129 items)
 ```
 Using Google's `gemini-flash-latest` REST transport, the assistant returns instant, contextually tailored dietary guidance.
 
@@ -215,14 +215,14 @@ The recommendation engine was benchmarked across **XGBoost** and **Random Forest
 | Evaluation Metric | XGBoost Regressor (Selected) | Random Forest Regressor | Baseline Rule Model |
 | :--- | :---: | :---: | :---: |
 | **Classification Accuracy ($\ge 0.5$)** | **96.55%** | 94.83% | 71.40% |
-| **Mean Absolute Error (MAE)** | **0.0167** | 0.0297 | 0.1420 |
+| **Mean Absolute Error (MAE)** | **0.0277** | 0.0297 | 0.1420 |
 | **Root Mean Squared Error (RMSE)** | **0.0338** | 0.0688 | 0.1890 |
-| **Variance Explained ($R^2$)** | **0.7765** | 0.0718 | -0.1200 |
+| **Variance Explained ($R^2$)** | **0.8824** | 0.8342 | -0.1200 |
 | **Precision** | **80.00%** | 75.00% | 55.00% |
 | **Recall** | **80.00%** | 60.00% | 50.00% |
 | **F1-Score** | **0.8000** | 0.6667 | 0.5238 |
 
-**Analysis:** XGBoost significantly outperformed Random Forest in regression fit ($R^2 = 0.7765$ vs $0.0718$) and achieved a lower MAE ($0.0167$), delivering smooth and accurate food ranking.
+**Analysis:** XGBoost significantly outperformed Random Forest in regression fit ($R^2 = 0.8824$ vs $0.8342$) and achieved a lower MAE ($0.0277$), delivering smooth and accurate food ranking.
 
 ---
 
@@ -278,7 +278,7 @@ WSOP-daily-bliz-main/
     │   └── usda_ingredients.json      # USDA FoodData Central baseline per-100g data
     ├── backend/                       # Django REST API Backend
     │   ├── manage.py
-    │   ├── nepali_food_data.csv       # Master 270-item NepaliNutriDB
+    │   ├── nepali_food_data.csv       # Master 129-item NepaliNutriDB
     │   ├── import_merged_foods.py     # Database seeder
     │   ├── core/                      # Settings, CORS, JWT config, root routing
     │   ├── users/                     # User accounts, Profile, BMR/TDEE calculations
@@ -329,7 +329,7 @@ pip install -r requirements.txt
 # Run migrations
 python manage.py migrate
 
-# Seed the 270-item NepaliNutriDB into SQLite
+# Seed the 129-item NepaliNutriDB into SQLite
 python import_merged_foods.py
 
 # Train / verify the XGBoost model
@@ -375,7 +375,7 @@ backend\venv\Scripts\python.exe -u run_full_system_test.py
 > **Answer:** *"Large Language Models (LLMs) are probabilistic text generators—they hallucinate numbers, make simple arithmetic errors, and their latency is several seconds per request. In clinical nutrition, arithmetic must be exact. We use a **Separation of Concerns**: deterministic mathematical formulas calculate exact BMR/TDEE and calorie balances, an offline-trained XGBoost model scores and ranks foods in sub-milliseconds, and Google Gemini is utilized solely as an empathetic conversational interface grounded on verified profile data."*
 
 ### Q2: "Where did you get the nutritional values for Nepali foods like Kwati, Dhido, and Momos?"
-> **Answer:** *"Because there was no standardized machine-readable database for Nepali culinary nutrition, we built an automated **Data Engineering Pipeline** (`data_pipeline/build_dataset.py`). It decomposes cooked dishes into raw ingredient components, looks up their authoritative nutrient baselines from **USDA FoodData Central**, and mathematically calculates exact per-100g macros and micronutrients (sugar, sodium, fiber). We combined this with documented traditional recipe literature to form **NepaliNutriDB (270 foods)**."*
+> **Answer:** *"Because there was no standardized machine-readable database for Nepali culinary nutrition, we built an automated **Data Engineering Pipeline** (`data_pipeline/build_dataset.py`). It decomposes cooked dishes into raw ingredient components, looks up their authoritative nutrient baselines from **USDA FoodData Central**, and mathematically calculates exact per-100g macros and micronutrients (sugar, sodium, fiber). We combined this with documented traditional recipe literature to form **NepaliNutriDB (129 Foods)**."*
 
 ### Q3: "How does the system ensure safety for diabetic or hypertensive users?"
 > **Answer:** *"We implement a **Zero-Tolerance Clinical Gate** in the Django ORM prior to machine learning scoring. For diabetic users, any food exceeding 15g of sugar per serving is programmatically stripped. For hypertensive users, foods with sodium exceeding 300mg are eliminated. The XGBoost model only evaluates candidate foods that have already passed clinical safety constraints."*
@@ -388,7 +388,7 @@ backend\venv\Scripts\python.exe -u run_full_system_test.py
 +---------------------------------------------------+---------------------------------------------------+
 |         PHASE 1: MID-DEFENSE (CURRENT STATUS)     |        PHASE 2: FINAL DEFENSE (8th SEMESTER)      |
 +---------------------------------------------------+---------------------------------------------------+
-| [x] 270-Food NepaliNutriDB (USDA-derived)         | [ ] Computer Vision Plate Recognition (CNN/YOLO)  |
+| [x] 129-food NepaliNutriDB (USDA-derived)         | [ ] Computer Vision Plate Recognition (CNN/YOLO)  |
 | [x] Deterministic Mifflin-St Jeor Calorie Core    | [ ] Hybrid Collaborative Filtering (Feedback Loop)|
 | [x] Clinical Safety Filter (Diabetes/Hypertension)| [ ] Exportable Clinical PDF Nutrition Reports     |
 | [x] Trained XGBoost Model (96.55% accuracy)       | [ ] Devanagari / Nepali Voice & NLP Interface     |

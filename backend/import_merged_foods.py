@@ -68,8 +68,17 @@ def main():
             else:
                 updated += 1
 
+    # Remove old/orphaned junk foods not in the clean dataset
+    with open(csv_path, 'r', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        valid_names = set(r['name'].strip() for r in reader if r.get('name'))
+    
+    deleted_count, _ = Food.objects.exclude(name__in=valid_names).delete()
+    if deleted_count > 0:
+        print(f"Purged {deleted_count} outdated/filler food items from database.")
+
     print(f"Import complete! Created {count} new foods, updated {updated} existing foods.")
-    print(f"Total foods in DB: {Food.objects.count()}")
+    print(f"Total verified foods in DB: {Food.objects.count()}")
 
 if __name__ == '__main__':
     main()
