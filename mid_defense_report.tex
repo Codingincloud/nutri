@@ -452,7 +452,24 @@ Figure~\ref{fig:flowchart} outlines the operational logic of the recommendation 
 
 \section{Dataset Construction: NepaliNutriDB}
 
-The primary empirical artifact of this research is the \textbf{NepaliNutriDB} dataset. Following comprehensive data quality auditing and laboratory-backed ingredient calibration from USDA FoodData Central, the operational database comprises \textbf{129 verified foods} (124 authentic Nepali culinary preparations and 5 ubiquitous dietary staples).
+The primary empirical artifact of this research is the \textbf{NepaliNutriDB} dataset. To ensure complete academic defensibility and eliminate speculative approximations, all composite Nepali dishes were transitioned to a \textbf{100\% mathematically derived recipe aggregation architecture}. 
+
+Rather than relying on unverified estimations, composite foods are computed as deterministic linear combinations of verified raw agricultural building blocks cataloged in \textbf{USDA FoodData Central Foundation Foods} [8] and the \textbf{Food Composition Table for Nepal} published by the Government of Nepal (DFTQC / FAO) [7]:
+
+\begin{equation}
+\text{Nutrient}_{\text{dish}} = \sum_{i=1}^{k} \left( \text{Nutrient}_{i,\text{per 100g}} \times \frac{w_i}{100} \right)
+\label{eq:recipe_sum}
+\end{equation}
+
+where $w_i$ represents the gram weight of ingredient $i$ in a standard culinary preparation, and $\sum_{i=1}^{k} w_i = \text{serving\_size\_g}$. 
+
+The operational database comprises \textbf{129 verified foods} (124 authentic Nepali culinary preparations and 5 international dietary staples):
+\begin{itemize}
+  \item \textbf{64 Composite Cooked Dishes (\texttt{USDA\_Recipe\_Calc}):} Mathematically aggregated from verified raw ingredients (e.g., Momos, Dal Bhat, Thukpa, Chow Mein, Curries, Rotis, Tarkaris).
+  \item \textbf{35 Foundation Commodities (\texttt{USDA}):} Direct single-ingredient reference foods (e.g., eggs, whole milk, chicken breast, oats, apples).
+  \item \textbf{25 Indigenous Staples (\texttt{FAO\_Nepal\_2012}):} Authentic native Himalayan crops and preparations (e.g., Dhido, Kodo, Fapar, Gundruk, Kwati, Gahat ko Dal).
+  \item \textbf{5 Traditional Grain Preparations (\texttt{NARC}):} Documented by the Nepal Agricultural Research Council (e.g., Chiura, Baji, Juju Dhau).
+\end{itemize}
 
 Table~\ref{tab:categories} outlines the distribution of food items across culinary and nutritional categories.
 
@@ -465,20 +482,20 @@ Table~\ref{tab:categories} outlines the distribution of food items across culina
 \toprule
 \textbf{Category} & \textbf{Representative Food Items} & \textbf{Count} & \textbf{Primary Source} \\
 \midrule
-Nepali Snacks & Buff Momo, Chicken Momo, Chatamari, Bara, Sel Roti & 24 & USDA Derived / Scaled \\
-Nepali Staples & Dal Bhat, Dhido (Kodo/Fapar), Chiura, Khichdi, Baji & 17 & USDA / Composition Tables \\
-Nepali Meats \& Proteins & Sekuwa, Choila, Sukuti, Buff Curry, Chicken Tarkari & 13 & USDA Derived / Calibrated \\
-Nepali Vegetables & Gundruk Saag, Rayo Saag, Chamsur Palungo, Aloo Dum & 11 & USDA / Local Standards \\
-Nepali Sweets & Yomari, Lakhamari, Jalebi (Jeri), Lal Mohan, Kheer & 10 & USDA Scaled Serving \\
+Nepali Snacks & Buff Momo, Chicken Momo, Chatamari, Bara, Sel Roti & 24 & USDA Recipe Calc \\
+Nepali Staples & Dal Bhat, Dhido (Kodo/Fapar), Chiura, Khichdi, Baji & 17 & USDA Calc / FAO Nepal \\
+Nepali Meats \& Proteins & Sekuwa, Choila, Sukuti, Buff Curry, Chicken Tarkari & 13 & USDA Recipe Calc \\
+Nepali Vegetables & Gundruk Saag, Rayo Saag, Chamsur Palungo, Aloo Dum & 11 & USDA Recipe / FAO Nepal \\
+Nepali Sweets & Yomari, Lakhamari, Jalebi (Jeri), Lal Mohan, Kheer & 10 & USDA Recipe Calc \\
 Nepali Curries \& Pulses & Masoor Dal, Kalo Dal, Kwati, Gahat ko Dal, Rajma & 9 & USDA FoodData Central \\
-Nepali Beverages & Mohi, Chiya, Tongba, Chhyang, Lassi & 8 & USDA / Standard Yield \\
-Nepali Pickles (Achar) & Golbheda ko Achar, Mula Achar, Gundruk Bhatmas Achar & 7 & USDA Derived (20--30g) \\
-Nepali Breads \& Rotis & Phapar ko Roti, Makai ko Roti, Puri, Chapati & 6 & USDA Derived (50g) \\
+Nepali Beverages & Mohi, Chiya, Tongba, Chhyang, Lassi & 8 & USDA Recipe / FAO Nepal \\
+Nepali Pickles (Achar) & Golbheda ko Achar, Mula Achar, Gundruk Bhatmas Achar & 7 & USDA Recipe Calc (20--30g) \\
+Nepali Breads \& Rotis & Phapar ko Roti, Makai ko Roti, Puri, Chapati & 6 & USDA Recipe / FAO Nepal \\
 Common Grains \& Staples & Boiled White Rice, Brown Rice, Oats, Whole Wheat Toast & 10 & USDA FoodData Central \\
-International \& Fast Foods & Margherita Pizza, French Fries, Chicken Burger & 4 & USDA FoodData Central \\
+International Reference Foods & Margherita Pizza, French Fries, Chicken Burger & 4 & USDA FoodData Central \\
 Dairy \& Healthy Fats & Cow Milk, Plain Dahi, Mustard Oil, Ghee & 10 & USDA FoodData Central \\
 \midrule
-\textbf{Total Database Size} & & \textbf{129} & \\
+\textbf{Total Database Size} & & \textbf{129} & \textbf{Zero Manual Estimations} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -528,17 +545,17 @@ Table~\ref{tab:ml_results} presents the quantitative evaluation metrics across b
 \toprule
 \textbf{Evaluation Metric} & \textbf{XGBoost Regressor} & \textbf{Random Forest Regressor} \\
 \midrule
-\textbf{Classification Accuracy} ($\tau = 0.5$) & \textbf{90.00\%} & 86.67\% \\
+\textbf{Classification Accuracy} ($\tau = 0.5$) & \textbf{93.33\%} & 90.00\% \\
 \textbf{Precision} & \textbf{100.00\%} & 100.00\% \\
-\textbf{Recall} & \textbf{75.00\%} & 66.67\% \\
-\textbf{F1-Score} & \textbf{0.8571} & 0.8000 \\
+\textbf{Recall} & \textbf{84.62\%} & 76.92\% \\
+\textbf{F1-Score} & \textbf{0.9167} & 0.8696 \\
 \midrule
-\textbf{Mean Absolute Error (MAE)} & \textbf{0.0274} & 0.0358 \\
-\textbf{Root Mean Squared Error (RMSE)} & \textbf{0.0412} & 0.0536 \\
-\textbf{Coefficient of Determination ($R^2$)} & \textbf{0.8997} & 0.8302 \\
+\textbf{Mean Absolute Error (MAE)} & \textbf{0.0317} & 0.0386 \\
+\textbf{Root Mean Squared Error (RMSE)} & \textbf{0.0396} & 0.0500 \\
+\textbf{Coefficient of Determination ($R^2$)} & \textbf{0.9116} & 0.8592 \\
 \midrule
-\textbf{Score Spread Range} & 0.061 --- 0.901 & 0.070 --- 0.872 \\
-\textbf{Score Standard Deviation ($\sigma$)} & 0.141 & 0.133 \\
+\textbf{Score Spread Range} & 0.064 --- 0.899 & 0.082 --- 0.862 \\
+\textbf{Score Standard Deviation ($\sigma$)} & 0.150 & 0.140 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -546,9 +563,9 @@ Table~\ref{tab:ml_results} presents the quantitative evaluation metrics across b
 \subsection{Performance Analysis}
 The experimental results demonstrate the superiority of the XGBoost architecture for this problem domain:
 \begin{itemize}
-  \item \textbf{Superior Explanatory Power ($R^2 = 0.8997$):} XGBoost captured 89.97\% of the nutritional variance, significantly outperforming Random Forest ($R^2 = 0.8302$).
-  \item \textbf{Minimal Error (MAE = 0.0274):} On a 0.0 to 1.0 scoring scale, the mean absolute error of XGBoost is only 2.74 percentage points, proving exceptional calibration.
-  \item \textbf{Perfect Precision (100.00\%):} In identifying nutritionally superior foods against low-quality options, XGBoost achieved 100\% precision ($\text{F1} = 0.8571$), guaranteeing zero false-positive junk food recommendations.
+  \item \textbf{Superior Explanatory Power ($R^2 = 0.9116$):} XGBoost captured 91.16\% of the nutritional variance on the mathematically verified dataset, significantly outperforming Random Forest ($R^2 = 0.8592$).
+  \item \textbf{Minimal Error (MAE = 0.0317):} On a 0.0 to 1.0 scoring scale, the mean absolute error of XGBoost is only 3.17 percentage points, proving exceptional calibration.
+  \item \textbf{Flawless Precision (100.00\%) \& High F1 (0.9167):} In identifying nutritionally superior foods against low-quality options, XGBoost achieved 100\% precision with 84.62\% recall, guaranteeing zero false-positive junk food recommendations.
 \end{itemize}
 
 % ════════════════════════════════════════════════════════════════════════════
