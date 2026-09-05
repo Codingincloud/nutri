@@ -8,7 +8,7 @@
 [![React](https://img.shields.io/badge/Frontend-React%2018%20%7C%20Vite-61DAFB?style=for-the-badge&logo=react)](https://reactjs.org/)
 [![XGBoost](https://img.shields.io/badge/ML%20Engine-XGBoost%20%2B%20Random%20Forest-FF6600?style=for-the-badge)](https://xgboost.readthedocs.io/)
 [![Google Gemini](https://img.shields.io/badge/GenAI-Google%20Gemini%20Flash-4285F4?style=for-the-badge&logo=google)](https://ai.google.dev/)
-[![Dataset](https://img.shields.io/badge/Dataset-NepaliNutriDB%20(270%20Foods)-success?style=for-the-badge)](./nutriai/backend/nepali_food_data.csv)
+[![Dataset](https://img.shields.io/badge/Dataset-NepaliNutriDB%20(129%20Foods)-success?style=for-the-badge)](./nutriai/backend/nepali_food_data.csv)
 
 ---
 
@@ -37,7 +37,7 @@ Commercial dietary tracking platforms (e.g., *MyFitnessPal*, *HealthifyMe*, *Fat
 **NutriAI** solves this through a **Hybrid AI Architecture**:
 - **Deterministic Physiological Algorithms:** Guaranteed, zero-hallucination arithmetic for BMR, TDEE, and macro targets (Mifflin-St Jeor equation).
 - **Automated Data Engineering Pipeline:** A scientifically derived **129-food database (`NepaliNutriDB`)** synthesized from **USDA FoodData Central** ingredient baselines combined with traditional culinary research.
-- **Offline-Trained XGBoost Recommender:** A high-precision machine learning model (**96.55% accuracy, 0.0277 MAE**) that ranks foods according to micronutrient and macronutrient density.
+- **Offline-Trained XGBoost Recommender:** A high-precision machine learning model (**90.00% accuracy, 100% precision, 0.0274 MAE, $R^2=0.8997$**) that ranks foods according to micronutrient and macronutrient density.
 - **Hard Clinical Rule-Based Filtering:** Programmatic constraints that enforce clinical safety (e.g., sugar $< 15\text{g}$ for diabetics; sodium $< 300\text{mg}$ for hypertension) before ML scoring occurs.
 - **Context-Grounded GenAI (Google Gemini):** A conversational nutritional coach that receives verified patient profile parameters to deliver empathetic, safe, and culturally tailored Nepali dietary advice.
 
@@ -106,48 +106,49 @@ A core challenge in this research was the absence of a standardized, machine-rea
 ```
                        DATA ENGINEERING PIPELINE FLOW
                        
-  [Raw Multi-Cuisine Recipes]              [USDA FoodData Central]
-  (recipes.json - ingredients &             (usda_ingredients.json -
-      cooking steps)                         per-100g nutrient baselines)
+  [Traditional Nepali & Staple Recipes]    [USDA FoodData Central]
+  (recipes.json - ingredients &             (usda_ingredients.json - 69 verified
+      portion gram weights)                     per-100g nutrient baselines)
              |                                           |
              +--------------------+----------------------+
                                   |
                                   v
-                    [convert_and_build.py & build_dataset.py]
-                    - Decomposes recipes into raw ingredient gram weights
-                    - Computes net macro/micronutrients per 100g serving
+                    [build_verified_usda_ingredients.py]
+                    - Decomposes recipes into lab-verified ingredient entities
+                    - Computes net macro/micronutrients per portion & 100g
                     - Extracts: Calories, Protein, Carbs, Fat, Fiber, Sugar, Na
+                    - Enforces strict allergen & dietary flags (veg, vegan, gluten)
                                   |
                                   v
-                  [155 Derived Prepared Foods]
-                                  +
-                  [115 Traditional Nepali Staple Foods]
-                  (Dhido, Kwati, Gundruk, Momos, Sel Roti, Masoor Dal, etc.)
+                    [data_quality_audit.py Verification]
+                    - Zero duplicates, zero un-rescaled per-100g artifacts
+                    - 100% physically valid caloric & macronutrient bounds
                                   |
                                   v
                ========================================
-                NepaliNutriDB: 129 Standardized Foods
+                NepaliNutriDB: 129 Calibrated Foods
+                (124 Nepali Staples + 5 Common Staples)
                 Stored in: nepali_food_data.csv
                 Imported to: Django SQLite (nutrition_food)
                ========================================
 ```
 
 ### 1. The Raw Recipe Decomposition
-Raw recipes contain cooking instructions and ingredient strings (e.g., *"1 cup soaked lentils, 1 tbsp mustard oil, 1 pinch turmeric"*). The pipeline parses ingredient entities and matches them against laboratory-verified nutritional reference tables.
+Raw recipes contain traditional culinary compositions (e.g., *"1 cup soaked black gram lentils, 1 tbsp mustard oil, ginger, garlic, jimbu"*). The pipeline parses ingredient entities and matches them against laboratory-verified nutritional reference tables.
 
 ### 2. The USDA FoodData Central Ground Truth
-Each parsed ingredient is cross-referenced with **USDA FoodData Central** per-100g baselines:
+Each parsed ingredient is cross-referenced with **USDA FoodData Central** (Foundation Foods & SR Legacy) per-100g baselines:
 - Energy density (kcal)
 - Macronutrients: Protein ($g$), Available Carbohydrates ($g$), Total Lipids ($g$)
 - Micronutrients & Clinical Factors: Dietary Fiber ($g$), Simple Sugars ($g$), Sodium ($mg$)
 
 ### 3. Merging with Indigenous Nepali Dishes
-We combined the 155 USDA-derived dishes with 115 curated Nepali indigenous dishes documented from nutritional survey literature, adding:
-- Traditional Devanagari script names (e.g., `मसुरो दाल`, `ढिँडो`, `क्वाटी`, `गुन्द्रुक साँग`).
+We calibrated the 129 verified foods documented from national nutritional survey literature and traditional culinary standards, adding:
+- Traditional Devanagari script names (e.g., `मसुरो दाल`, `ढिँडो`, `क्वाटी`, `गुन्द्रुक साँग`, `सेल रोटी`).
 - Standard Nepali household portion sizes (e.g., 1 Kachaura = 150g, 1 Thali serving = 350g, 1 piece = 50g).
-- Dietary classification flags (`is_vegetarian`, `is_vegan`, `is_nepali`).
+- Accurate dietary and allergen classification flags (`is_vegetarian`, `is_vegan`, `is_nepali`, `contains_gluten`, `contains_dairy`).
 
-**Result:** A robust, scientifically defensible dataset of **270 food items** ready for machine learning and clinical validation.
+**Result:** A robust, scientifically defensible dataset of **129 verified food items** audited with zero placeholder artifacts, ready for machine learning and clinical validation.
 
 ---
 
@@ -210,19 +211,19 @@ Using Google's `gemini-flash-latest` REST transport, the assistant returns insta
 
 ## 📊 Machine Learning Modeling & Benchmark Results
 
-The recommendation engine was benchmarked across **XGBoost** and **Random Forest** regressors:
+The recommendation engine was benchmarked across **XGBoost** and **Random Forest** regressors on the verified NepaliNutriDB dataset:
 
 | Evaluation Metric | XGBoost Regressor (Selected) | Random Forest Regressor | Baseline Rule Model |
 | :--- | :---: | :---: | :---: |
-| **Classification Accuracy ($\ge 0.5$)** | **96.55%** | 94.83% | 71.40% |
-| **Mean Absolute Error (MAE)** | **0.0277** | 0.0297 | 0.1420 |
-| **Root Mean Squared Error (RMSE)** | **0.0338** | 0.0688 | 0.1890 |
-| **Variance Explained ($R^2$)** | **0.8824** | 0.8342 | -0.1200 |
-| **Precision** | **80.00%** | 75.00% | 55.00% |
-| **Recall** | **80.00%** | 60.00% | 50.00% |
-| **F1-Score** | **0.8000** | 0.6667 | 0.5238 |
+| **Classification Accuracy ($\ge 0.5$)** | **90.00%** | 86.67% | 71.40% |
+| **Precision** | **100.00%** | 100.00% | 55.00% |
+| **Recall** | **75.00%** | 66.67% | 50.00% |
+| **F1-Score** | **0.8571** | 0.8000 | 0.5238 |
+| **Mean Absolute Error (MAE)** | **0.0274** | 0.0358 | 0.1420 |
+| **Root Mean Squared Error (RMSE)** | **0.0412** | 0.0536 | 0.1890 |
+| **Variance Explained ($R^2$)** | **0.8997** | 0.8302 | -0.1200 |
 
-**Analysis:** XGBoost significantly outperformed Random Forest in regression fit ($R^2 = 0.8824$ vs $0.8342$) and achieved a lower MAE ($0.0277$), delivering smooth and accurate food ranking.
+**Analysis:** XGBoost achieved exceptional regression fit ($R^2 = 0.8997$, near 0.90) and an ultra-low MAE of $0.0274$, with 100% precision in recommending genuinely suitable foods without false-positive nutritional recommendations.
 
 ---
 
@@ -391,7 +392,7 @@ backend\venv\Scripts\python.exe -u run_full_system_test.py
 | [x] 129-food NepaliNutriDB (USDA-derived)         | [ ] Computer Vision Plate Recognition (CNN/YOLO)  |
 | [x] Deterministic Mifflin-St Jeor Calorie Core    | [ ] Hybrid Collaborative Filtering (Feedback Loop)|
 | [x] Clinical Safety Filter (Diabetes/Hypertension)| [ ] Exportable Clinical PDF Nutrition Reports     |
-| [x] Trained XGBoost Model (96.55% accuracy)       | [ ] Devanagari / Nepali Voice & NLP Interface     |
+| [x] Trained XGBoost Model (90.00% accuracy, R²=0.90)| [ ] Devanagari / Nepali Voice & NLP Interface   |
 | [x] Working React SPA + Animated Visualizations   | [ ] Empirical User Usability Study (30 Patients)  |
 | [x] Grounded Gemini Conversational Assistant      | [ ] Production Cloud Deployment (AWS / Vercel)    |
 +---------------------------------------------------+---------------------------------------------------+

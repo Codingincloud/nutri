@@ -3,8 +3,8 @@ food_id,name,name_nepali,category,calories,protein,carbohydrates,fat,fiber,sugar
 2,Dhido,ढिडो,nepali_staple,105.0,2.5,21.0,0.5,2.5,0.0,5.0,250.0,True,True,True,False,False,False,False,True,FAO_Nepal_2012
 3,Chiura,चिउरा,nepali_staple,340.0,6.5,77.0,1.0,2.0,0.0,5.0,100.0,True,True,True,False,False,False,False,True,NARC
 4,Baji,बजी,nepali_staple,340.0,6.5,77.0,1.0,2.0,0.0,5.0,100.0,True,True,True,False,False,False,False,True,NARC
-5,Puri,पुरी,nepali_bread,310.0,7.0,42.0,12.0,2.5,1.0,300.0,50.0,True,True,False,False,False,True,False,True,manual_calc
-6,Roti,रोटी,nepali_bread,297.0,9.0,50.0,6.5,6.0,1.5,150.0,50.0,True,True,False,False,False,True,False,True,manual_calc
+5,Puri,पुरी,nepali_bread,155.0,3.5,21.0,6.0,1.2,0.5,150.0,50.0,True,True,False,False,False,True,False,True,manual_calc
+6,Roti,रोटी,nepali_bread,148.5,4.5,25.0,3.2,3.0,0.8,75.0,50.0,True,True,False,False,False,True,False,True,manual_calc
 7,Plain Rice,भात,nepali_staple,130.0,2.7,28.0,0.3,0.4,0.0,1.0,200.0,True,True,True,False,False,False,False,True,USDA
 8,Jeera Rice,जिरा भात,nepali_staple,140.0,2.8,28.5,1.5,0.5,0.1,150.0,200.0,True,False,True,False,True,False,False,True,manual_calc
 9,Pulao,पुलाउ,nepali_staple,160.0,3.5,30.0,3.0,1.5,1.0,200.0,250.0,True,False,True,True,True,False,False,True,manual_calc
@@ -17,20 +17,20 @@ food_id,name,name_nepali,category,calories,protein,carbohydrates,fat,fiber,sugar
 16,Tornak,तोर्नाक,nepali_bread,250.0,6.0,45.0,4.5,4.0,1.0,200.0,80.0,True,True,False,False,False,True,False,True,manual_calc
 17,Naan,नान,nepali_bread,290.0,9.6,48.0,6.0,2.5,2.0,350.0,100.0,True,False,False,False,True,True,False,True,USDA
 18,Buff Momo,बफ मम,nepali_snack,210.0,12.0,22.0,8.0,1.5,1.0,450.0,150.0,False,False,False,False,False,True,False,True,manual_calc
-19,Chicken Momo,चिकेन मम,nepali_snack,719.9,57.0,80.5,16.4,1.5,1.0,400.0,150.0,False,False,False,False,False,True,False,True,Calculated_from_USDA
+19,Chicken Momo,चिकेन मम,nepali_snack,280.0,18.0,32.0,9.0,1.5,1.0,450.0,150.0,False,False,False,False,False,True,False,True,Calculated_from_USDA
 20,Veg Momo,भेज मम,nepali_snack,160.0,5.0,25.0,4.5,3.0,1.5,350.0,150.0,True,True,False,False,False,True,False,True,manual_calc
 21,Fried Buff Momo,फ्राइड बफ मम,nepali_snack,280.0,12.0,24.0,15.0,1.5,1.0,480.0,150.0,False,False,False,False,False,True,False,True,manual_calc
 22,Chatamari,चतामरी,nepali_snack,180.0,8.0,25.0,5.0,2.0,0.5,300.0,100.0,False,False,True,False,False,False,True,True,manual_calc
 23,Bara,बरा,nepali_snack,210.0,12.0,28.0,6.0,5.0,0.5,250.0,80.0,True,True,True,False,False,False,False,True,FAO_Nepal_2012
-24,Sel Roti,सेल रोटी,nepali_snack,350.0,5.0,58.0,11.0,1.5,15.0,10.0,50.0,True,False,True,False,True,False,False,True,NARC
-25,Yomari,योमरी,nepali_snack,300.0,4.0,55.0,7.0,2.0,20.0,5.0,60.0,True,False,True,True,True,False,False,True,manual_calc
-26,Lakhamari,लाखामरी,nepali_snack,450.0,5.0,65.0,18.0,1.0,30.0,15.0,40.0,True,False,True,False,True,False,False,True,manual_calc
+24,Sel Roti,सेल रोटी,nepali_snack,175.0,2.5,29.0,5.5,0.8,7.5,5.0,50.0,True,False,True,False,True,False,False,True,NARC
+25,Yomari,योमरी,nepali_snack,180.0,2.4,33.0,4.2,1.2,12.0,3.0,60.0,True,False,True,True,True,False,False,True,manual_calc
+26,Lakhamari,लाखामरी,nepali_snack,180.0,2.0,26.0,7.2,0.4,12.0,6.0,40.0,True,False,True,False,True,False,False,True,manual_calc
 27,Samosa,समोसा,nepali_snack,260.0,4.5,32.0,13.0,2.5,1.5,350.0,100.0,True,True,False,False,False,True,False,True,USDA
 28,Pakoda,पकौडा,nepali_snack,290.0,7.0,28.0,16.0,3.5,1.0,400.0,100.0,True,True,False,False,False,True,False,True,manual_calc
 29,Aloo Chop,आलु चप,nepali_snack,240.0,4.0,30.0,11.0,3.0,1.0,380.0,80.0,True,True,False,False,False,True,False,True,manual_calc
 30,Phuraula,फुरौला,nepali_snack,270.0,6.0,40.0,9.0,4.0,1.0,200.0,60.0,True,True,True,False,False,False,False,True,manual_calc
-31,Khajuri,खजुरी,nepali_snack,400.0,6.0,60.0,15.0,2.0,25.0,50.0,50.0,True,False,False,False,True,True,False,True,manual_calc
-32,Nimki,निम्की,nepali_snack,480.0,8.0,55.0,25.0,2.5,2.0,600.0,40.0,True,True,False,False,False,True,False,True,manual_calc
+31,Khajuri,खजुरी,nepali_snack,200.0,3.0,30.0,7.5,1.0,12.5,25.0,50.0,True,False,False,False,True,True,False,True,manual_calc
+32,Nimki,निम्की,nepali_snack,192.0,3.2,22.0,10.0,1.0,0.8,240.0,40.0,True,True,False,False,False,True,False,True,manual_calc
 33,Pani Puri,पानी पुरी,nepali_snack,150.0,4.0,25.0,4.0,2.5,2.0,400.0,120.0,True,True,False,False,False,True,False,True,manual_calc
 34,Chana Chatpate,चना चटपटे,nepali_snack,140.0,5.5,24.0,2.5,5.0,2.5,500.0,100.0,True,True,True,True,False,False,False,True,manual_calc
 35,Aloo Tama,आलु तामा,nepali_curry,90.0,2.5,16.0,2.0,3.0,1.5,450.0,200.0,True,True,True,False,False,False,False,True,FAO_Nepal_2012
@@ -53,7 +53,7 @@ food_id,name,name_nepali,category,calories,protein,carbohydrates,fat,fiber,sugar
 52,Iskus ko Tarkari,इस्कुसको तरकारी,nepali_vegetable,45.0,1.2,7.0,1.5,2.5,2.5,230.0,100.0,True,True,True,False,False,False,False,True,manual_calc
 53,Sekuwa,सेकुवा,nepali_meat,220.0,22.0,2.0,13.0,0.5,0.5,450.0,150.0,False,False,True,False,False,False,False,True,manual_calc
 54,Choila,छोइला,nepali_meat,195.0,20.0,4.0,10.0,1.0,1.0,500.0,150.0,False,False,True,False,False,False,False,True,manual_calc
-55,Sukuti,सुकुटी,nepali_meat,310.0,45.0,0.0,12.0,0.0,0.0,600.0,50.0,False,False,True,False,False,False,False,True,FAO_Nepal_2012
+55,Sukuti,सुकुटी,nepali_meat,155.0,22.5,0.0,6.0,0.0,0.0,300.0,50.0,False,False,True,False,False,False,False,True,FAO_Nepal_2012
 56,Buff Curry,बफको तरकारी,nepali_meat,180.0,18.0,5.0,9.0,1.0,1.0,450.0,200.0,False,False,True,False,False,False,False,True,manual_calc
 57,Chicken Curry,कुखुराको तरकारी,nepali_meat,165.0,16.0,6.0,8.0,1.0,1.5,420.0,200.0,False,False,True,False,False,False,False,True,manual_calc
 58,Mutton Curry,खसीको तरकारी,nepali_meat,210.0,18.0,5.0,12.0,1.0,1.0,480.0,200.0,False,False,True,False,False,False,False,True,manual_calc
@@ -68,25 +68,25 @@ food_id,name,name_nepali,category,calories,protein,carbohydrates,fat,fiber,sugar
 67,Sikarni,सिकार्नी,nepali_sweet,140.0,4.5,18.0,5.5,0.5,16.0,45.0,100.0,True,False,True,True,True,False,False,True,manual_calc
 68,Haluwa,हलुवा,nepali_sweet,320.0,4.0,45.0,14.0,1.5,25.0,20.0,100.0,True,False,False,True,True,True,False,True,manual_calc
 69,Rasbari,रसबरी,nepali_sweet,220.0,6.0,38.0,5.0,0.0,35.0,30.0,50.0,True,False,True,False,True,False,False,True,manual_calc
-70,Laddoo,लड्डु,nepali_sweet,400.0,6.0,60.0,16.0,2.0,40.0,20.0,50.0,True,False,True,True,True,False,False,True,manual_calc
-71,Barfi,बर्फी,nepali_sweet,380.0,8.0,55.0,15.0,0.5,45.0,30.0,50.0,True,False,True,True,True,False,False,True,manual_calc
-72,Peda,पेँडा,nepali_sweet,390.0,9.0,52.0,16.0,0.5,42.0,25.0,50.0,True,False,True,True,True,False,False,True,manual_calc
-73,Lal Mohan,लाल मोहन,nepali_sweet,300.0,5.0,45.0,10.0,0.5,35.0,40.0,60.0,True,False,False,False,True,True,False,True,manual_calc
-74,Jeri,जेरी,nepali_sweet,350.0,2.0,65.0,8.0,0.5,50.0,10.0,50.0,True,False,False,False,True,True,False,True,manual_calc
+70,Laddoo,लड्डु,nepali_sweet,200.0,3.0,30.0,8.0,1.0,20.0,10.0,50.0,True,False,True,True,True,False,False,True,manual_calc
+71,Barfi,बर्फी,nepali_sweet,190.0,4.0,27.5,7.5,0.2,22.5,15.0,50.0,True,False,True,True,True,False,False,True,manual_calc
+72,Peda,पेँडा,nepali_sweet,195.0,4.5,26.0,8.0,0.2,21.0,12.5,50.0,True,False,True,True,True,False,False,True,manual_calc
+73,Lal Mohan,लाल मोहन,nepali_sweet,180.0,3.0,27.0,6.0,0.3,21.0,24.0,60.0,True,False,False,False,True,True,False,True,manual_calc
+74,Jeri,जेरी,nepali_sweet,175.0,1.0,32.5,4.0,0.2,25.0,5.0,50.0,True,False,False,False,True,True,False,True,manual_calc
 75,Chiya,चिया,nepali_beverage,55.0,1.5,8.0,2.0,0.0,7.5,15.0,150.0,True,False,True,False,True,False,False,True,manual_calc
 76,Masala Tea,मसला चिया,nepali_beverage,60.0,1.5,9.0,2.0,0.1,8.0,15.0,150.0,True,False,True,False,True,False,False,True,manual_calc
 77,Lassi,लस्सी,nepali_beverage,90.0,3.0,14.0,2.5,0.0,12.0,40.0,250.0,True,False,True,False,True,False,False,True,manual_calc
 78,Chhyang,छ्याङ,nepali_beverage,70.0,0.5,12.0,0.1,0.2,2.0,5.0,200.0,True,True,True,False,False,False,False,True,FAO_Nepal_2012
 79,Lemon Water,कागती पानी,nepali_beverage,10.0,0.1,2.5,0.0,0.1,1.0,2.0,250.0,True,True,True,False,False,False,False,True,manual_calc
-80,Raksi,रक्सी,nepali_beverage,231.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,True,True,True,False,False,False,False,True,manual_calc
+80,Raksi,रक्सी,nepali_beverage,115.5,0.0,0.0,0.0,0.0,0.0,0.0,50.0,True,True,True,False,False,False,False,True,manual_calc
 81,Tongba,तोङबा,nepali_beverage,65.0,0.8,11.0,0.2,0.5,1.5,5.0,300.0,True,True,True,False,False,False,False,True,manual_calc
 82,Tomato Achar,गोलभेडाको अचार,nepali_pickle,45.0,1.5,6.0,1.8,2.0,3.0,450.0,30.0,True,True,True,False,False,False,False,True,manual_calc
 83,Mula ko Achar,मुलाको अचार,nepali_pickle,55.0,1.5,7.0,2.5,2.5,3.0,500.0,30.0,True,True,True,False,False,False,False,True,manual_calc
-84,Til ko Achar,तिलको अचार,nepali_pickle,220.0,6.0,12.0,18.0,4.0,1.0,450.0,20.0,True,True,True,False,False,False,False,True,manual_calc
-85,Lapsi ko Achar,लप्सीको अचार,nepali_pickle,150.0,1.0,35.0,0.5,3.0,25.0,400.0,20.0,True,True,True,False,False,False,False,True,manual_calc
+84,Til ko Achar,तिलको अचार,nepali_pickle,44.0,1.2,2.4,3.6,0.8,0.2,90.0,20.0,True,True,True,False,False,False,False,True,manual_calc
+85,Lapsi ko Achar,लप्सीको अचार,nepali_pickle,30.0,0.2,7.0,0.1,0.6,5.0,80.0,20.0,True,True,True,False,False,False,False,True,manual_calc
 86,Gundruk ko Achar,गुन्द्रुकको अचार,nepali_pickle,85.0,4.0,9.0,3.5,4.5,1.5,450.0,20.0,True,True,True,False,False,False,False,True,manual_calc
 87,Kakro ko Achar,काँक्रोको अचार,nepali_pickle,40.0,1.0,5.0,2.0,1.5,2.0,350.0,30.0,True,True,True,False,False,False,False,True,manual_calc
-88,Aam ko Achar,आँपको अचार,nepali_pickle,180.0,1.0,20.0,12.0,3.0,15.0,600.0,20.0,True,True,True,False,False,False,False,True,manual_calc
+88,Aam ko Achar,आँपको अचार,nepali_pickle,36.0,0.2,4.0,2.4,0.6,3.0,120.0,20.0,True,True,True,False,False,False,False,True,manual_calc
 89,White Rice Cooked,सेतो भात,grain,130.0,2.7,28.2,0.3,0.4,0.1,1.0,100.0,True,True,True,False,False,False,False,True,USDA
 90,Brown Rice Cooked,ब्राउन चामल भात,grain,111.0,2.6,23.0,0.9,1.8,0.4,5.0,100.0,True,True,True,False,False,False,False,True,USDA
 91,Kodo ko Roti,कोदोको रोटी,nepali_bread,185.0,5.2,36.0,2.1,5.8,0.5,110.0,80.0,True,True,True,False,False,False,False,True,FAO_Nepal_2012
