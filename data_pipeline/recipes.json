@@ -1,1770 +1,704 @@
 {
-  "Chicken Momo": {
-    "ingredients": {
-      "flour": 50,
-      "raw_chicken": 70,
-      "mustard_oil": 5,
-      "onion": 25
-    },
-    "cuisine": "Nepali",
-    "is_veg": false
-  },
   "Dal Bhat": {
     "ingredients": {
-      "rice": 200,
-      "lentils": 100,
-      "mustard_oil": 10,
-      "potato": 50,
-      "spinach": 50,
-      "ghee": 15
+      "rice_white_cooked": 170,
+      "red_lentils_masoor_cooked": 70,
+      "spinach_raw": 30,
+      "potato_boiled": 20,
+      "mustard_oil": 5,
+      "ghee_clarified_butter": 5
     },
     "cuisine": "Nepali",
-    "is_veg": true
+    "category": "nepali_staple"
   },
-  "Apple Pie": {
-    "ingredients": {
-      "apples": 25,
-      "flour": 25,
-      "butter": 25,
-      "sugar": 25,
-      "cinnamon": 25,
-      "nutmeg": 25
-    },
-    "cuisine": "American",
-    "is_veg": true,
-    "category": "american_dish"
-  },
-  "Chocolate Cake": {
-    "ingredients": {
-      "flour": 25,
-      "sugar": 25,
-      "cocoa_powder": 25,
-      "eggs": 25,
-      "butter": 25,
-      "vanilla_extract": 25
-    },
-    "cuisine": "American",
-    "is_veg": true,
-    "category": "american_dish"
-  },
-  "Tiramisu": {
-    "ingredients": {
-      "ladyfingers": 25,
-      "coffee": 25,
-      "mascarpone_cheese": 25,
-      "sugar": 25,
-      "cocoa_powder": 25,
-      "eggs": 25
-    },
-    "cuisine": "Italian",
-    "is_veg": true,
-    "category": "italian_dish"
-  },
-  "Cr\u00e8me Br\u00fbl\u00e9e": {
-    "ingredients": {
-      "cream": 38,
-      "egg_yolks": 38,
-      "sugar": 38,
-      "vanilla_bean": 38
-    },
-    "cuisine": "French",
-    "is_veg": true,
-    "category": "french_dish"
-  },
-  "Cheesecake": {
-    "ingredients": {
-      "cream_cheese": 25,
-      "graham_crackers": 25,
-      "sugar": 25,
-      "eggs": 25,
-      "butter": 25,
-      "vanilla_extract": 25
-    },
-    "cuisine": "American",
-    "is_veg": true,
-    "category": "american_dish"
-  },
-  "Baklava": {
-    "ingredients": {
-      "filo_pastry": 30,
-      "nuts": 30,
-      "honey": 30,
-      "butter": 30,
-      "cinnamon": 30
-    },
-    "cuisine": "Middle Eastern",
-    "is_veg": true,
-    "category": "middle eastern_dish"
-  },
-  "Pavlova": {
-    "ingredients": {
-      "egg_whites": 38,
-      "sugar": 38,
-      "whipped_cream": 38,
-      "fresh_fruits": 38
-    },
-    "cuisine": "Australian",
-    "is_veg": true,
-    "category": "australian_dish"
-  },
-  "Banoffee Pie": {
-    "ingredients": {
-      "digestive_biscuits": 30,
-      "butter": 30,
-      "bananas": 30,
-      "caramel": 30,
-      "whipped_cream": 30
-    },
-    "cuisine": "British",
-    "is_veg": true,
-    "category": "british_dish"
-  },
-  "Raspberry Sorbet": {
-    "ingredients": {
-      "raspberries": 50,
-      "sugar": 50,
-      "lemon_juice": 50
-    },
-    "cuisine": "French",
-    "is_veg": true,
-    "category": "french_dish"
-  },
-  "Pumpkin Pie": {
-    "ingredients": {
-      "pumpkin": 25,
-      "flour": 25,
-      "butter": 25,
-      "sugar": 25,
-      "cinnamon": 25,
-      "nutmeg": 25
-    },
-    "cuisine": "American",
-    "is_veg": true,
-    "category": "american_dish"
-  },
-  "Lemon Tart": {
-    "ingredients": {
-      "flour": 30,
-      "butter": 30,
-      "lemons": 30,
-      "sugar": 30,
-      "eggs": 30
-    },
-    "cuisine": "French",
-    "is_veg": true,
-    "category": "french_dish"
-  },
-  "Strawberry Shortcake": {
-    "ingredients": {
-      "flour": 30,
-      "sugar": 30,
-      "butter": 30,
-      "strawberries": 30,
-      "whipped_cream": 30
-    },
-    "cuisine": "American",
-    "is_veg": true,
-    "category": "american_dish"
-  },
-  "Mango Sticky Rice": {
-    "ingredients": {
-      "sticky_rice": 38,
-      "coconut_milk": 38,
-      "mangoes": 38,
-      "sugar": 38
-    },
-    "cuisine": "Thai",
-    "is_veg": true,
-    "category": "thai_dish"
-  },
-  "Black Forest Cake": {
-    "ingredients": {
-      "flour": 25,
-      "cocoa_powder": 25,
-      "cherries": 25,
-      "whipped_cream": 25,
-      "sugar": 25,
-      "eggs": 25
-    },
-    "cuisine": "German",
-    "is_veg": true,
-    "category": "german_dish"
-  },
-  "Key Lime Pie": {
-    "ingredients": {
-      "key_lime_juice": 38,
-      "sweetened_condensed_milk": 38,
-      "graham_crackers": 38,
-      "butter": 38
-    },
-    "cuisine": "American",
-    "is_veg": true,
-    "category": "american_dish"
-  },
-  "Profiteroles": {
-    "ingredients": {
-      "flour": 30,
-      "butter": 30,
-      "eggs": 30,
-      "whipped_cream": 30,
-      "chocolate": 30
-    },
-    "cuisine": "French",
-    "is_veg": true,
-    "category": "french_dish"
-  },
-  "Gelato": {
-    "ingredients": {
-      "milk": 50,
-      "sugar": 50,
-      "flavorings_(e.g.,_vanilla,_chocolate,_fruit)": 50
-    },
-    "cuisine": "Italian",
-    "is_veg": true,
-    "category": "italian_dish"
-  },
-  "Peach Cobbler": {
-    "ingredients": {
-      "peaches": 30,
-      "flour": 30,
-      "butter": 30,
-      "sugar": 30,
-      "cinnamon": 30
-    },
-    "cuisine": "Southern",
-    "is_veg": true,
-    "category": "southern_dish"
-  },
-  "Flan": {
-    "ingredients": {
-      "milk": 38,
-      "sugar": 38,
-      "eggs": 38,
-      "vanilla": 38
-    },
-    "cuisine": "Latin American",
-    "is_veg": true,
-    "category": "latin american_dish"
-  },
-  "Mille-feuille": {
-    "ingredients": {
-      "puff_pastry": 25,
-      "milk": 25,
-      "sugar": 25,
-      "eggs": 25,
-      "vanilla": 25,
-      "icing": 25
-    },
-    "cuisine": "French",
-    "is_veg": true,
-    "category": "french_dish"
-  },
-  "Cannoli": {
-    "ingredients": {
-      "pastry_dough": 38,
-      "ricotta_cheese": 38,
-      "sugar": 38,
-      "chocolate_chips": 38
-    },
-    "cuisine": "Italian",
-    "is_veg": true,
-    "category": "italian_dish"
-  },
-  "Brownies": {
-    "ingredients": {
-      "flour": 30,
-      "sugar": 30,
-      "cocoa_powder": 30,
-      "butter": 30,
-      "eggs": 30
-    },
-    "cuisine": "American",
-    "is_veg": true,
-    "category": "american_dish"
-  },
-  "Churros": {
-    "ingredients": {
-      "flour": 30,
-      "butter": 30,
-      "sugar": 30,
-      "cinnamon": 30,
-      "eggs": 30
-    },
-    "cuisine": "Spanish",
-    "is_veg": true,
-    "category": "spanish_dish"
-  },
-  "Tres Leches Cake": {
-    "ingredients": {
-      "flour": 25,
-      "sugar": 25,
-      "eggs": 25,
-      "evaporated_milk": 25,
-      "condensed_milk": 25,
-      "heavy_cream": 25
-    },
-    "cuisine": "Latin American",
-    "is_veg": true,
-    "category": "latin american_dish"
-  },
-  "Coconut Macaroons": {
-    "ingredients": {
-      "shredded_coconut": 38,
-      "sugar": 38,
-      "egg_whites": 38,
-      "vanilla_extract": 38
-    },
-    "cuisine": "French",
-    "is_veg": true,
-    "category": "french_dish"
-  },
-  "Chocolate Lava Cake": {
-    "ingredients": {
-      "chocolate": 30,
-      "butter": 30,
-      "sugar": 30,
-      "eggs": 30,
-      "flour": 30
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Cinnamon Rolls": {
-    "ingredients": {
-      "flour": 25,
-      "sugar": 25,
-      "butter": 25,
-      "yeast": 25,
-      "cinnamon": 25,
-      "cream_cheese": 25
-    },
-    "cuisine": "American",
-    "is_veg": true,
-    "category": "american_dish"
-  },
-  "Pecan Pie": {
-    "ingredients": {
-      "pecans": 30,
-      "corn_syrup": 30,
-      "eggs": 30,
-      "butter": 30,
-      "sugar": 30
-    },
-    "cuisine": "American",
-    "is_veg": true,
-    "category": "american_dish"
-  },
-  "Red Velvet Cake": {
-    "ingredients": {
-      "flour": 25,
-      "sugar": 25,
-      "buttermilk": 25,
-      "cocoa_powder": 25,
-      "red_food_coloring": 25,
-      "cream_cheese": 25
-    },
-    "cuisine": "American",
-    "is_veg": true,
-    "category": "american_dish"
-  },
-  "Angel Food Cake": {
-    "ingredients": {
-      "egg_whites": 38,
-      "sugar": 38,
-      "flour": 38,
-      "vanilla_extract": 38
-    },
-    "cuisine": "American",
-    "is_veg": true,
-    "category": "american_dish"
-  },
-  "Fruit Tart": {
-    "ingredients": {
-      "pastry_dough": 38,
-      "custard": 38,
-      "fresh_fruits": 38,
-      "sugar": 38
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Bread Pudding": {
-    "ingredients": {
-      "bread": 25,
-      "milk": 25,
-      "eggs": 25,
-      "sugar": 25,
-      "vanilla_extract": 25,
-      "cinnamon": 25
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Panna Cotta": {
-    "ingredients": {
-      "cream": 38,
-      "sugar": 38,
-      "gelatin": 38,
-      "vanilla_extract": 38
-    },
-    "cuisine": "Italian",
-    "is_veg": true,
-    "category": "italian_dish"
-  },
-  "Maple Pecan Pie": {
-    "ingredients": {
-      "pecans": 25,
-      "maple_syrup": 25,
-      "eggs": 25,
-      "butter": 25,
-      "sugar": 25,
-      "flour": 25
-    },
-    "cuisine": "American",
-    "is_veg": true,
-    "category": "american_dish"
-  },
-  "Opera Cake": {
-    "ingredients": {
-      "almond_sponge_cake": 30,
-      "coffee_syrup": 30,
-      "ganache": 30,
-      "coffee_buttercream": 30,
-      "chocolate_glaze": 30
-    },
-    "cuisine": "French",
-    "is_veg": true,
-    "category": "french_dish"
-  },
-  "Lemon Bars": {
-    "ingredients": {
-      "shortbread_crust": 30,
-      "lemon_juice": 30,
-      "eggs": 30,
-      "sugar": 30,
-      "flour": 30
-    },
-    "cuisine": "American",
-    "is_veg": true,
-    "category": "american_dish"
-  },
-  "Pumpkin Roll": {
-    "ingredients": {
-      "pumpkin_puree": 30,
-      "flour": 30,
-      "eggs": 30,
-      "sugar": 30,
-      "cream_cheese": 30
-    },
-    "cuisine": "American",
-    "is_veg": true,
-    "category": "american_dish"
-  },
-  "Creme Brulee": {
-    "ingredients": {
-      "cream": 38,
-      "egg_yolks": 38,
-      "sugar": 38,
-      "vanilla_bean": 38
-    },
-    "cuisine": "French",
-    "is_veg": true,
-    "category": "french_dish"
-  },
-  "Pineapple Upside-Down Cake": {
-    "ingredients": {
-      "pineapple_rings": 21,
-      "maraschino_cherries": 21,
-      "brown_sugar": 21,
-      "butter": 21,
-      "flour": 21,
-      "sugar": 21,
-      "eggs": 21
-    },
-    "cuisine": "American",
-    "is_veg": true,
-    "category": "american_dish"
-  },
-  "Cannoli Pastry": {
-    "ingredients": {
-      "pastry_shells": 30,
-      "ricotta_cheese": 30,
-      "powdered_sugar": 30,
-      "cinnamon": 30,
-      "chocolate_chips": 30
-    },
-    "cuisine": "Italian",
-    "is_veg": true,
-    "category": "italian_dish"
-  },
-  "Raspberry Mousse": {
-    "ingredients": {
-      "raspberries": 38,
-      "heavy_cream": 38,
-      "sugar": 38,
-      "gelatin": 38
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Carrot Cake": {
-    "ingredients": {
-      "carrots": 21,
-      "flour": 21,
-      "sugar": 21,
-      "oil": 21,
-      "eggs": 21,
-      "spices": 21,
-      "cream_cheese": 21
-    },
-    "cuisine": "American",
-    "is_veg": true,
-    "category": "american_dish"
-  },
-  "Bienenstich": {
-    "ingredients": {
-      "yeast_cake": 38,
-      "almonds": 38,
-      "honey": 38,
-      "vanilla_cream": 38
-    },
-    "cuisine": "German",
-    "is_veg": true,
-    "category": "german_dish"
-  },
-  "Lemonade": {
-    "ingredients": {
-      "lemon_juice": 50,
-      "water": 50,
-      "sugar": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Kimchi": {
-    "ingredients": {
-      "cabbage": 25,
-      "radishes": 25,
-      "chili_peppers": 25,
-      "garlic": 25,
-      "ginger": 25,
-      "salt": 25
-    },
-    "cuisine": "Korean",
-    "is_veg": true,
-    "category": "korean_dish"
-  },
-  "Sour Patch Kids": {
-    "ingredients": {
-      "sugar": 25,
-      "corn_syrup": 25,
-      "modified_corn_starch": 25,
-      "citric_acid": 25,
-      "lactic_acid": 25,
-      "malic_acid": 25
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Grapefruit": {
-    "ingredients": {
-      "grapefruit": 150
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Cream": {
-    "ingredients": {
-      "cream": 75,
-      "lactic_acid_bacteria": 75
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Pickles": {
-    "ingredients": {
-      "cucumbers": 38,
-      "vinegar": 38,
-      "salt": 38,
-      "spices": 38
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Greek Yogurt": {
-    "ingredients": {
-      "milk": 75,
-      "live_active_cultures": 75
-    },
-    "cuisine": "Greek",
-    "is_veg": true,
-    "category": "greek_dish"
-  },
-  "Sauerkraut": {
-    "ingredients": {
-      "cabbage": 50,
-      "salt": 50,
-      "lactic_acid_bacteria": 50
-    },
-    "cuisine": "German",
-    "is_veg": true,
-    "category": "german_dish"
-  },
-  "Vinegar": {
-    "ingredients": {
-      "ethanol_alcohol": 150
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Lime Juice": {
-    "ingredients": {
-      "limes": 150
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Cherry": {
-    "ingredients": {
-      "sour_cherries": 150
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Tamarind": {
-    "ingredients": {
-      "tamarind_pulp": 150
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Milk": {
-    "ingredients": {
-      "milk": 75,
-      "bacteria_cultures": 75
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Gummy Worms": {
-    "ingredients": {
-      "sugar": 25,
-      "corn_syrup": 25,
-      "gelatin": 25,
-      "citric_acid": 25,
-      "lactic_acid": 25,
-      "fruit_juice": 25
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sourdough Bread": {
-    "ingredients": {
-      "flour": 50,
-      "water": 50,
-      "starter_culture": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Apple": {
-    "ingredients": {
-      "sour_apples": 150
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Fish Soup": {
-    "ingredients": {
-      "fish": 30,
-      "vegetables": 30,
-      "tamarind": 30,
-      "lime_juice": 30,
-      "spices": 30
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Cream and Onion Chips": {
-    "ingredients": {
-      "potatoes": 30,
-      "vegetable_oil": 30,
-      "sour_cream_powder": 30,
-      "onion_powder": 30,
-      "salt": 30
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Beef Stew": {
-    "ingredients": {
-      "beef": 30,
-      "vegetables": 30,
-      "vinegar": 30,
-      "tamarind": 30,
-      "spices": 30
-    },
-    "cuisine": "International",
-    "is_veg": false,
-    "category": "international_dish"
-  },
-  "Sour Plum": {
-    "ingredients": {
-      "sour_plums": 150
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Lemon Drops": {
-    "ingredients": {
-      "sugar": 38,
-      "corn_syrup": 38,
-      "citric_acid": 38,
-      "natural_lemon_flavor": 38
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Raspberry Jam": {
-    "ingredients": {
-      "raspberries": 50,
-      "sugar": 50,
-      "lemon_juice": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Cherry Pie": {
-    "ingredients": {
-      "sour_cherries": 30,
-      "sugar": 30,
-      "lemon_juice": 30,
-      "flour": 30,
-      "butter": 30
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Orange Marmalade": {
-    "ingredients": {
-      "oranges": 50,
-      "sugar": 50,
-      "lemon_zest": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Watermelon Slices": {
-    "ingredients": {
-      "sugar": 25,
-      "corn_syrup": 25,
-      "gelatin": 25,
-      "citric_acid": 25,
-      "lactic_acid": 25,
-      "watermelon_flavor": 25
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Patch Watermelon": {
-    "ingredients": {
-      "sugar": 25,
-      "corn_syrup": 25,
-      "modified_corn_starch": 25,
-      "citric_acid": 25,
-      "lactic_acid": 25,
-      "fruit_juice": 25
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Patch Strawberries": {
-    "ingredients": {
-      "sugar": 25,
-      "corn_syrup": 25,
-      "modified_corn_starch": 25,
-      "citric_acid": 25,
-      "lactic_acid": 25,
-      "fruit_juice": 25
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Cherry Lollipops": {
-    "ingredients": {
-      "sugar": 30,
-      "corn_syrup": 30,
-      "citric_acid": 30,
-      "lactic_acid": 30,
-      "cherry_flavor": 30
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Raspberry Gummies": {
-    "ingredients": {
-      "sugar": 25,
-      "corn_syrup": 25,
-      "gelatin": 25,
-      "citric_acid": 25,
-      "lactic_acid": 25,
-      "raspberry_flavor": 25
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Apple Rings": {
-    "ingredients": {
-      "sugar": 25,
-      "corn_syrup": 25,
-      "gelatin": 25,
-      "citric_acid": 25,
-      "lactic_acid": 25,
-      "apple_flavor": 25
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Blueberry Candy": {
-    "ingredients": {
-      "sugar": 30,
-      "corn_syrup": 30,
-      "citric_acid": 30,
-      "lactic_acid": 30,
-      "blueberry_flavor": 30
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Grapefruit Slices": {
-    "ingredients": {
-      "sugar": 25,
-      "corn_syrup": 25,
-      "gelatin": 25,
-      "citric_acid": 25,
-      "lactic_acid": 25,
-      "grapefruit_flavor": 25
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Strawberry Belts": {
-    "ingredients": {
-      "sugar": 25,
-      "corn_syrup": 25,
-      "gelatin": 25,
-      "citric_acid": 25,
-      "lactic_acid": 25,
-      "strawberry_flavor": 25
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Peach Rings": {
-    "ingredients": {
-      "sugar": 25,
-      "corn_syrup": 25,
-      "gelatin": 25,
-      "citric_acid": 25,
-      "lactic_acid": 25,
-      "peach_flavor": 25
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Cola Bottles": {
-    "ingredients": {
-      "sugar": 25,
-      "corn_syrup": 25,
-      "gelatin": 25,
-      "citric_acid": 25,
-      "lactic_acid": 25,
-      "cola_flavor": 25
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Lemonade": {
-    "ingredients": {
-      "lemon_juice": 50,
-      "water": 50,
-      "sugar": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Blue Raspberry Straws": {
-    "ingredients": {
-      "sugar": 25,
-      "corn_syrup": 25,
-      "cornstarch": 25,
-      "citric_acid": 25,
-      "lactic_acid": 25,
-      "blue_raspberry_flavor": 25
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Mango Slices": {
-    "ingredients": {
-      "sugar": 25,
-      "corn_syrup": 25,
-      "gelatin": 25,
-      "citric_acid": 25,
-      "lactic_acid": 25,
-      "mango_flavor": 25
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Pineapple Rings": {
-    "ingredients": {
-      "sugar": 25,
-      "corn_syrup": 25,
-      "gelatin": 25,
-      "citric_acid": 25,
-      "lactic_acid": 25,
-      "pineapple_flavor": 25
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Grape Slices": {
-    "ingredients": {
-      "sugar": 25,
-      "corn_syrup": 25,
-      "gelatin": 25,
-      "citric_acid": 25,
-      "lactic_acid": 25,
-      "grape_flavor": 25
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Kiwi Gummies": {
-    "ingredients": {
-      "sugar": 25,
-      "corn_syrup": 25,
-      "gelatin": 25,
-      "citric_acid": 25,
-      "lactic_acid": 25,
-      "kiwi_flavor": 25
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Cranberry Candy": {
-    "ingredients": {
-      "sugar": 38,
-      "corn_syrup": 38,
-      "citric_acid": 38,
-      "cranberry_flavor": 38
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Peach Slices": {
-    "ingredients": {
-      "sugar": 25,
-      "corn_syrup": 25,
-      "gelatin": 25,
-      "citric_acid": 25,
-      "lactic_acid": 25,
-      "peach_flavor": 25
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Lemon Sherbet": {
-    "ingredients": {
-      "lemon_juice": 50,
-      "sugar": 50,
-      "water": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Cherry Licorice": {
-    "ingredients": {
-      "sugar": 30,
-      "corn_syrup": 30,
-      "wheat_flour": 30,
-      "citric_acid": 30,
-      "cherry_flavor": 30
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Apple Lollipops": {
-    "ingredients": {
-      "sugar": 30,
-      "corn_syrup": 30,
-      "citric_acid": 30,
-      "lactic_acid": 30,
-      "apple_flavor": 30
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Grape Lollipops": {
-    "ingredients": {
-      "sugar": 30,
-      "corn_syrup": 30,
-      "citric_acid": 30,
-      "lactic_acid": 30,
-      "grape_flavor": 30
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Blue Raspberry Belts": {
-    "ingredients": {
-      "sugar": 25,
-      "corn_syrup": 25,
-      "gelatin": 25,
-      "citric_acid": 25,
-      "lactic_acid": 25,
-      "blue_raspberry_flavor": 25
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sour Blackberry Gummies": {
-    "ingredients": {
-      "sugar": 25,
-      "corn_syrup": 25,
-      "gelatin": 25,
-      "citric_acid": 25,
-      "lactic_acid": 25,
-      "blackberry_flavor": 25
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Classic Potato Chips": {
-    "ingredients": {
-      "potatoes": 50,
-      "vegetable_oil": 50,
-      "salt": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Sea Salted Pretzels": {
-    "ingredients": {
-      "flour": 38,
-      "water": 38,
-      "yeast": 38,
-      "salt": 38
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Cashews": {
-    "ingredients": {
-      "cashews": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Popcorn": {
-    "ingredients": {
-      "popcorn_kernels": 50,
-      "salt": 50,
-      "butter": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Almonds": {
-    "ingredients": {
-      "almonds": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Sunflower Seeds": {
-    "ingredients": {
-      "sunflower_seeds": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Peanuts": {
-    "ingredients": {
-      "peanuts": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Pistachios": {
-    "ingredients": {
-      "pistachios": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Macadamia Nuts": {
-    "ingredients": {
-      "macadamia_nuts": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Mixed Nuts": {
-    "ingredients": {
-      "almonds": 30,
-      "cashews": 30,
-      "peanuts": 30,
-      "salt": 30,
-      "vegetable_oil": 30
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Pecans": {
-    "ingredients": {
-      "pecans": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Hazelnuts": {
-    "ingredients": {
-      "hazelnuts": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Chicken": {
-    "ingredients": {
-      "chickpeas": 50,
-      "salt": 50,
-      "olive_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": false,
-    "category": "international_dish"
-  },
-  "Salted Roasted Edamame": {
-    "ingredients": {
-      "edamame": 50,
-      "salt": 50,
-      "olive_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Walnuts": {
-    "ingredients": {
-      "walnuts": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Pumpkin Seeds": {
-    "ingredients": {
-      "pumpkin_seeds": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Brazil Nuts": {
-    "ingredients": {
-      "brazil_nuts": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Soybeans": {
-    "ingredients": {
-      "soybeans": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Corn": {
-    "ingredients": {
-      "corn_kernels": 50,
-      "salt": 50,
-      "butter": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Chickpea Snack Mix": {
-    "ingredients": {
-      "chickpeas": 25,
-      "almonds": 25,
-      "cashews": 25,
-      "sunflower_seeds": 25,
-      "salt": 25,
-      "olive_oil": 25
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Mixed Nuts and Dried Fruits": {
-    "ingredients": {
-      "almonds": 25,
-      "cashews": 25,
-      "peanuts": 25,
-      "dried_fruits": 25,
-      "salt": 25,
-      "vegetable_oil": 25
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Seaweed Snacks": {
-    "ingredients": {
-      "seaweed": 50,
-      "salt": 50,
-      "sesame_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Green Peas": {
-    "ingredients": {
-      "green_peas": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Broad Beans": {
-    "ingredients": {
-      "broad_beans": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Fava Beans": {
-    "ingredients": {
-      "fava_beans": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Mixed Seeds": {
-    "ingredients": {
-      "pumpkin_seeds": 30,
-      "sunflower_seeds": 30,
-      "sesame_seeds": 30,
-      "salt": 30,
-      "vegetable_oil": 30
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Rice Crackers": {
-    "ingredients": {
-      "rice_flour": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Quinoa Snack": {
-    "ingredients": {
-      "quinoa": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Barley Snack": {
-    "ingredients": {
-      "barley": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Lentil Snack": {
-    "ingredients": {
-      "lentils": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Cashews": {
-    "ingredients": {
-      "cashews": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Chickpeas": {
-    "ingredients": {
-      "chickpeas": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Pretzel Sticks": {
-    "ingredients": {
-      "wheat_flour": 30,
-      "salt": 30,
-      "yeast": 30,
-      "water": 30,
-      "vegetable_oil": 30
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Rice Cakes": {
-    "ingredients": {
-      "rice": 75,
-      "salt": 75
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Roasted Seaweed": {
-    "ingredients": {
-      "seaweed": 50,
-      "salt": 50,
-      "sesame_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Corn Chips": {
-    "ingredients": {
-      "corn": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Tortilla Chips": {
-    "ingredients": {
-      "corn": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "Mexican",
-    "is_veg": true,
-    "category": "mexican_dish"
-  },
-  "Salted Roasted Cashew Nuts": {
-    "ingredients": {
-      "cashew_nuts": 50,
-      "salt": 50,
-      "vegetable_oil": 50
-    },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
-  },
-  "Salted Crackers": {
+  "Chicken Momo": {
     "ingredients": {
       "wheat_flour": 50,
-      "salt": 50,
-      "vegetable_oil": 50
+      "chicken_breast_skinless": 70,
+      "onion_raw": 22,
+      "mustard_oil": 5,
+      "ginger_raw": 1.5,
+      "garlic_raw": 1.5
     },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
+    "cuisine": "Nepali",
+    "category": "nepali_snack"
   },
-  "Salted Breadsticks": {
+  "Buff Momo": {
+    "ingredients": {
+      "wheat_flour": 50,
+      "buffalo_meat_lean": 70,
+      "onion_raw": 22,
+      "mustard_oil": 5,
+      "ginger_raw": 1.5,
+      "garlic_raw": 1.5
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_snack"
+  },
+  "Veg Momo": {
+    "ingredients": {
+      "wheat_flour": 50,
+      "cabbage_raw": 45,
+      "onion_raw": 25,
+      "cauliflower_raw": 20,
+      "mustard_oil": 6,
+      "ginger_raw": 2,
+      "garlic_raw": 2
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_snack"
+  },
+  "Fried Buff Momo": {
+    "ingredients": {
+      "wheat_flour": 48,
+      "buffalo_meat_lean": 65,
+      "onion_raw": 20,
+      "mustard_oil": 14,
+      "ginger_raw": 1.5,
+      "garlic_raw": 1.5
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_snack"
+  },
+  "Puri": {
+    "ingredients": {
+      "wheat_flour": 40,
+      "mustard_oil": 9.5,
+      "salt_table": 0.5
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_bread"
+  },
+  "Roti": {
+    "ingredients": {
+      "wheat_flour": 49,
+      "ghee_clarified_butter": 1
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_bread"
+  },
+  "Jeera Rice": {
+    "ingredients": {
+      "rice_white_cooked": 194,
+      "ghee_clarified_butter": 4,
+      "cumin_seeds_jeera": 2
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_staple"
+  },
+  "Pulao": {
+    "ingredients": {
+      "rice_white_cooked": 210,
+      "green_peas_raw": 20,
+      "ghee_clarified_butter": 6,
+      "cashews_raw": 8,
+      "cumin_seeds_jeera": 4,
+      "turmeric_powder": 2
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_staple"
+  },
+  "Khichdi": {
+    "ingredients": {
+      "rice_white_cooked": 150,
+      "mung_beans_cooked": 70,
+      "ghee_clarified_butter": 8,
+      "ginger_raw": 4,
+      "turmeric_powder": 3,
+      "cumin_seeds_jeera": 3,
+      "salt_table": 12
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_staple"
+  },
+  "Samay Baji": {
+    "ingredients": {
+      "beaten_rice_chiura": 110,
+      "soybeans_cooked": 50,
+      "buffalo_meat_lean": 60,
+      "black_gram_urad_cooked": 50,
+      "mustard_oil": 15,
+      "ginger_raw": 8,
+      "garlic_raw": 7
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_staple"
+  },
+  "Tornak": {
+    "ingredients": {
+      "wheat_flour": 68,
+      "butter_salted": 8,
+      "mustard_oil": 4
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_bread"
+  },
+  "Chatamari": {
+    "ingredients": {
+      "rice_white_raw": 55,
+      "whole_egg": 20,
+      "onion_raw": 15,
+      "mustard_oil": 7,
+      "salt_table": 3
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_snack"
+  },
+  "Yomari": {
+    "ingredients": {
+      "rice_white_raw": 40,
+      "jaggery_gud": 14,
+      "sesame_seeds_til": 6
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_snack"
+  },
+  "Lakhamari": {
+    "ingredients": {
+      "rice_white_raw": 22,
+      "black_gram_urad_cooked": 8,
+      "sugar_granulated": 6,
+      "ghee_clarified_butter": 4
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_snack"
+  },
+  "Pakoda": {
+    "ingredients": {
+      "chickpeas_chana_cooked": 45,
+      "onion_raw": 35,
+      "mustard_oil": 16,
+      "turmeric_powder": 2,
+      "salt_table": 2
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_snack"
+  },
+  "Aloo Chop": {
+    "ingredients": {
+      "potato_boiled": 55,
+      "chickpeas_chana_cooked": 15,
+      "mustard_oil": 7,
+      "onion_raw": 2.5,
+      "salt_table": 0.5
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_snack"
+  },
+  "Phuraula": {
+    "ingredients": {
+      "black_gram_urad_cooked": 42,
+      "mustard_oil": 14,
+      "ginger_raw": 2,
+      "cumin_seeds_jeera": 1,
+      "salt_table": 1
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_snack"
+  },
+  "Khajuri": {
+    "ingredients": {
+      "wheat_flour": 32,
+      "sugar_granulated": 10,
+      "ghee_clarified_butter": 8
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_snack"
+  },
+  "Nimki": {
+    "ingredients": {
+      "wheat_flour": 31,
+      "mustard_oil": 8,
+      "cumin_seeds_jeera": 0.5,
+      "salt_table": 0.5
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_snack"
+  },
+  "Pani Puri": {
     "ingredients": {
       "wheat_flour": 30,
-      "salt": 30,
-      "yeast": 30,
-      "water": 30,
-      "vegetable_oil": 30
+      "potato_boiled": 45,
+      "chickpeas_chana_cooked": 35,
+      "mustard_oil": 8,
+      "salt_table": 2
     },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
+    "cuisine": "Nepali",
+    "category": "nepali_snack"
   },
-  "Salted Pretzel Bites": {
+  "Chana Chatpate": {
     "ingredients": {
-      "wheat_flour": 30,
-      "salt": 30,
-      "yeast": 30,
-      "water": 30,
-      "vegetable_oil": 30
+      "beaten_rice_chiura": 35,
+      "chickpeas_chana_cooked": 35,
+      "onion_raw": 15,
+      "tomato_red_ripe": 10,
+      "mustard_oil": 4,
+      "salt_table": 1
     },
-    "cuisine": "International",
-    "is_veg": true,
-    "category": "international_dish"
+    "cuisine": "Nepali",
+    "category": "nepali_snack"
   },
-  "Margherita Pizza": {
+  "Cauliflower Tarkari": {
     "ingredients": {
-      "pizza_dough": 30,
-      "tomatoes": 30,
-      "mozzarella_cheese": 30,
-      "basil": 30,
-      "capsicum": 30
+      "cauliflower_raw": 125,
+      "tomato_red_ripe": 15,
+      "mustard_oil": 5,
+      "turmeric_powder": 2,
+      "cumin_seeds_jeera": 2,
+      "salt_table": 1
     },
-    "cuisine": "Italian",
-    "is_veg": true,
-    "category": "italian_dish"
+    "cuisine": "Nepali",
+    "category": "nepali_vegetable"
   },
-  "Pepperoni Pizza": {
+  "Mixed Vegetable Tarkari": {
     "ingredients": {
-      "pizza_dough": 38,
-      "pepperoni": 38,
-      "mozzarella_cheese": 38,
-      "tomato_sauce": 38
+      "cauliflower_raw": 45,
+      "potato_boiled": 40,
+      "green_peas_raw": 30,
+      "tomato_red_ripe": 25,
+      "mustard_oil": 6,
+      "turmeric_powder": 2,
+      "salt_table": 2
     },
-    "cuisine": "American",
-    "is_veg": true,
-    "category": "american_dish"
+    "cuisine": "Nepali",
+    "category": "nepali_vegetable"
   },
-  "BBQ Chicken Pizza": {
+  "Mushroom Curry": {
     "ingredients": {
-      "pizza_dough": 25,
-      "bbq_sauce": 25,
-      "grilled_chicken": 25,
-      "red_onions": 25,
-      "cilantro": 25,
-      "mozzarella_cheese": 25
+      "mushrooms_white": 115,
+      "onion_raw": 15,
+      "tomato_red_ripe": 12,
+      "mustard_oil": 5,
+      "garlic_raw": 2,
+      "salt_table": 1
     },
-    "cuisine": "American",
-    "is_veg": false,
-    "category": "american_dish"
+    "cuisine": "Nepali",
+    "category": "nepali_curry"
   },
-  "Hawaiian Pizza": {
+  "Paneer Curry": {
     "ingredients": {
-      "pizza_dough": 30,
-      "ham": 30,
-      "pineapple": 30,
-      "mozzarella_cheese": 30,
-      "tomato_sauce": 30
+      "paneer_cottage_cheese": 55,
+      "tomato_red_ripe": 45,
+      "onion_raw": 35,
+      "ghee_clarified_butter": 9,
+      "turmeric_powder": 3,
+      "salt_table": 3
     },
-    "cuisine": "Canadian",
-    "is_veg": true,
-    "category": "canadian_dish"
+    "cuisine": "Nepali",
+    "category": "nepali_curry"
   },
-  "Vegan Pizza": {
+  "Aloo Kerau": {
     "ingredients": {
-      "_dough": 21,
-      "bell_peppers": 21,
-      "mushrooms": 21,
-      "olives": 21,
-      "tomatoes": 21,
-      "mozzarella_cheese": 21,
-      "tomato_sauce": 21
+      "potato_boiled": 80,
+      "green_peas_raw": 45,
+      "tomato_red_ripe": 15,
+      "mustard_oil": 6,
+      "cumin_seeds_jeera": 2,
+      "salt_table": 2
     },
-    "cuisine": "Italian",
-    "is_veg": true,
-    "category": "italian_dish"
+    "cuisine": "Nepali",
+    "category": "nepali_curry"
   },
-  "Classic Chocolate Cake": {
+  "Tama Aloo": {
     "ingredients": {
-      "flour": 21,
-      "sugar": 21,
-      "cocoa_powder": 21,
-      "eggs": 21,
-      "butter": 21,
-      "vanilla_extract": 21,
-      "baking_powder": 21
+      "bamboo_shoots_tama": 110,
+      "potato_boiled": 65,
+      "mustard_oil": 6,
+      "tomato_red_ripe": 13,
+      "garlic_raw": 3,
+      "turmeric_powder": 2,
+      "salt_table": 1
     },
-    "cuisine": "American",
-    "is_veg": true,
-    "category": "american_dish"
+    "cuisine": "Nepali",
+    "category": "nepali_curry"
   },
-  "Vegan Chocolate Cake": {
+  "Kerau Paneer": {
     "ingredients": {
-      "flour": 19,
-      "sugar": 19,
-      "cocoa_powder": 19,
-      "almond_milk": 19,
-      "coconut_oil": 19,
-      "vanilla_extract": 19,
-      "apple_cider_vinegar": 19,
-      "baking_soda": 19
+      "paneer_cottage_cheese": 50,
+      "green_peas_raw": 55,
+      "tomato_red_ripe": 30,
+      "ghee_clarified_butter": 9,
+      "cumin_seeds_jeera": 3,
+      "salt_table": 3
     },
-    "cuisine": "American",
-    "is_veg": true,
-    "category": "american_dish"
+    "cuisine": "Nepali",
+    "category": "nepali_curry"
   },
-  "Gluten-Free Chocolate Cake": {
+  "Mula ko Tarkari": {
     "ingredients": {
-      "gluten-free_flour": 19,
-      "sugar": 19,
-      "cocoa_powder": 19,
-      "eggs": 19,
-      "butter": 19,
-      "vanilla_extract": 19,
-      "baking_powder": 19,
-      "xanthan_gum": 19
+      "radish_mula": 82,
+      "tomato_red_ripe": 10,
+      "mustard_oil": 5,
+      "turmeric_powder": 1.5,
+      "salt_table": 1.5
     },
-    "cuisine": "American",
-    "is_veg": true,
-    "category": "american_dish"
+    "cuisine": "Nepali",
+    "category": "nepali_vegetable"
   },
-  "Chocolate Syrup": {
+  "Karela ko Tarkari": {
     "ingredients": {
-      "cocoa_powder": 30,
-      "sugar": 30,
-      "water": 30,
-      "vanilla_extract": 30,
-      "salt": 30
+      "bitter_gourd_karela": 80,
+      "onion_raw": 12,
+      "mustard_oil": 5,
+      "turmeric_powder": 1.5,
+      "salt_table": 1.5
     },
-    "cuisine": "Universal",
-    "is_veg": true,
-    "category": "universal_dish"
+    "cuisine": "Nepali",
+    "category": "nepali_vegetable"
   },
-  "California Roll": {
+  "Bhindi ko Tarkari": {
     "ingredients": {
-      "crab": 25,
-      "avocado": 25,
-      "cucumber": 25,
-      "seaweed": 25,
-      "rice": 25,
-      "soy_sauce": 25
+      "okra_bhindi_raw": 80,
+      "onion_raw": 12,
+      "mustard_oil": 5,
+      "turmeric_powder": 1.5,
+      "salt_table": 1.5
     },
-    "cuisine": "Japanese",
-    "is_veg": true,
-    "category": "japanese_dish"
+    "cuisine": "Nepali",
+    "category": "nepali_vegetable"
   },
-  "Spaghetti Carbonara": {
+  "Sekuwa": {
     "ingredients": {
-      "spaghetti": 30,
-      "eggs": 30,
-      "parmesan_cheese": 30,
-      "pancetta": 30,
-      "black_pepper": 30
+      "goat_meat_mutton": 130,
+      "mustard_oil": 8,
+      "ginger_raw": 5,
+      "garlic_raw": 5,
+      "cumin_seeds_jeera": 1,
+      "salt_table": 1
     },
-    "cuisine": "Italian",
-    "is_veg": true,
-    "category": "italian_dish"
+    "cuisine": "Nepali",
+    "category": "nepali_meat"
   },
-  "Caesar Salad": {
+  "Choila": {
     "ingredients": {
-      "romaine_lettuce": 38,
-      "croutons": 38,
-      "parmesan_cheese": 38,
-      "caesar_dressing": 38
+      "buffalo_meat_lean": 125,
+      "mustard_oil": 12,
+      "garlic_raw": 6,
+      "ginger_raw": 5,
+      "fenugreek_methi": 1,
+      "salt_table": 1
     },
-    "cuisine": "Italian",
-    "is_veg": true,
-    "category": "italian_dish"
+    "cuisine": "Nepali",
+    "category": "nepali_meat"
   },
-  "Chicken Tikka Masala": {
+  "Buff Curry": {
     "ingredients": {
-      "chicken": 30,
-      "yogurt": 30,
-      "tomato_sauce": 30,
-      "cream": 30,
-      "spices": 30
+      "buffalo_meat_lean": 115,
+      "onion_raw": 35,
+      "tomato_red_ripe": 35,
+      "mustard_oil": 10,
+      "ginger_raw": 2.5,
+      "garlic_raw": 2.5
     },
-    "cuisine": "Indian",
-    "is_veg": false,
-    "category": "indian_dish"
+    "cuisine": "Nepali",
+    "category": "nepali_meat"
   },
-  "Miso Soup": {
+  "Chicken Curry": {
     "ingredients": {
-      "miso_paste": 30,
-      "dashi": 30,
-      "tofu": 30,
-      "seaweed": 30,
-      "green_onions": 30
+      "chicken_breast_skinless": 110,
+      "onion_raw": 40,
+      "tomato_red_ripe": 35,
+      "mustard_oil": 9,
+      "ginger_raw": 3,
+      "garlic_raw": 3
     },
-    "cuisine": "Japanese",
-    "is_veg": true,
-    "category": "japanese_dish"
+    "cuisine": "Nepali",
+    "category": "nepali_meat"
   },
-  "Chicken Biryani": {
+  "Mutton Curry": {
     "ingredients": {
-      "rice": 30,
-      "chicken": 30,
-      "spices": 30,
-      "yogurt": 30,
-      "onions": 30
+      "goat_meat_mutton": 110,
+      "onion_raw": 40,
+      "tomato_red_ripe": 35,
+      "mustard_oil": 10,
+      "ginger_raw": 2.5,
+      "garlic_raw": 2.5
     },
-    "cuisine": "Indian",
-    "is_veg": false,
-    "category": "indian_dish"
+    "cuisine": "Nepali",
+    "category": "nepali_meat"
   },
-  "Chicken Dum Biryani": {
+  "Fish Curry": {
     "ingredients": {
-      "rice": 30,
-      "chicken": 30,
-      "spices": 30,
-      "yogurt": 30,
-      "onions": 30
+      "fish_trout_freshwater": 125,
+      "tomato_red_ripe": 40,
+      "mustard_oil": 8,
+      "onion_raw": 20,
+      "ginger_raw": 3.5,
+      "garlic_raw": 3.5
     },
-    "cuisine": "Indian",
-    "is_veg": false,
-    "category": "indian_dish"
+    "cuisine": "Nepali",
+    "category": "nepali_meat"
   },
-  "Vegetable Stir Fry": {
+  "Egg Curry": {
     "ingredients": {
-      "broccoli": 25,
-      "carrots": 25,
-      "bell_peppers": 25,
-      "soy_sauce": 25,
-      "garlic": 25,
-      "ginger": 25
+      "whole_egg": 100,
+      "tomato_red_ripe": 50,
+      "onion_raw": 38,
+      "mustard_oil": 8,
+      "ginger_raw": 2,
+      "garlic_raw": 2
     },
-    "cuisine": "Chinese",
-    "is_veg": true,
-    "category": "chinese_dish"
+    "cuisine": "Nepali",
+    "category": "nepali_meat"
   },
-  "Garlic Bread": {
+  "Kukhura ko Jhol": {
     "ingredients": {
-      "bread": 38,
-      "garlic": 38,
-      "butter": 38,
-      "parsley": 38
+      "chicken_thigh_skinless": 105,
+      "tomato_red_ripe": 65,
+      "onion_raw": 65,
+      "mustard_oil": 8,
+      "ginger_raw": 3.5,
+      "garlic_raw": 3.5
     },
-    "cuisine": "Italian",
-    "is_veg": true,
-    "category": "italian_dish"
+    "cuisine": "Nepali",
+    "category": "nepali_meat"
   },
-  "Beef Tacos": {
+  "Sungur ko Masu": {
     "ingredients": {
-      "corn_tortillas": 30,
-      "beef": 30,
-      "lettuce": 30,
-      "cheese": 30,
-      "salsa": 30
+      "pork_chop_lean": 130,
+      "onion_raw": 35,
+      "tomato_red_ripe": 22,
+      "mustard_oil": 7,
+      "ginger_raw": 3,
+      "garlic_raw": 3
     },
-    "cuisine": "Mexican",
-    "is_veg": false,
-    "category": "mexican_dish"
+    "cuisine": "Nepali",
+    "category": "nepali_meat"
   },
-  "Tom Yum Soup": {
+  "Bhutun": {
     "ingredients": {
-      "shrimp": 25,
-      "mushrooms": 25,
-      "tomatoes": 25,
-      "lemongrass": 25,
-      "galangal": 25,
-      "kaffir_lime_leaves": 25
+      "goat_meat_mutton": 75,
+      "mustard_oil": 18,
+      "onion_raw": 5,
+      "garlic_raw": 1,
+      "salt_table": 1
     },
-    "cuisine": "Thai",
-    "is_veg": true,
-    "category": "thai_dish"
+    "cuisine": "Nepali",
+    "category": "nepali_meat"
+  },
+  "Kachila": {
+    "ingredients": {
+      "buffalo_meat_lean": 85,
+      "mustard_oil": 8,
+      "garlic_raw": 4,
+      "fenugreek_methi": 2,
+      "salt_table": 1
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_meat"
+  },
+  "Machha Tareko (Fried Fish)": {
+    "ingredients": {
+      "fish_trout_freshwater": 100,
+      "mustard_oil": 16,
+      "turmeric_powder": 2,
+      "salt_table": 2
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_meat"
+  },
+  "Kheer": {
+    "ingredients": {
+      "cow_milk_whole": 115,
+      "rice_white_raw": 22,
+      "sugar_granulated": 8,
+      "ghee_clarified_butter": 3,
+      "cashews_raw": 2
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_sweet"
+  },
+  "Sikarni": {
+    "ingredients": {
+      "yogurt_plain": 82,
+      "sugar_granulated": 12,
+      "almonds_raw": 3,
+      "cashews_raw": 3
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_sweet"
+  },
+  "Haluwa": {
+    "ingredients": {
+      "semolina_suji": 50,
+      "ghee_clarified_butter": 24,
+      "sugar_granulated": 22,
+      "cashews_raw": 4
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_sweet"
+  },
+  "Rasbari": {
+    "ingredients": {
+      "paneer_cottage_cheese": 25,
+      "sugar_granulated": 23,
+      "wheat_flour": 2
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_sweet"
+  },
+  "Laddoo": {
+    "ingredients": {
+      "chickpeas_chana_cooked": 24,
+      "sugar_granulated": 16,
+      "ghee_clarified_butter": 8,
+      "cashews_raw": 2
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_sweet"
+  },
+  "Barfi": {
+    "ingredients": {
+      "cow_milk_whole": 30,
+      "sugar_granulated": 14,
+      "ghee_clarified_butter": 4,
+      "cashews_raw": 2
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_sweet"
+  },
+  "Peda": {
+    "ingredients": {
+      "cow_milk_whole": 32,
+      "sugar_granulated": 13,
+      "ghee_clarified_butter": 4,
+      "almonds_raw": 1
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_sweet"
+  },
+  "Lal Mohan": {
+    "ingredients": {
+      "cow_milk_whole": 30,
+      "sugar_granulated": 20,
+      "wheat_flour": 5,
+      "ghee_clarified_butter": 5
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_sweet"
+  },
+  "Jeri": {
+    "ingredients": {
+      "wheat_flour": 22,
+      "sugar_granulated": 20,
+      "ghee_clarified_butter": 8
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_sweet"
+  },
+  "Chiya": {
+    "ingredients": {
+      "cow_milk_whole": 100,
+      "sugar_granulated": 8,
+      "water": 42
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_beverage"
+  },
+  "Masala Tea": {
+    "ingredients": {
+      "cow_milk_whole": 100,
+      "sugar_granulated": 8,
+      "ginger_raw": 2,
+      "water": 40
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_beverage"
+  },
+  "Lassi": {
+    "ingredients": {
+      "yogurt_plain": 180,
+      "sugar_granulated": 20,
+      "water": 50
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_beverage"
+  },
+  "Tomato Achar": {
+    "ingredients": {
+      "tomato_red_ripe": 23,
+      "mustard_oil": 4,
+      "garlic_raw": 1.5,
+      "salt_table": 1.5
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_pickle"
+  },
+  "Mula ko Achar": {
+    "ingredients": {
+      "radish_mula": 23,
+      "mustard_oil": 4,
+      "turmeric_powder": 1.5,
+      "salt_table": 1.5
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_pickle"
+  },
+  "Til ko Achar": {
+    "ingredients": {
+      "sesame_seeds_til": 13,
+      "tomato_red_ripe": 5,
+      "mustard_oil": 1.5,
+      "salt_table": 0.5
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_pickle"
+  },
+  "Gundruk ko Achar": {
+    "ingredients": {
+      "gundruk_fermented": 12,
+      "mustard_oil": 5,
+      "garlic_raw": 1.5,
+      "salt_table": 1.5
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_pickle"
+  },
+  "Kakro ko Achar": {
+    "ingredients": {
+      "cucumber_kakro": 24,
+      "sesame_seeds_til": 3,
+      "mustard_oil": 2,
+      "salt_table": 1
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_pickle"
+  },
+  "Thukpa (Tibetan Noodle Soup)": {
+    "ingredients": {
+      "wheat_flour": 70,
+      "buffalo_meat_lean": 60,
+      "cabbage_raw": 50,
+      "onion_raw": 30,
+      "tomato_red_ripe": 25,
+      "mustard_oil": 7,
+      "water": 58
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_snack"
+  },
+  "Vegetable Chow Mein": {
+    "ingredients": {
+      "wheat_flour": 80,
+      "cabbage_raw": 50,
+      "onion_raw": 30,
+      "green_peas_raw": 25,
+      "mustard_oil": 13,
+      "salt_table": 2
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_snack"
+  },
+  "Chicken Chow Mein": {
+    "ingredients": {
+      "wheat_flour": 80,
+      "chicken_breast_skinless": 50,
+      "cabbage_raw": 35,
+      "onion_raw": 20,
+      "mustard_oil": 13,
+      "salt_table": 2
+    },
+    "cuisine": "Nepali",
+    "category": "nepali_snack"
   }
 }

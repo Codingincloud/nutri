@@ -4,7 +4,10 @@ import time
 import sys
 sys.stdout.reconfigure(encoding='utf-8')
 
-BASE_URL = "http://127.0.0.1:8000"
+import os
+
+PORT = os.environ.get("PORT", "2000")
+BASE_URL = f"http://127.0.0.1:{PORT}"
 
 def print_banner(title):
     print("\n" + "=" * 75)
