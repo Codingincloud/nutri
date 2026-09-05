@@ -543,18 +543,24 @@ def build_html():
       </tr>
     </thead>
     <tbody>
-      <tr><td>Nepali Snacks</td><td>Buff Momo, Chicken Momo, Chatamari, Bara, Sel Roti</td><td>24</td><td>USDA Recipe Calc</td></tr>
-      <tr><td>Nepali Staples</td><td>Dal Bhat, Dhido (Kodo/Fapar), Chiura, Khichdi, Baji</td><td>17</td><td>USDA Calc / FAO Nepal</td></tr>
-      <tr><td>Nepali Meats & Proteins</td><td>Sekuwa, Choila, Sukuti, Buff Curry, Chicken Tarkari</td><td>13</td><td>USDA Recipe Calc</td></tr>
-      <tr><td>Nepali Vegetables</td><td>Gundruk Saag, Rayo Saag, Chamsur Palungo, Aloo Dum</td><td>11</td><td>USDA Recipe / FAO Nepal</td></tr>
-      <tr><td>Nepali Sweets</td><td>Yomari, Lakhamari, Jalebi (Jeri), Lal Mohan, Kheer</td><td>10</td><td>USDA Recipe Calc</td></tr>
-      <tr><td>Nepali Curries & Pulses</td><td>Masoor Dal, Kalo Dal, Kwati, Gahat ko Dal, Rajma</td><td>9</td><td>USDA FoodData Central</td></tr>
-      <tr><td>Nepali Beverages</td><td>Mohi, Chiya, Tongba, Chhyang, Lassi</td><td>8</td><td>USDA Recipe / FAO Nepal</td></tr>
-      <tr><td>Nepali Pickles (Achar)</td><td>Golbheda ko Achar, Mula Achar, Gundruk Bhatmas Achar</td><td>7</td><td>USDA Recipe Calc (20-30g)</td></tr>
-      <tr><td>Nepali Breads & Rotis</td><td>Phapar ko Roti, Makai ko Roti, Puri, Chapati</td><td>6</td><td>USDA Recipe / FAO Nepal</td></tr>
-      <tr><td>Common Grains & Staples</td><td>Boiled White Rice, Brown Rice, Oats, Whole Wheat Toast</td><td>10</td><td>USDA FoodData Central</td></tr>
-      <tr><td>International Reference Foods</td><td>Margherita Pizza, French Fries, Chicken Burger</td><td>4</td><td>USDA FoodData Central</td></tr>
-      <tr><td>Dairy & Healthy Fats</td><td>Cow Milk, Plain Dahi, Mustard Oil, Ghee</td><td>10</td><td>USDA FoodData Central</td></tr>
+      <tr><td>Nepali Snacks (<code>nepali_snack</code>)</td><td>Buff Momo, Chicken Momo, Chatamari, Bara, Sel Roti</td><td>24</td><td>USDA Recipe / FAO Nepal</td></tr>
+      <tr><td>Nepali Staples (<code>nepali_staple</code>)</td><td>Dal Bhat, Dhido, Chiura, Khichdi, Masoor Dal</td><td>17</td><td>USDA / FAO Nepal / NARC</td></tr>
+      <tr><td>Nepali Meats (<code>nepali_meat</code>)</td><td>Sekuwa, Choila, Sukuti, Buff Curry, Chicken Curry</td><td>13</td><td>USDA Recipe Calc</td></tr>
+      <tr><td>Nepali Vegetables (<code>nepali_vegetable</code>)</td><td>Rayo Saag, Cauliflower Tarkari, Mula ko Tarkari</td><td>11</td><td>USDA Recipe / FAO Nepal</td></tr>
+      <tr><td>Nepali Sweets (<code>nepali_sweet</code>)</td><td>Yomari, Lakhamari, Jeri, Lal Mohan, Kheer, Juju Dhau</td><td>10</td><td>USDA Recipe / NARC</td></tr>
+      <tr><td>Nepali Curries (<code>nepali_curry</code>)</td><td>Aloo Tama, Gundruk ko Jhol, Aloo Gobi, Paneer Curry</td><td>9</td><td>USDA Recipe / FAO / NARC</td></tr>
+      <tr><td>Nepali Beverages (<code>nepali_beverage</code>)</td><td>Chiya, Masala Tea, Lassi, Chhyang, Mohi, Tongba</td><td>8</td><td>FAO Nepal / USDA Recipe</td></tr>
+      <tr><td>Nepali Pickles (<code>nepali_pickle</code>)</td><td>Tomato Achar, Mula Achar, Til ko Achar, Gundruk Achar</td><td>7</td><td>USDA Recipe / FAO Nepal</td></tr>
+      <tr><td>Nepali Breads (<code>nepali_bread</code>)</td><td>Puri, Roti, Tornak, Naan, Kodo ko Roti, Fapar ko Roti</td><td>6</td><td>USDA Recipe / FAO Nepal</td></tr>
+      <tr><td>Proteins (<code>protein</code>)</td><td>Boiled Egg, Chicken Breast, Buff Meat Lean, Tofu</td><td>4</td><td>USDA FoodData Central</td></tr>
+      <tr><td>International Foods (<code>international</code>)</td><td>Margherita Pizza, Chicken Burger, French Fries, Toast</td><td>4</td><td>USDA FoodData Central</td></tr>
+      <tr><td>Dairy (<code>dairy</code>)</td><td>Paneer Fresh, Curd / Plain Dahi, Whole Cow Milk</td><td>3</td><td>USDA FoodData Central</td></tr>
+      <tr><td>Grains (<code>grain</code>)</td><td>White Rice Cooked, Brown Rice Cooked, Oatmeal</td><td>3</td><td>USDA FoodData Central</td></tr>
+      <tr><td>Vegetables & Aromatics (<code>vegetable</code>)</td><td>Garlic (Raw), Ginger (Raw), Chopped Onion</td><td>3</td><td>USDA FoodData Central</td></tr>
+      <tr><td>Fruits (<code>fruit</code>)</td><td>Mustang Apple, Malbhog Banana, Suntala Orange</td><td>3</td><td>USDA FoodData Central</td></tr>
+      <tr><td>Healthy Fats & Oils (<code>fat_oil</code>)</td><td>Mustard Oil (14g serving), Ghee (14g serving)</td><td>2</td><td>USDA FoodData Central</td></tr>
+      <tr><td>Beverages (<code>beverage</code>)</td><td>Ilam Green Tea</td><td>1</td><td>USDA FoodData Central</td></tr>
+      <tr><td>Nuts & Healthy Snacks (<code>snack</code>)</td><td>Jumla Okhar (Walnuts, 28g serving)</td><td>1</td><td>USDA FoodData Central</td></tr>
       <tr style="font-weight:bold; background:#f5f5f5;"><td>Total Database Size</td><td>Audited, Mathematically Verified Dataset</td><td>129</td><td>Zero Manual Estimations</td></tr>
     </tbody>
   </table>
