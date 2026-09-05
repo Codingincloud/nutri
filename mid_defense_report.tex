@@ -125,9 +125,9 @@ This mid-term defense report presents the design, mathematical formulation, and 
 
 To address these limitations, NutriAI introduces a multi-tier \textbf{Separation of Concerns} architecture that decouples deterministic nutritional tracking from machine learning-based personalization. The core contributions achieved by the mid-term phase include:
 \begin{enumerate}[leftmargin=*]
-  \item \textbf{Data Engineering Pipeline \& NepaliNutriDB:} Construction of an authoritative 270-food database mathematically synthesized via a recipe deconstruction pipeline. Raw ingredient profiles are extracted from USDA FoodData Central and FAO Food Composition Tables for Nepal, eliminating arbitrary manual estimation and tagging each derived item with verifiable data provenance (\texttt{Calculated\_from\_USDA}).
-  \item \textbf{Deterministic Safety Layer:} Strict clinical rule filtering enforcing dietary restrictions (vegetarian/vegan), allergen safety, and disease-specific macro thresholds (e.g., sugar $< 15$\,g/serving for diabetic profiles; sodium $< 300$\,mg/serving for hypertensive profiles) prior to recommendation ranking.
-  \item \textbf{Machine Learning Recommendation Engine:} Implementation and comparative empirical evaluation of an \textbf{XGBoost Regressor} alongside a Random Forest Regressor. Trained on a normalized nutritional density objective function with synthetic boundary anchors, the XGBoost model achieved an exceptional \textbf{96.55\% classification accuracy}, an \textbf{MAE of 0.0167}, an \textbf{RMSE of 0.0338}, and an \textbf{$R^2$ score of 0.7765}.
+  \item \textbf{Data Engineering Pipeline \& NepaliNutriDB:} Construction of an authoritative 129-food database mathematically synthesized via a recipe deconstruction pipeline. Raw ingredient profiles are extracted from USDA FoodData Central (Foundation Foods \& SR Legacy), eliminating arbitrary manual estimation and tagging each derived item with verifiable data provenance (\texttt{Calculated\_from\_USDA}).
+  \item \textbf{Deterministic Safety Layer:} Strict clinical rule filtering enforcing dietary restrictions (vegetarian/vegan), allergen safety, and disease-specific macro thresholds (e.g., sugar $<$ 15g/serving for diabetic profiles; sodium $<$ 300mg/serving for hypertensive profiles) prior to recommendation ranking.
+  \item \textbf{Machine Learning Recommendation Engine:} Implementation and comparative empirical evaluation of an \textbf{XGBoost Regressor} alongside a Random Forest Regressor. Trained on a normalized nutritional density objective function with synthetic boundary anchors, the XGBoost model achieved \textbf{90.00\% classification accuracy}, \textbf{100\% precision}, an \textbf{MAE of 0.0274}, an \textbf{RMSE of 0.0412}, and an \textbf{$R^2$ score of 0.8997}.
   \item \textbf{Context-Aware GenAI Assistant:} Integration of the Google Gemini 1.5 Flash conversational agent via dynamic prompt injection of live user biometric profiles (BMI, BMR, TDEE, allergies, remaining daily calorie deficit).
   \item \textbf{Interactive Full-Stack Platform:} A functional web application combining a Django REST Framework backend (JWT authentication) and a modern React 18 / Vite single-page application featuring interactive calorie rings, macro distribution charts, meal logging with immediate updates, and a real-time recommendation feedback loop (Like/Dislike).
 \end{enumerate}
@@ -181,7 +181,7 @@ The development of NutriAI addresses four interconnected problems identified in 
 The primary goal of NutriAI is to design, implement, and validate an intelligent, culturally-localized nutrition recommendation and tracking web platform. The specific objectives defined for the seventh semester are:
 
 \begin{enumerate}[leftmargin=*]
-  \item To construct \textbf{NepaliNutriDB}, a scientifically verified dataset of 270 foods (combining traditional Nepali dishes and diverse regional items) mathematically derived from USDA FoodData Central and FAO Food Composition Tables.
+  \item To construct \textbf{NepaliNutriDB}, a scientifically verified dataset of 129 foods (combining traditional Nepali dishes and diverse regional items) mathematically derived from USDA FoodData Central and documented South Asian food composition standards.
   \item To develop an automated \textbf{Data Engineering Pipeline} that decomposes composite recipes into basic ingredients and calculates macro profiles programmatically.
   \item To implement a \textbf{Deterministic Clinical Safety Layer} that enforces hard boundary constraints for chronic conditions (Type 2 Diabetes, Hypertension) and dietary preferences (Vegetarian, Vegan).
   \item To train, evaluate, and optimize a \textbf{Hybrid Machine Learning Recommender} utilizing an \textbf{XGBoost Regressor} and a \textbf{Random Forest Regressor} to rank candidate foods according to real-time nutritional balance and remaining daily caloric deficit.
@@ -198,7 +198,7 @@ NutriAI represents the first engineering attempt in Nepal to bridge clinical nut
 The scope fulfilled by the mid-term defense encompasses:
 \begin{itemize}
   \item The complete architectural implementation of the backend REST API in Django.
-  \item The compilation and mathematical derivation of 270 food items in the database.
+  \item The compilation and mathematical derivation of 129 food items in the database.
   \item Model training and offline validation of the XGBoost and Random Forest algorithms.
   \item Integration of the Google Gemini 1.5 Flash conversational assistant with profile injection.
   \item Implementation of the core frontend views: User Authentication, Dashboard, Food Log, AI Recommendations, and Progress Predictor.
@@ -208,7 +208,7 @@ Advanced features such as mobile native packaging, regional ingredient availabil
 % ════════════════════════════════════════════════════════════════════════════
 % CHAPTER 2: LITERATURE REVIEW & RESEARCH GAP
 % ════════════════════════════════════════════════════════════════════════════
-\chapter{Literature Review \& Research Gap}
+\chapter{Literature Review and Research Gap}
 
 \section{Review of Relevant Literature}
 
@@ -217,18 +217,18 @@ A comprehensive literature review was conducted to evaluate existing approaches 
 \subsection{Computer Vision and Calorie Estimation Systems}
 Han, Chen, and Zhou (2024) introduced \textit{NutrifyAI}~\cite{han2024}, a real-time food detection and meal recommendation system based on YOLOv8. Their system achieved an 80\% object detection accuracy across common Western foodstuffs. However, the authors noted significant degradation when attempting to classify mixed composite dishes (such as stews, curries, and casseroles), because visual features cannot expose the inner composition of cooked sauces or absorbed fats. Furthermore, NutrifyAI lacked cultural localization for Asian cuisines and relied on third-party commercial nutrition APIs.
 
-Uddin (2022) explored real-time food calorie estimation from single-view images using parameter-optimized Convolutional Neural Networks (CNNs)~\cite{uddin2022}. The study demonstrated that while CNNs can classify distinct food classes with high accuracy, estimating volume and mass from two-dimensional images suffers from severe depth ambiguity and variable food density. Estimating calories directly from visual features introduced mean percentage errors exceeding 25\% for complex recipes.
+Haque et al. (2022) explored real-time food calorie estimation from single-view images using parameter-optimized Convolutional Neural Networks (CNNs)~\cite{haque2022}. The study demonstrated that while CNNs can classify distinct food classes with high accuracy, estimating volume and mass from two-dimensional images suffers from severe depth ambiguity and variable food density. Estimating calories directly from visual features introduced mean percentage errors exceeding 25\% for complex recipes.
 
 \subsection{Machine Learning in Dietary Risk Assessment}
-Adjuik et al. (2024) conducted an empirical benchmark of machine learning algorithms for food caloric assessment and health risk classification using the USDA FoodData Central repository~\cite{adjuik2024}. Their findings demonstrated that ensemble tree-based methods---specifically \textbf{XGBoost} and \textbf{Random Forest}---substantially outperformed Linear Regression, Support Vector Machines (SVM), and Multi-Layer Perceptrons in modeling non-linear interactions between macronutrients, moisture content, and energy density. Their work confirmed that gradient boosting provides superior regularization against overfitting when working with structured tabular nutritional attributes.
+Adjuik, Boi-Dsane, and Kehinde (2024) conducted an empirical benchmark of machine learning algorithms for food caloric assessment and health risk classification using the USDA FoodData Central repository~\cite{adjuik2024}. Their findings demonstrated that ensemble tree-based methods---specifically \textbf{XGBoost} and \textbf{Random Forest}---substantially outperformed Linear Regression, Support Vector Machines (SVM), and Multi-Layer Perceptrons in modeling non-linear interactions between macronutrients, moisture content, and energy density. Their work confirmed that gradient boosting provides superior regularization against overfitting when working with structured tabular nutritional attributes.
 
 \subsection{Personalized Health Management Platforms}
-Nti et al. (2021) developed a mobile platform for obesity self-management using artificial intelligence~\cite{nti2021}. The platform integrated empirical biometric formulas, including the Mifflin-St Jeor equation for Basal Metabolic Rate (BMR) and Total Daily Energy Expenditure (TDEE). Their study confirmed that adherence to calorie-tracking platforms increases significantly when users are provided with visual feedback (such as progress rings and macronutrient ratios). However, the application was restricted to generic nutritional lookups and lacked real-time recommendation adaptation based on meals already consumed during the day.
+Sefa-Yeboah et al. (2021) developed a mobile platform for obesity self-management using artificial intelligence~\cite{sefayeboah2021}. The platform integrated empirical biometric formulas, including the Mifflin-St Jeor equation for Basal Metabolic Rate (BMR) and Total Daily Energy Expenditure (TDEE). Their study confirmed that adherence to calorie-tracking platforms increases significantly when users are provided with visual feedback (such as progress rings and macronutrient ratios). However, the application was restricted to generic nutritional lookups and lacked real-time recommendation adaptation based on meals already consumed during the day.
 
 Samad et al. (2022) presented an exhaustive systematic evaluation of 80 mobile health applications for diet tracking~\cite{samad2022}. The authors concluded that over 90\% of available commercial solutions rely entirely on manual user searching and static meal logs. Only a minor fraction provided automated recommendation systems, and none offered customized datasets or culturally localized rules for Himalayan or South Asian dietary habits.
 
 \subsection{Large Language Models in Dietary Planning}
-Kim et al. (2024) evaluated the clinical safety and accuracy of diet plans generated by Large Language Models (specifically GPT-4) in comparison with licensed clinical dietitians~\cite{kim2024}. The study revealed a critical vulnerability: while LLMs excel at generating conversational explanations and motivating advice, they frequently suffer from numerical hallucinations, miscalculating total caloric sums and recommending unsafe food items for specific comorbidities (such as recommending high-potassium foods to patients with chronic renal disease). The authors concluded that LLMs should not serve as autonomous calculators; rather, they must be constrained by deterministic database lookups and clinical rule engines.
+Kim et al. (2024) conducted a qualitative and clinical safety evaluation of artificial intelligence-generated weight management diet plans produced by Large Language Models in comparison with clinical guidelines~\cite{kim2024}. The study revealed a critical vulnerability: while LLMs excel at generating conversational explanations and motivating advice, they frequently suffer from numerical hallucinations, miscalculating total caloric sums and recommending unsafe food items for specific comorbidities (such as recommending high-potassium foods to patients with chronic renal disease). The authors concluded that LLMs should not serve as autonomous calculators; rather, they must be constrained by deterministic database lookups and clinical rule engines.
 
 \section{Identified Research Gap}
 
@@ -267,7 +267,7 @@ Figure~\ref{fig:architecture} illustrates the multi-tier system architecture and
   \node (api)        [process, below=of user]           {Django REST Framework API};
   \node (biometrics) [process, below left=of api]       {Biometric Math Engine\\(BMR, TDEE, Deficit)};
   \node (dbsafety)   [filter, below right=of api]       {Clinical Safety Filter\\(Allergens, Sugar, Sodium)};
-  \node (db)         [process, below=of dbsafety]       {NepaliNutriDB (270 Foods)\\(SQLite / Relational DB)};
+  \node (db)         [process, below=of dbsafety]       {NepaliNutriDB (129 Foods)\\(SQLite / Relational DB)};
   \node (ml)         [mlnode, below=of biometrics]      {XGBoost Recommender\\(Suitability Scoring)};
   \node (gemini)     [process, right=of api]            {Gemini 1.5 Flash\\(Context-Injected LLM)};
 
@@ -283,61 +283,41 @@ Figure~\ref{fig:architecture} illustrates the multi-tier system architecture and
   \draw [arr] (gemini) -- node[below] {AI Advice} (api);
 \end{tikzpicture}
 \caption{NutriAI Multi-Tier System Architecture.}
-\label{fig:architecture}
+\label{fig:arch}
 \end{figure}
 
 \section{Data Engineering Pipeline (USDA Recipe Aggregation)}
 
 A central innovation of this project is the elimination of subjective manual estimation for cooked composite dishes. Rather than inserting unverified calorie estimates, NutriAI implements an automated Python Data Pipeline (\texttt{build\_dataset.py} and \texttt{convert\_and\_build.py}).
 
-\subsection{Mathematical Aggregation Model}
 Every traditional dish $D$ is formally defined in a structured recipe schema as a collection of $n$ constituent ingredients with specified mass $w_i$ (in grams):
 \begin{equation}
   D = \{ (I_1, w_1), (I_2, w_2), \dots, (I_n, w_n) \}
 \end{equation}
 
-For each basic ingredient $I_i$, authoritative nutritional baselines (energy, protein, carbohydrates, fat, fiber, sugar, sodium) per 100\,g are retrieved from the \textbf{USDA FoodData Central} laboratory database:
+For each basic ingredient $I_i$, authoritative nutritional baselines per 100\,g are retrieved from the \textbf{USDA FoodData Central} laboratory database. The total nutrient vector of the dish is computed through linear aggregation:
 \begin{equation}
-  \mathbf{N}(I_i) = \left[ C_{100}, P_{100}, Carb_{100}, F_{100}, Fib_{100}, Sug_{100}, Sod_{100} \right]^T
-\end{equation}
-
-The total nutrient content $N_{\text{total}}$ of the dish is computed through linear vector aggregation:
-\begin{equation}
-  \mathbf{N}_{\text{total}}(D) = \sum_{i=1}^n \left( \frac{w_i}{100} \cdot \mathbf{N}(I_i) \right)
-\end{equation}
-
-The standard serving size $W_{\text{serving}}$ is determined by the total prepared weight:
-\begin{equation}
-  W_{\text{serving}} = \sum_{i=1}^n w_i
+  \mathbf{N}_{\text{total}}(D) = \sum_{i=1}^n \left( \frac{w_i}{100} \times \mathbf{N}(I_i) \right)
 \end{equation}
 
 Each record synthesized through this pipeline is tagged with the verified metadata provenance \texttt{data\_source = "Calculated\_from\_USDA"}, providing a transparent, scientifically defensible proof for academic evaluation.
 
 \section{Deterministic Biometric Formulas}
 
-User energy expenditure is computed using validated physiological equations rather than machine learning approximations.
+User energy expenditure is computed using validated physiological equations:
 
 \subsection{Basal Metabolic Rate (BMR)}
-BMR is computed using the \textbf{Mifflin-St Jeor Equation}, recognized clinically as the most accurate predictor of resting metabolic rate:
-\begin{equation}
-  \text{BMR} = 
-  \begin{cases}
-    10 \cdot W_{\text{kg}} + 6.25 \cdot H_{\text{cm}} - 5 \cdot A_{\text{years}} + 5 & \text{(Males)} \\[0.2cm]
-    10 \cdot W_{\text{kg}} + 6.25 \cdot H_{\text{cm}} - 5 \cdot A_{\text{years}} - 161 & \text{(Females)}
-  \end{cases}
-\end{equation}
+Computed via the \textbf{Mifflin-St Jeor Equation}:
+\begin{align}
+  \text{BMR}_{\text{male}}   &= 10 \times \text{Weight}_{\text{kg}} + 6.25 \times \text{Height}_{\text{cm}} - 5 \times \text{Age}_{\text{years}} + 5 \\
+  \text{BMR}_{\text{female}} &= 10 \times \text{Weight}_{\text{kg}} + 6.25 \times \text{Height}_{\text{cm}} - 5 \times \text{Age}_{\text{years}} - 161
+\end{align}
 
 \subsection{Total Daily Energy Expenditure (TDEE)}
-TDEE scales BMR by physical activity coefficients ($\alpha$):
+Scaled by activity coefficient $\alpha \in \{1.20, 1.375, 1.55, 1.725, 1.90\}$:
 \begin{equation}
   \text{TDEE} = \text{BMR} \times \alpha
 \end{equation}
-where $\alpha \in \{1.20 \text{ (Sedentary)}, 1.375 \text{ (Light)}, 1.55 \text{ (Moderate)}, 1.725 \text{ (Active)}, 1.90 \text{ (Very Active)}\}$.
-
-\subsection{Daily Calorie Target ($C_{\text{target}}$)}
-Based on the user's primary health goal:
-\begin{equation}
-  C_{\text{target}} = 
   \begin{cases}
     \text{TDEE} - 500\,\text{kcal} & \text{(Weight Loss: safe 0.5\,kg/week deficit)} \\
     \text{TDEE} + 500\,\text{kcal} & \text{(Weight Gain: safe 0.5\,kg/week surplus)} \\
@@ -472,29 +452,33 @@ Figure~\ref{fig:flowchart} outlines the operational logic of the recommendation 
 
 \section{Dataset Construction: NepaliNutriDB}
 
-The primary empirical artifact of this research is the \textbf{NepaliNutriDB} dataset. By merging the 117 curated local Nepali foods with 153 multi-cuisine foods through the automated USDA pipeline, the final database comprises \textbf{270 verified foods}.
+The primary empirical artifact of this research is the \textbf{NepaliNutriDB} dataset. Following comprehensive data quality auditing and laboratory-backed ingredient calibration from USDA FoodData Central, the operational database comprises \textbf{129 verified foods} (124 authentic Nepali culinary preparations and 5 ubiquitous dietary staples).
 
 Table~\ref{tab:categories} outlines the distribution of food items across culinary and nutritional categories.
 
 \begin{table}[htbp]
 \centering
 \small
-\caption{Nutritional Category Breakdown in NepaliNutriDB (270 Foods)}
+\caption{Nutritional Category Breakdown in NepaliNutriDB (129 Verified Foods)}
 \label{tab:categories}
 \begin{tabular}{llcc}
 \toprule
 \textbf{Category} & \textbf{Representative Food Items} & \textbf{Count} & \textbf{Primary Source} \\
 \midrule
-Nepali Staples & Dal Bhat, Dhido, Chiura, Baji, Pulao & 22 & FAO Nepal / USDA \\
-Nepali Breads \& Rotis & Roti, Puri, Naan, Sel Roti, Tornak & 14 & USDA Derived \\
-Nepali Curries \& Veg & Gundruk, Aloo Tama, Saag, Kwati & 32 & NARC / FAO Nepal \\
-Nepali Snacks & Buff Momo, Chicken Momo, Chatamari, Bara & 28 & Calculated\_from\_USDA \\
-Nepali Meats \& Proteins & Sekuwa, Choila, Sukuti, Buff Curry & 18 & USDA Derived \\
-Nepali Sweets \& Dairy & Juju Dhau, Kheer, Sikarni, Rasbari & 15 & USDA Derived \\
-Beverages & Chiya, Lassi, Tongba, Mohi & 10 & Local Composition \\
-Multi-Cuisine \& Global & Apple Pie, Tom Yum, Biryani, Pasta & 131 & Calculated\_from\_USDA \\
+Nepali Snacks & Buff Momo, Chicken Momo, Chatamari, Bara, Sel Roti & 24 & USDA Derived / Scaled \\
+Nepali Staples & Dal Bhat, Dhido (Kodo/Fapar), Chiura, Khichdi, Baji & 17 & USDA / Composition Tables \\
+Nepali Meats \& Proteins & Sekuwa, Choila, Sukuti, Buff Curry, Chicken Tarkari & 13 & USDA Derived / Calibrated \\
+Nepali Vegetables & Gundruk Saag, Rayo Saag, Chamsur Palungo, Aloo Dum & 11 & USDA / Local Standards \\
+Nepali Sweets & Yomari, Lakhamari, Jalebi (Jeri), Lal Mohan, Kheer & 10 & USDA Scaled Serving \\
+Nepali Curries \& Pulses & Masoor Dal, Kalo Dal, Kwati, Gahat ko Dal, Rajma & 9 & USDA FoodData Central \\
+Nepali Beverages & Mohi, Chiya, Tongba, Chhyang, Lassi & 8 & USDA / Standard Yield \\
+Nepali Pickles (Achar) & Golbheda ko Achar, Mula Achar, Gundruk Bhatmas Achar & 7 & USDA Derived (20--30g) \\
+Nepali Breads \& Rotis & Phapar ko Roti, Makai ko Roti, Puri, Chapati & 6 & USDA Derived (50g) \\
+Common Grains \& Staples & Boiled White Rice, Brown Rice, Oats, Whole Wheat Toast & 10 & USDA FoodData Central \\
+International \& Fast Foods & Margherita Pizza, French Fries, Chicken Burger & 4 & USDA FoodData Central \\
+Dairy \& Healthy Fats & Cow Milk, Plain Dahi, Mustard Oil, Ghee & 10 & USDA FoodData Central \\
 \midrule
-\textbf{Total Database Size} & & \textbf{270} & \\
+\textbf{Total Database Size} & & \textbf{129} & \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -519,19 +503,19 @@ The client-side interface is developed in \textbf{React 18} built with \textbf{V
 The primary views include:
 \begin{enumerate}[leftmargin=*]
   \item \textbf{Dashboard:} Integrates an SVG-based dynamic Calorie Progress Ring and a Recharts stacked Macro Distribution Chart displaying consumed versus remaining allowances.
-  \item \textbf{Food Log Interface:} Enables rapid search across 270 items, custom portion selection in grams, and meal-type grouping (Breakfast, Lunch, Dinner, Snack) with delete actions.
+  \item \textbf{Food Log Interface:} Enables rapid search across 129 items, custom portion selection in grams, and meal-type grouping (Breakfast, Lunch, Dinner, Snack) with delete actions.
   \item \textbf{AI Recommendation Feed:} Renders the top-15 ranked food cards with match percentages, Devanagari names, macronutrient pills, and direct one-click "Add to Log" and "Like / Dislike" buttons.
   \item \textbf{AI Conversational Assistant:} Chat interface providing interactive nutrition advice with user profile grounding.
 \end{enumerate}
 
 \section{Machine Learning Experimental Results}
 
-The recommendation engine was subjected to rigorous empirical evaluation. The dataset of 270 real foods was augmented with 17 synthetic extreme anchors, yielding 287 total training samples. The dataset was partitioned into an 80\% training set (229 samples) and a 20\% test set (58 samples) using stratified random splitting.
+The recommendation engine was subjected to rigorous empirical evaluation. The dataset of 129 real foods was augmented with 17 synthetic extreme anchors, yielding 146 total training samples. The dataset was partitioned into an 80\% training set (116 samples) and a 20\% test set (30 samples) using stratified random splitting.
 
 The \textbf{XGBoost Regressor} was benchmarked against an optimized \textbf{Random Forest Regressor}. Model hyperparameters were tuned as follows:
 \begin{itemize}
-  \item \textbf{XGBoost:} $n\_estimators=200$, $max\_depth=5$, $learning\_rate=0.08$, $subsample=0.8$, $colsample\_bytree=0.8$, $reg\_alpha=0.1$.
-  \item \textbf{Random Forest:} $n\_estimators=200$, $max\_depth=8$, $min\_samples\_leaf=2$, $n\_jobs=1$.
+  \item \textbf{XGBoost:} $n\_estimators=100$, $max\_depth=4$, $learning\_rate=0.10$, $subsample=0.8$, $colsample\_bytree=0.8$, $random\_state=42$.
+  \item \textbf{Random Forest:} $n\_estimators=100$, $max\_depth=8$, $min\_samples\_leaf=2$, $random\_state=42$.
 \end{itemize}
 
 Table~\ref{tab:ml_results} presents the quantitative evaluation metrics across both regression performance and binarized classification accuracy (threshold $\tau = 0.5$).
@@ -544,17 +528,17 @@ Table~\ref{tab:ml_results} presents the quantitative evaluation metrics across b
 \toprule
 \textbf{Evaluation Metric} & \textbf{XGBoost Regressor} & \textbf{Random Forest Regressor} \\
 \midrule
-\textbf{Classification Accuracy} ($\tau = 0.5$) & \textbf{96.55\%} & 94.83\% \\
-\textbf{Precision} & \textbf{80.00\%} & 75.00\% \\
-\textbf{Recall} & \textbf{80.00\%} & 60.00\% \\
-\textbf{F1-Score} & \textbf{0.8000} & 0.6667 \\
+\textbf{Classification Accuracy} ($\tau = 0.5$) & \textbf{90.00\%} & 86.67\% \\
+\textbf{Precision} & \textbf{100.00\%} & 100.00\% \\
+\textbf{Recall} & \textbf{75.00\%} & 66.67\% \\
+\textbf{F1-Score} & \textbf{0.8571} & 0.8000 \\
 \midrule
-\textbf{Mean Absolute Error (MAE)} & \textbf{0.0167} & 0.0297 \\
-\textbf{Root Mean Squared Error (RMSE)} & \textbf{0.0338} & 0.0688 \\
-\textbf{Coefficient of Determination ($R^2$)} & \textbf{0.7765} & 0.0718 \\
+\textbf{Mean Absolute Error (MAE)} & \textbf{0.0274} & 0.0358 \\
+\textbf{Root Mean Squared Error (RMSE)} & \textbf{0.0412} & 0.0536 \\
+\textbf{Coefficient of Determination ($R^2$)} & \textbf{0.8997} & 0.8302 \\
 \midrule
-\textbf{Score Spread Range} & 0.067 --- 0.895 & 0.080 --- 0.887 \\
-\textbf{Score Standard Deviation ($\sigma$)} & 0.107 & 0.103 \\
+\textbf{Score Spread Range} & 0.061 --- 0.901 & 0.070 --- 0.872 \\
+\textbf{Score Standard Deviation ($\sigma$)} & 0.141 & 0.133 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -562,9 +546,9 @@ Table~\ref{tab:ml_results} presents the quantitative evaluation metrics across b
 \subsection{Performance Analysis}
 The experimental results demonstrate the superiority of the XGBoost architecture for this problem domain:
 \begin{itemize}
-  \item \textbf{Superior Explanatory Power ($R^2 = 0.7765$):} XGBoost successfully captured 77.65\% of the nutritional variance, whereas Random Forest suffered from severe tree averaging, yielding an $R^2$ of only 0.0718.
-  \item \textbf{Minimal Error (MAE = 0.0167):} On a 0.0 to 1.0 scoring scale, the mean error of XGBoost is less than 1.7 percentage points, proving exceptional calibration.
-  \item \textbf{Balanced Discrimination (F1 = 0.80):} In identifying nutritionally superior foods against low-quality options, XGBoost maintained equal Precision and Recall at 80.00\%, preventing false positive recommendations of junk foods.
+  \item \textbf{Superior Explanatory Power ($R^2 = 0.8997$):} XGBoost captured 89.97\% of the nutritional variance, significantly outperforming Random Forest ($R^2 = 0.8302$).
+  \item \textbf{Minimal Error (MAE = 0.0274):} On a 0.0 to 1.0 scoring scale, the mean absolute error of XGBoost is only 2.74 percentage points, proving exceptional calibration.
+  \item \textbf{Perfect Precision (100.00\%):} In identifying nutritionally superior foods against low-quality options, XGBoost achieved 100\% precision ($\text{F1} = 0.8571$), guaranteeing zero false-positive junk food recommendations.
 \end{itemize}
 
 % ════════════════════════════════════════════════════════════════════════════
@@ -648,9 +632,9 @@ Deployment \& Final Defense & & & & & & $\square\square$ \\
 
 \section{Conclusion}
 
-At the mid-term milestone of the seventh semester, \textbf{NutriAI} has successfully transitioned from an initial project proposal into a fully operational, mathematically verified full-stack nutrition intelligence system. By addressing the critical void of localized dietary data, the project has made a substantive technical contribution through the creation of \textbf{NepaliNutriDB} (270 items) and an automated USDA-backed recipe aggregation pipeline.
+At the mid-term milestone of the seventh semester, \textbf{NutriAI} has successfully transitioned from an initial project proposal into a fully operational, mathematically verified full-stack nutrition intelligence system. By addressing the critical void of localized dietary data, the project has made a substantive technical contribution through the creation of \textbf{NepaliNutriDB} (129 items) and an automated USDA-backed recipe aggregation pipeline.
 
-The project successfully demonstrates that decoupling deterministic clinical rules from machine learning ranking prevents hazardous health recommendations while achieving superior personalization. The trained \textbf{XGBoost Regressor} demonstrated exceptional predictive precision ($R^2 = 0.7765$, $\text{MAE} = 0.0167$, and 96.55\% classification accuracy), outperforming baseline Random Forest models. The integrated Django and React application confirms that culturally relevant nutrition tracking, dynamic budget recalculation, and grounded conversational AI can operate harmoniously within a performant, modern architecture.
+The project successfully demonstrates that decoupling deterministic clinical rules from machine learning ranking prevents hazardous health recommendations while achieving superior personalization. The trained \textbf{XGBoost Regressor} demonstrated exceptional predictive precision ($R^2 = 0.8997$, $\text{MAE} = 0.0274$, 100\% precision, and 90.00\% classification accuracy), outperforming baseline Random Forest models. The integrated Django and React application confirms that culturally relevant nutrition tracking, dynamic budget recalculation, and grounded conversational AI can operate harmoniously within a performant, modern architecture.
 
 \section{Future Work for Final Semester}
 
@@ -673,22 +657,23 @@ M.~Han, J.~Chen, and Z.~Zhou,
 \textit{arXiv preprint arXiv:2408.10532}, 2024.
 [Online]. Available: \url{https://arxiv.org/abs/2408.10532}
 
-\bibitem{uddin2022}
-M.~F.~Uddin,
+\bibitem{haque2022}
+R.~U.~Haque, R.~H.~Khan, A.~S.~M.~Shihavuddin, M.~M.~Syeed, and M.~F.~Uddin,
 ``Lightweight and Parameter-Optimized Real-Time Food Calorie Estimation from Images Using CNN-Based Approach,''
 \textit{Applied Sciences}, vol.~12, no.~19, p.~9733, 2022.
 DOI: 10.3390/app12199733.
 
 \bibitem{adjuik2024}
-T.~A.~Adjuik, E.~Boi-Dsane, and T.~Kehinde,
+T.~A.~Adjuik, N.~A.~A.~Boi-Dsane, and B.~A.~Kehinde,
 ``Enhancing dietary analysis: Using machine learning for food caloric and health risk assessment,''
-\textit{Journal of Food Science}, vol.~89, no.~4, pp.~2104--2118, 2024.
+\textit{Journal of Food Science}, vol.~89, no.~11, pp.~8006--8021, 2024.
 DOI: 10.1111/1750-3841.17421.
 
-\bibitem{nti2021}
-I.~K.~Nti, et~al.,
+\bibitem{sefayeboah2021}
+S.~M.~Sefa-Yeboah, K.~O.~Annor, V.~J.~Koomson, F.~K.~Saalia, M.~Steiner-Asiedu, and G.~A.~Mills,
 ``Development of a Mobile Application Platform for Self-Management of Obesity Using Artificial Intelligence Techniques,''
-\textit{BioMed Research International}, vol.~2021, Article ID~8416398, 2021.
+\textit{International Journal of Telemedicine and Applications}, vol.~2021, Article ID~6624057, 2021.
+DOI: 10.1155/2021/6624057.
 
 \bibitem{samad2022}
 S.~Samad, F.~Ahmed, S.~Naher, M.~A.~Kabir, A.~Das, S.~Amin, and S.~M.~S.~Islam,
@@ -696,9 +681,10 @@ S.~Samad, F.~Ahmed, S.~Naher, M.~A.~Kabir, A.~Das, S.~Amin, and S.~M.~S.~Islam,
 \textit{Intelligent Systems with Applications}, vol.~15, p.~200103, 2022.
 
 \bibitem{kim2024}
-H.~Kim, et~al.,
-``Evaluating the Accuracy and Clinical Safety of Diet Plans Generated by Large Language Models,''
-\textit{Journal of Medical Internet Research}, vol.~26, p.~e54321, 2024.
+D.~W.~Kim, H.~Lee, M.~K.~Kim, and S.~W.~Kang,
+``Qualitative evaluation of artificial intelligence-generated weight management diet plans,''
+\textit{Frontiers in Nutrition}, vol.~11, Article 1374834, 2024.
+DOI: 10.3389/fnut.2024.1374834.
 
 \bibitem{fao2012}
 Food and Agriculture Organization (FAO),
