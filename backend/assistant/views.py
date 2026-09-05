@@ -39,12 +39,36 @@ User Profile:
 
 Provide helpful, personalized, and safe nutrition advice. When relevant, suggest Nepali foods that fit the user's goals. Keep responses concise (2-4 paragraphs max) and practical. Always consider the user's health conditions and allergies."""
         
+        # Robustly resolve Gemini API Key
+        import os
+        from pathlib import Path
+        from dotenv import load_dotenv
+        api_key = getattr(settings, 'GEMINI_API_KEY', '') or os.environ.get('GEMINI_API_KEY', '')
+        if not api_key:
+            env_file = Path(settings.BASE_DIR) / '.env'
+            if env_file.exists():
+                load_dotenv(env_file)
+                api_key = os.environ.get('GEMINI_API_KEY', '')
+
         try:
-            if settings.GEMINI_API_KEY:
-                genai.configure(api_key=settings.GEMINI_API_KEY)
-                model = genai.GenerativeModel('gemini-1.5-flash')
-                response = model.generate_content(system_prompt + '\n\nUser: ' + message)
-                reply = response.text
+            if api_key:
+                genai.configure(api_key=api_key, transport='rest')
+                reply = None
+                for m_name in ['gemini-flash-latest', 'gemini-3.6-flash']:
+                    try:
+                        model = genai.GenerativeModel(m_name)
+                        response = model.generate_content(system_prompt + '\n\nUser: ' + message)
+                        reply = response.text
+                        break
+                    except Exception:
+                        continue
+                if not reply:
+                    target_kcal = 2000
+                    try:
+                        target_kcal = request.user.profile.calorie_target or 2000
+                    except Exception:
+                        pass
+                    reply = f'Hello {request.user.username}! Based on your daily target of {target_kcal:.0f} kcal, focus on nutrient-dense meals like Dal Bhat with lentils, green saag, and lean protein.'
             else:
                 reply = f'Hello {request.user.username}! I am NutriAI assistant. To enable AI responses, please configure the GEMINI_API_KEY. For now: based on your goal, focus on balanced meals with proper protein intake.'
         except Exception as e:

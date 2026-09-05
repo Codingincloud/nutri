@@ -191,7 +191,7 @@ def train():
         max_depth=8,
         min_samples_leaf=2,
         random_state=42,
-        n_jobs=-1
+        n_jobs=1
     )
     rf.fit(X_train, y_train)
     rf_metrics = evaluate('Random Forest', y_test, rf.predict(X_test))

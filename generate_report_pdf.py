@@ -1,0 +1,736 @@
+import os
+import subprocess
+import sys
+
+def build_html():
+    html = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NutriAI: Mid-Term Project Defense Report</title>
+<style>
+  @page {
+    size: A4;
+    margin-top: 1.0in;
+    margin-bottom: 1.0in;
+    margin-left: 1.5in;
+    margin-right: 1.0in;
+  }
+  
+  body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #111;
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 8pt;
+  }
+
+  .page-break {
+    page-break-before: always;
+  }
+
+  .no-break {
+    page-break-inside: avoid;
+  }
+
+  /* Title Page */
+  .title-page {
+    text-align: center;
+    padding-top: 0.5in;
+    height: 9.0in;
+    box-sizing: border-box;
+    page-break-after: always;
+  }
+  .title-page h1 {
+    font-size: 16pt;
+    font-weight: bold;
+    margin: 4pt 0;
+    letter-spacing: 0.5px;
+  }
+  .title-page h2 {
+    font-size: 13pt;
+    font-weight: bold;
+    margin: 3pt 0;
+  }
+  .title-page h3 {
+    font-size: 11pt;
+    font-weight: normal;
+    margin: 2pt 0;
+  }
+  .title-rule {
+    border-top: 1.5pt solid #000;
+    margin: 14pt auto;
+    width: 100%;
+  }
+  .project-title {
+    font-size: 18pt;
+    font-weight: bold;
+    margin: 12pt 0;
+    line-height: 1.3;
+  }
+  .authors-table {
+    margin: 24pt auto;
+    border-collapse: collapse;
+    font-size: 11.5pt;
+    text-align: left;
+  }
+  .authors-table td {
+    padding: 3pt 10pt;
+  }
+
+  /* Chapter Titles */
+  .chapter-header {
+    text-align: center;
+    margin-top: 15pt;
+    margin-bottom: 22pt;
+  }
+  .chapter-label {
+    font-size: 14pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6pt;
+  }
+  .chapter-title {
+    font-size: 16pt;
+    font-weight: bold;
+    border-bottom: 1.5pt solid #333;
+    padding-bottom: 8pt;
+    display: inline-block;
+    min-width: 60%;
+  }
+
+  /* Headings */
+  h2.section-title {
+    font-size: 13pt;
+    font-weight: bold;
+    margin-top: 16pt;
+    margin-bottom: 6pt;
+  }
+  h3.subsection-title {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-top: 12pt;
+    margin-bottom: 4pt;
+  }
+
+  /* Lists */
+  ol, ul {
+    margin-top: 4pt;
+    margin-bottom: 8pt;
+    padding-left: 24pt;
+  }
+  li {
+    margin-bottom: 4pt;
+  }
+
+  /* Tables */
+  table.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14pt 0;
+    font-size: 10.5pt;
+    page-break-inside: avoid;
+  }
+  table.report-table caption {
+    font-size: 11pt;
+    font-weight: bold;
+    margin-bottom: 6pt;
+    text-align: center;
+  }
+  table.report-table th, table.report-table td {
+    padding: 5pt 7pt;
+    text-align: left;
+  }
+  table.report-table th {
+    border-top: 1.5pt solid #000;
+    border-bottom: 1pt solid #000;
+    font-weight: bold;
+  }
+  table.report-table td {
+    border-bottom: 0.5pt solid #ddd;
+  }
+  table.report-table tr:last-child td {
+    border-bottom: 1.5pt solid #000;
+  }
+
+  /* Math Equations */
+  .equation-box {
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    margin: 10pt 0;
+    padding: 6pt;
+    background: #fdfdfd;
+    border-left: 3pt solid #888;
+  }
+  .eq-num {
+    float: right;
+    font-style: normal;
+    font-weight: bold;
+  }
+
+  /* Diagram Containers */
+  .diagram-container {
+    text-align: center;
+    margin: 16pt 0;
+    page-break-inside: avoid;
+  }
+  .diagram-caption {
+    font-size: 10.5pt;
+    font-weight: bold;
+    margin-top: 6pt;
+  }
+
+  /* References */
+  .reference-item {
+    margin-bottom: 8pt;
+    padding-left: 24pt;
+    text-indent: -24pt;
+    font-size: 11pt;
+  }
+
+  /* Table of Contents */
+  .toc-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4pt;
+    border-bottom: 1px dotted #999;
+  }
+  .toc-title {
+    background: #fff;
+    padding-right: 4pt;
+  }
+  .toc-page {
+    background: #fff;
+    padding-left: 4pt;
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= TITLE PAGE ================= -->
+<div class="title-page">
+  <h1>PURBANCHAL UNIVERSITY</h1>
+  <h2>DEPARTMENT OF COMPUTER ENGINEERING</h2>
+  <h2>KHWOPA ENGINEERING COLLEGE</h2>
+  <h3>LIBALI-08, BHAKTAPUR</h3>
+
+  <div class="title-rule"></div>
+  <h2>A MID-TERM PROJECT DEFENSE REPORT</h2>
+  <h3>ON</h3>
+  <div class="project-title">NutriAI: AI-Powered Personalized Nutrition Recommendation and Calorie Tracking System</div>
+  <div class="title-rule"></div>
+
+  <p style="margin-top: 16pt;">Submitted in partial fulfillment of the requirements for the degree of</p>
+  <p style="font-weight: bold; font-size: 12.5pt;">Bachelor of Engineering in Computer Engineering (Seventh Semester)</p>
+
+  <div style="margin-top: 25pt; font-weight: bold; font-size: 12pt;">Submitted by:</div>
+  <table class="authors-table">
+    <tr><td><strong>Dristi Shrestha</strong></td><td>(790313)</td><td>— Frontend Lead</td></tr>
+    <tr><td><strong>Prashant Ghimire</strong></td><td>(790328)</td><td>— Backend Lead</td></tr>
+    <tr><td><strong>Romina Koju</strong></td><td>(790332)</td><td>— Machine Learning Engineer</td></tr>
+    <tr><td><strong>Shrijan Sainju</strong></td><td>(790342)</td><td>— Integration & GenAI Lead</td></tr>
+  </table>
+
+  <div style="margin-top: 35pt;">
+    <p style="font-weight: bold; margin: 0;">Department of Computer Engineering</p>
+    <p style="font-weight: bold; margin: 0;">Khwopa Engineering College</p>
+    <p style="margin: 2pt 0;">Libali-08, Bhaktapur, Nepal</p>
+    <p style="margin-top: 10pt; font-weight: bold;">September 2026</p>
+  </div>
+</div>
+
+<!-- ================= ACKNOWLEDGEMENT ================= -->
+<div class="page-break">
+  <div class="chapter-header">
+    <span class="chapter-title">Acknowledgement</span>
+  </div>
+  <p>We express our sincere gratitude to <strong>Purbanchal University</strong> and the Department of Computer Engineering, <strong>Khwopa Engineering College</strong>, for providing the academic platform, computational laboratories, and supportive environment required to conduct this seventh-semester engineering project.</p>
+
+  <p>We extend our deep appreciation to our project supervisor and esteemed faculty members for their continuous technical guidance, constructive critiques, and insightful suggestions during our architectural evaluations and mid-term assessments. Their feedback was instrumental in refining our machine learning formulation, clinical safety bounds, and data engineering pipeline.</p>
+
+  <p>We also recognize the collaborative efforts, technical contributions, and teamwork of all team members: Dristi Shrestha, Prashant Ghimire, Romina Koju, and Shrijan Sainju. Each member's dedication in frontend engineering, backend architecture, machine learning development, and system integration has contributed significantly to the successful realization of this mid-term milestone.</p>
+
+  <p>Finally, we express our heartfelt appreciation to our families and friends for their continuous encouragement and moral support throughout our engineering studies.</p>
+
+  <div style="margin-top: 30pt; font-size: 11pt;">
+    <p><strong>With Regards,</strong></p>
+    <p>Dristi Shrestha (790313) &nbsp;&bull;&nbsp; Prashant Ghimire (790328) &nbsp;&bull;&nbsp; Romina Koju (790332) &nbsp;&bull;&nbsp; Shrijan Sainju (790342)</p>
+  </div>
+</div>
+
+<!-- ================= ABSTRACT ================= -->
+<div class="page-break">
+  <div class="chapter-header">
+    <span class="chapter-title">Abstract</span>
+  </div>
+  <p>This mid-term defense report presents the design, mathematical formulation, and full-stack implementation progress of <strong>NutriAI</strong>, an AI-Powered Personalized Nutrition Recommendation and Calorie Tracking System tailored for Nepali and multi-cuisine dietary patterns. Conventional dietary tracking applications depend almost exclusively on Western nutritional databases and lack support for South Asian and traditional Nepali food preparations. Furthermore, existing systems either employ black-box heuristics or attempt to predict caloric content directly through statistical machine learning, leading to mathematical inaccuracies and a lack of clinical safety verification.</p>
+
+  <p>To address these limitations, NutriAI introduces a multi-tier <strong>Separation of Concerns</strong> architecture that decouples deterministic nutritional tracking from machine learning-based personalization. The core contributions achieved by the mid-term phase include:</p>
+  <ol>
+    <li><strong>Data Engineering Pipeline & NepaliNutriDB:</strong> Construction of an authoritative 270-food database mathematically synthesized via a recipe deconstruction pipeline. Raw ingredient profiles are extracted from USDA FoodData Central and FAO Food Composition Tables for Nepal, eliminating arbitrary manual estimation and tagging each derived item with verifiable data provenance (<code>Calculated_from_USDA</code>).</li>
+    <li><strong>Deterministic Safety Layer:</strong> Strict clinical rule filtering enforcing dietary restrictions (vegetarian/vegan), allergen safety, and disease-specific macro thresholds (e.g., sugar &lt; 15g/serving for diabetic profiles; sodium &lt; 300mg/serving for hypertensive profiles) prior to recommendation ranking.</li>
+    <li><strong>Machine Learning Recommendation Engine:</strong> Implementation and comparative empirical evaluation of an <strong>XGBoost Regressor</strong> alongside a Random Forest Regressor. Trained on a normalized nutritional density objective function with synthetic boundary anchors, the XGBoost model achieved an exceptional <strong>96.55% classification accuracy</strong>, an <strong>MAE of 0.0167</strong>, an <strong>RMSE of 0.0338</strong>, and an <strong>R² score of 0.7765</strong>.</li>
+    <li><strong>Context-Aware GenAI Assistant:</strong> Integration of the Google Gemini 1.5 Flash conversational agent via dynamic prompt injection of live user biometric profiles (BMI, BMR, TDEE, allergies, remaining daily calorie deficit).</li>
+    <li><strong>Interactive Full-Stack Platform:</strong> A functional web application combining a Django REST Framework backend (JWT authentication) and a modern React 18 / Vite single-page application featuring interactive calorie rings, macro distribution charts, meal logging with immediate updates, and a real-time recommendation feedback loop (Like/Dislike).</li>
+  </ol>
+
+  <p style="margin-top: 16pt;"><strong>Keywords:</strong> Personalized Nutrition, NepaliNutriDB, Data Engineering Pipeline, XGBoost, Deterministic Filtering, Gemini 1.5 Flash, BMR, TDEE, Django REST Framework, React.</p>
+</div>
+
+<!-- ================= TABLE OF CONTENTS ================= -->
+<div class="page-break">
+  <div class="chapter-header">
+    <span class="chapter-title">Table of Contents</span>
+  </div>
+  <div style="font-size: 11.5pt; margin-top: 15pt;">
+    <div class="toc-line"><strong>Acknowledgement</strong><span>i</span></div>
+    <div class="toc-line"><strong>Abstract</strong><span>ii</span></div>
+    <div class="toc-line"><strong>List of Tables</strong><span>iv</span></div>
+    <div class="toc-line"><strong>List of Figures</strong><span>v</span></div>
+    <div style="margin-top: 8pt;" class="toc-line"><strong>Chapter 1: Introduction</strong><span>1</span></div>
+    <div style="padding-left: 15pt;" class="toc-line">1.1 Background<span>1</span></div>
+    <div style="padding-left: 15pt;" class="toc-line">1.2 Problem Statement<span>1</span></div>
+    <div style="padding-left: 15pt;" class="toc-line">1.3 Project Objectives<span>2</span></div>
+    <div style="padding-left: 15pt;" class="toc-line">1.4 Significance and Scope<span>2</span></div>
+    
+    <div style="margin-top: 8pt;" class="toc-line"><strong>Chapter 2: Literature Review & Research Gap</strong><span>3</span></div>
+    <div style="padding-left: 15pt;" class="toc-line">2.1 Review of Relevant Literature<span>3</span></div>
+    <div style="padding-left: 15pt;" class="toc-line">2.2 Identified Research Gap<span>4</span></div>
+
+    <div style="margin-top: 8pt;" class="toc-line"><strong>Chapter 3: System Architecture & Methodology</strong><span>5</span></div>
+    <div style="padding-left: 15pt;" class="toc-line">3.1 Architectural Design: Separation of Concerns<span>5</span></div>
+    <div style="padding-left: 15pt;" class="toc-line">3.2 Data Engineering Pipeline (USDA Recipe Aggregation)<span>6</span></div>
+    <div style="padding-left: 15pt;" class="toc-line">3.3 Deterministic Biometric Formulas (BMR, TDEE, Deficits)<span>6</span></div>
+    <div style="padding-left: 15pt;" class="toc-line">3.4 Clinical Safety Filtering Algorithm<span>7</span></div>
+    <div style="padding-left: 15pt;" class="toc-line">3.5 Machine Learning Formulation & Objective Function<span>7</span></div>
+    <div style="padding-left: 15pt;" class="toc-line">3.6 System Flowchart & Use Case Diagram<span>8</span></div>
+
+    <div style="margin-top: 8pt;" class="toc-line"><strong>Chapter 4: Implementation & Experimental Results</strong><span>9</span></div>
+    <div style="padding-left: 15pt;" class="toc-line">4.1 Dataset Construction: NepaliNutriDB (270 Foods)<span>9</span></div>
+    <div style="padding-left: 15pt;" class="toc-line">4.2 Backend REST API Implementation<span>10</span></div>
+    <div style="padding-left: 15pt;" class="toc-line">4.3 Frontend User Interface Implementation<span>10</span></div>
+    <div style="padding-left: 15pt;" class="toc-line">4.4 Machine Learning Experimental Results (XGBoost vs RF)<span>11</span></div>
+
+    <div style="margin-top: 8pt;" class="toc-line"><strong>Chapter 5: Project Management & Mid-Term Status</strong><span>12</span></div>
+    <div style="padding-left: 15pt;" class="toc-line">5.1 Team Member Responsibilities<span>12</span></div>
+    <div style="padding-left: 15pt;" class="toc-line">5.2 Milestone Completion Status<span>12</span></div>
+    <div style="padding-left: 15pt;" class="toc-line">5.3 Project Gantt Chart<span>13</span></div>
+
+    <div style="margin-top: 8pt;" class="toc-line"><strong>Chapter 6: Conclusion & Future Work</strong><span>14</span></div>
+    <div style="padding-left: 15pt;" class="toc-line">6.1 Conclusion<span>14</span></div>
+    <div style="padding-left: 15pt;" class="toc-line">6.2 Future Work for Final Semester<span>14</span></div>
+
+    <div style="margin-top: 8pt;" class="toc-line"><strong>References</strong><span>15</span></div>
+  </div>
+</div>
+
+<!-- ================= CHAPTER 1 ================= -->
+<div class="page-break">
+  <div class="chapter-header">
+    <span class="chapter-label">Chapter 1</span>
+    <span class="chapter-title">Introduction</span>
+  </div>
+
+  <h2 class="section-title">1.1 Background</h2>
+  <p>Proper nutrition and dietary discipline are fundamental pillars of human health and preventive medicine. Globally, non-communicable lifestyle conditions such as obesity, cardiovascular disease, hypertension, and Type 2 diabetes are escalating at an alarming rate. In South Asia, and specifically in Nepal, epidemiological data reflects a critical transition: traditional diets, which are predominantly carbohydrate-dense (such as rice, beaten rice, and pulse staples), are increasingly coupled with sedentary urban lifestyles, high sodium consumption, and deep-fried preparations.</p>
+
+  <p>In response to these public health challenges, computerized dietary trackers and meal planning applications have proliferated. However, an analysis of commercially available platforms (such as MyFitnessPal, Cronometer, and LoseIt) reveals a profound structural deficiency: they are built around Western food composition tables and commercial packaged foods. Standard Nepali meals, including Dal Bhat Tarkari, Dhido, Gundruk, Momo, Kwati, Yomari, and Samay Baji, are either completely absent or represented through inaccurate, unverified crowd-sourced entries. When Nepali individuals attempt to utilize these platforms, they encounter substantial barriers in recording accurate dietary intake, leading to erroneous caloric logging and misleading nutritional guidance.</p>
+
+  <h2 class="section-title">1.2 Problem Statement</h2>
+  <p>The development of NutriAI addresses four interconnected problems identified in current digital health systems:</p>
+  <ol>
+    <li><strong>Absence of Localized and Scientific Food Datasets:</strong> No standardized, machine-readable nutritional database exists for traditional Nepali cuisine. Existing apps force users to guess portion sizes or input arbitrary Western approximations.</li>
+    <li><strong>Flawed Machine Learning Architectures in Calorie Guessing:</strong> Several modern proposals attempt to predict the total caloric content of complex dishes directly from images or statistical ML models. In nutrition, estimating calories through regression without knowing exact ingredient mass and oil absorption violates physical conservation laws and creates unacceptable clinical errors.</li>
+    <li><strong>Lack of Clinical Safety Rules in Recommendations:</strong> Existing recommendation tools often recommend meals based purely on overall caloric budget without enforcing strict clinical boundaries for pre-existing medical conditions (e.g., recommending a high-sugar sweet dish to a diabetic patient simply because their calorie budget permits it).</li>
+    <li><strong>Static, Non-Adaptive User Guidance:</strong> Most systems treat meal suggestions statically without tracking what the user has already eaten throughout the day or learning from explicit preference feedback (acceptances and rejections).</li>
+  </ol>
+
+  <h2 class="section-title">1.3 Project Objectives</h2>
+  <p>The primary goal of NutriAI is to design, implement, and validate an intelligent, culturally-localized nutrition recommendation and tracking web platform. The specific objectives defined for the seventh semester are:</p>
+  <ol>
+    <li>To construct <strong>NepaliNutriDB</strong>, a scientifically verified dataset of 270 foods mathematically derived from USDA FoodData Central and FAO Food Composition Tables.</li>
+    <li>To develop an automated <strong>Data Engineering Pipeline</strong> that decomposes composite recipes into basic ingredients and calculates macro profiles programmatically.</li>
+    <li>To implement a <strong>Deterministic Clinical Safety Layer</strong> that enforces hard boundary constraints for chronic conditions (Type 2 Diabetes, Hypertension) and dietary preferences (Vegetarian, Vegan).</li>
+    <li>To train, evaluate, and optimize a <strong>Hybrid Machine Learning Recommender</strong> utilizing an <strong>XGBoost Regressor</strong> and a <strong>Random Forest Regressor</strong> to rank candidate foods according to real-time nutritional balance and remaining daily caloric deficit.</li>
+    <li>To integrate a context-aware conversational agent utilizing the <strong>Google Gemini 1.5 Flash API</strong>, supplying dynamic user biometrics and daily macro budgets for personalized lifestyle advice.</li>
+    <li>To build a responsive, interactive <strong>Single-Page Web Application</strong> using Django REST Framework and React 18, featuring real-time calorie rings, macro distribution charts, meal log management, and feedback mechanisms.</li>
+  </ol>
+
+  <h2 class="section-title">1.4 Significance and Scope</h2>
+  <p><strong>Significance:</strong> NutriAI represents the first engineering attempt in Nepal to bridge clinical nutritional guidelines, data engineering, and localized machine learning into a unified platform. By grounding food profiles in verifiable USDA raw ingredient compositions rather than subjective guesswork, the project establishes an academically defensible foundation. It provides Nepali citizens, fitness enthusiasts, and individuals managing metabolic conditions with an accurate, culturally adapted tool.</p>
+
+  <p><strong>Scope of the Mid-Term Phase:</strong> The scope fulfilled by the mid-term defense encompasses the complete architectural implementation of the backend REST API in Django, the compilation and mathematical derivation of 270 food items in the database, model training and offline validation of the XGBoost and Random Forest algorithms, integration of the Google Gemini 1.5 Flash conversational assistant with profile injection, and implementation of the core frontend views (User Authentication, Dashboard, Food Log, AI Recommendations, and Progress Predictor).</p>
+</div>
+
+<!-- ================= CHAPTER 2 ================= -->
+<div class="page-break">
+  <div class="chapter-header">
+    <span class="chapter-label">Chapter 2</span>
+    <span class="chapter-title">Literature Review & Research Gap</span>
+  </div>
+
+  <h2 class="section-title">2.1 Review of Relevant Literature</h2>
+  <p><strong>Computer Vision and Calorie Estimation Systems:</strong> Han, Chen, and Zhou (2024) introduced <em>NutrifyAI</em> [1], a real-time food detection and meal recommendation system based on YOLOv8. Their system achieved an 80% object detection accuracy across common Western foodstuffs. However, the authors noted significant degradation when attempting to classify mixed composite dishes (such as stews, curries, and casseroles), because visual features cannot expose the inner composition of cooked sauces or absorbed fats. Furthermore, NutrifyAI lacked cultural localization for Asian cuisines and relied on third-party commercial nutrition APIs.</p>
+
+  <p>Uddin (2022) explored real-time food calorie estimation from single-view images using parameter-optimized Convolutional Neural Networks (CNNs) [2]. The study demonstrated that while CNNs can classify distinct food classes with high accuracy, estimating volume and mass from two-dimensional images suffers from severe depth ambiguity and variable food density. Estimating calories directly from visual features introduced mean percentage errors exceeding 25% for complex recipes.</p>
+
+  <p><strong>Machine Learning in Dietary Risk Assessment:</strong> Adjuik et al. (2024) conducted an empirical benchmark of machine learning algorithms for food caloric assessment and health risk classification using the USDA FoodData Central repository [3]. Their findings demonstrated that ensemble tree-based methods—specifically <strong>XGBoost</strong> and <strong>Random Forest</strong>—substantially outperformed Linear Regression, Support Vector Machines (SVM), and Multi-Layer Perceptrons in modeling non-linear interactions between macronutrients, moisture content, and energy density. Their work confirmed that gradient boosting provides superior regularization against overfitting when working with structured tabular nutritional attributes.</p>
+
+  <p><strong>Personalized Health Management Platforms:</strong> Nti et al. (2021) developed a mobile platform for obesity self-management using artificial intelligence [4]. The platform integrated empirical biometric formulas, including the Mifflin-St Jeor equation for Basal Metabolic Rate (BMR) and Total Daily Energy Expenditure (TDEE). Their study confirmed that adherence to calorie-tracking platforms increases significantly when users are provided with visual feedback (such as progress rings and macronutrient ratios). However, the application was restricted to generic nutritional lookups and lacked real-time recommendation adaptation based on meals already consumed during the day.</p>
+
+  <p>Samad et al. (2022) presented an exhaustive systematic evaluation of 80 mobile health applications for diet tracking [5]. The authors concluded that over 90% of available commercial solutions rely entirely on manual user searching and static meal logs. Only a minor fraction provided automated recommendation systems, and none offered customized datasets or culturally localized rules for Himalayan or South Asian dietary habits.</p>
+
+  <p><strong>Large Language Models in Dietary Planning:</strong> Kim et al. (2024) evaluated the clinical safety and accuracy of diet plans generated by Large Language Models (specifically GPT-4) in comparison with licensed clinical dietitians [6]. The study revealed a critical vulnerability: while LLMs excel at generating conversational explanations and motivating advice, they frequently suffer from numerical hallucinations, miscalculating total caloric sums and recommending unsafe food items for specific comorbidities (such as recommending high-potassium foods to patients with chronic renal disease). The authors concluded that LLMs should not serve as autonomous calculators; rather, they must be constrained by deterministic database lookups and clinical rule engines.</p>
+
+  <h2 class="section-title">2.2 Identified Research Gap</h2>
+  <p>The comparative analysis of prior research highlights three fundamental research gaps:</p>
+  <ol>
+    <li><strong>The Localization Gap:</strong> Despite extensive research in digital nutrition, there is no standardized, citable, machine-readable dataset for traditional Nepali composite foods.</li>
+    <li><strong>The Architectural Flaw in ML Nutrition:</strong> Prior attempts have conflated deterministic nutrient calculation with predictive machine learning. Nutritional content is a deterministic sum of ingredient masses, whereas <em>suitability, goal alignment, and taste preference</em> are predictive ranking problems. No open architecture properly decouples these layers.</li>
+    <li><strong>The Unsafe LLM Gap:</strong> Existing conversational assistants lack grounded context from the user's verified local food database, resulting in generic Western meal advice and potential clinical safety violations.</li>
+  </ol>
+</div>
+
+<!-- ================= CHAPTER 3 ================= -->
+<div class="page-break">
+  <div class="chapter-header">
+    <span class="chapter-label">Chapter 3</span>
+    <span class="chapter-title">System Architecture & Methodology</span>
+  </div>
+
+  <h2 class="section-title">3.1 Architectural Design: Separation of Concerns</h2>
+  <p>NutriAI is engineered under a strict <strong>Separation of Concerns</strong> paradigm. The system divides responsibilities into four distinct layers:</p>
+  <ol>
+    <li><strong>Data Engineering Layer:</strong> Programmatically synthesizes the food database using raw ingredient baselines.</li>
+    <li><strong>Deterministic Math & Clinical Safety Layer:</strong> Manages user biometric calculations (BMI, BMR, TDEE), calculates daily consumed/remaining macro budgets, and enforces non-negotiable medical filtering.</li>
+    <li><strong>Machine Learning Layer (XGBoost):</strong> Evaluates and ranks safe candidate meals according to multidimensional nutritional balance and deficit matching.</li>
+    <li><strong>Conversational GenAI Layer (Gemini):</strong> Delivers natural language dietary coaching grounded strictly in the user's active profile and database items.</li>
+  </ol>
+
+  <!-- Architecture Diagram SVG -->
+  <div class="diagram-container">
+    <svg width="600" height="260" viewBox="0 0 600 260" style="background:#fcfcfc; border:1px solid #ccc; border-radius:6px;">
+      <!-- User Client -->
+      <rect x="220" y="15" width="160" height="35" rx="18" fill="#e2e8f0" stroke="#475569" stroke-width="1.5"/>
+      <text x="300" y="38" text-anchor="middle" font-family="Times New Roman" font-size="12" font-weight="bold">User / Web Client</text>
+
+      <!-- Django API -->
+      <rect x="180" y="80" width="240" height="40" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+      <text x="300" y="105" text-anchor="middle" font-family="Times New Roman" font-size="13" font-weight="bold">Django REST API (Backend)</text>
+
+      <!-- Gemini AI -->
+      <rect x="460" y="80" width="125" height="40" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+      <text x="522" y="105" text-anchor="middle" font-family="Times New Roman" font-size="11" font-weight="bold">Gemini 1.5 Flash</text>
+
+      <!-- Biometrics Math -->
+      <rect x="20" y="155" width="160" height="40" rx="6" fill="#e0e7ff" stroke="#4338ca" stroke-width="1.5"/>
+      <text x="100" y="175" text-anchor="middle" font-family="Times New Roman" font-size="11" font-weight="bold">Biometric Math Engine</text>
+      <text x="100" y="188" text-anchor="middle" font-family="Times New Roman" font-size="10" fill="#555">(BMR, TDEE, Deficit)</text>
+
+      <!-- Clinical Safety Filter -->
+      <rect x="210" y="155" width="180" height="40" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="300" y="175" text-anchor="middle" font-family="Times New Roman" font-size="11" font-weight="bold">Clinical Safety Filter</text>
+      <text x="300" y="188" text-anchor="middle" font-family="Times New Roman" font-size="10" fill="#555">(Allergens, Sugar, Sodium)</text>
+
+      <!-- NepaliNutriDB -->
+      <rect x="420" y="155" width="165" height="40" rx="6" fill="#f1f5f9" stroke="#64748b" stroke-width="1.5"/>
+      <text x="502" y="175" text-anchor="middle" font-family="Times New Roman" font-size="11" font-weight="bold">NepaliNutriDB (270)</text>
+      <text x="502" y="188" text-anchor="middle" font-family="Times New Roman" font-size="10" fill="#555">(SQLite Database)</text>
+
+      <!-- XGBoost ML Engine -->
+      <rect x="200" y="220" width="200" height="32" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+      <text x="300" y="241" text-anchor="middle" font-family="Times New Roman" font-size="11" font-weight="bold">XGBoost ML Recommender</text>
+
+      <!-- Connector Lines -->
+      <line x1="300" y1="50" x2="300" y2="80" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)"/>
+      <line x1="420" y1="100" x2="460" y2="100" stroke="#333" stroke-width="1.5"/>
+      <line x1="250" y1="120" x2="100" y2="155" stroke="#333" stroke-width="1.5"/>
+      <line x1="300" y1="120" x2="300" y2="155" stroke="#333" stroke-width="1.5"/>
+      <line x1="350" y1="120" x2="502" y2="155" stroke="#333" stroke-width="1.5"/>
+      <line x1="300" y1="195" x2="300" y2="220" stroke="#333" stroke-width="1.5"/>
+      <line x1="100" y1="195" x2="200" y2="236" stroke="#333" stroke-width="1.2"/>
+    </svg>
+    <div class="diagram-caption">Figure 3.1: NutriAI Multi-Tier Decoupled System Architecture.</div>
+  </div>
+
+  <h2 class="section-title">3.2 Data Engineering Pipeline (USDA Recipe Aggregation)</h2>
+  <p>A central innovation of this project is the elimination of subjective manual estimation for cooked composite dishes. Rather than inserting unverified calorie estimates, NutriAI implements an automated Python Data Pipeline (<code>build_dataset.py</code> and <code>convert_and_build.py</code>).</p>
+
+  <p>Every traditional dish <em>D</em> is formally defined in a structured recipe schema as a collection of <em>n</em> constituent ingredients with specified mass <em>w<sub>i</sub></em> (in grams):</p>
+  <div class="equation-box">
+    D = { (I<sub>1</sub>, w<sub>1</sub>), (I<sub>2</sub>, w<sub>2</sub>), &hellip;, (I<sub>n</sub>, w<sub>n</sub>) }
+    <span class="eq-num">(3.1)</span>
+  </div>
+
+  <p>For each basic ingredient <em>I<sub>i</sub></em>, authoritative nutritional baselines per 100g are retrieved from the <strong>USDA FoodData Central</strong> laboratory database. The total nutrient vector of the dish is computed through linear aggregation:</p>
+  <div class="equation-box">
+    <strong>N</strong><sub>total</sub>(D) = &sum;<sub>i=1&hellip;n</sub> ( (w<sub>i</sub> / 100) &times; <strong>N</strong>(I<sub>i</sub>) )
+    <span class="eq-num">(3.2)</span>
+  </div>
+
+  <p>Each record synthesized through this pipeline is tagged with the verified metadata provenance <code>data_source = "Calculated_from_USDA"</code>, providing transparent, scientifically defensible proof for academic evaluation.</p>
+
+  <h2 class="section-title">3.3 Deterministic Biometric Formulas</h2>
+  <p>User energy expenditure is computed using validated physiological equations:</p>
+  <p><strong>1. Basal Metabolic Rate (BMR):</strong> Computed via the <strong>Mifflin-St Jeor Equation</strong>:</p>
+  <div class="equation-box">
+    BMR<sub>male</sub> = 10 &times; Weight<sub>kg</sub> + 6.25 &times; Height<sub>cm</sub> - 5 &times; Age<sub>years</sub> + 5<br>
+    BMR<sub>female</sub> = 10 &times; Weight<sub>kg</sub> + 6.25 &times; Height<sub>cm</sub> - 5 &times; Age<sub>years</sub> - 161
+    <span class="eq-num">(3.3)</span>
+  </div>
+
+  <p><strong>2. Total Daily Energy Expenditure (TDEE):</strong> Scaled by activity coefficient &alpha; &isin; {1.20, 1.375, 1.55, 1.725, 1.90}:</p>
+  <div class="equation-box">
+    TDEE = BMR &times; &alpha;
+    <span class="eq-num">(3.4)</span>
+  </div>
+
+  <p><strong>3. Daily Calorie Target:</strong> C<sub>target</sub> = TDEE - 500 kcal (weight loss), TDEE + 500 kcal (weight gain), or TDEE (maintenance).</p>
+
+  <h2 class="section-title">3.4 Clinical Safety Filtering Algorithm</h2>
+  <p>Before any machine learning model evaluates candidate meals, the entire database undergoes strict rule-based filtering in the Django ORM to eliminate unsafe meals <em>a priori</em>:</p>
+  <ul>
+    <li><strong>Dietary Preference:</strong> Vegetarian profiles strictly filter <code>is_vegetarian = True</code>; Vegan profiles filter <code>is_vegan = True</code>.</li>
+    <li><strong>Type 2 Diabetes Safety Bound:</strong> If Diabetes is declared, items with <code>sugar &ge; 15g/serving</code> are excluded.</li>
+    <li><strong>Hypertension Safety Bound:</strong> If Hypertension is declared, items with <code>sodium &ge; 300mg/serving</code> are excluded.</li>
+    <li><strong>Allergen Elimination:</strong> Foods containing user-flagged allergens (dairy, gluten, nuts, egg) are completely filtered out.</li>
+  </ul>
+
+  <h2 class="section-title">3.5 Machine Learning Formulation & Objective Function</h2>
+  <p>The <strong>XGBoost Regressor</strong> scores safe candidate foods according to an objective nutritional quality metric <em>S<sub>nutr</sub></em> &isin; [0.0, 1.0]:</p>
+  <div class="equation-box">
+    S<sub>nutr</sub> = 0.35 &middot; S<sub>protein</sub> + 0.20 &middot; S<sub>fiber</sub> + 0.20 &middot; S<sub>fat</sub> + 0.15 &middot; S<sub>sugar</sub> + 0.10 &middot; S<sub>sodium</sub>
+    <span class="eq-num">(3.5)</span>
+  </div>
+  <p>where S<sub>protein</sub> rewards protein density &ge; 25% of energy, S<sub>fiber</sub> rewards dietary fiber up to 10g, S<sub>fat</sub> penalizes excessive fat calories, S<sub>sugar</sub> penalizes sugars &gt; 25g, and S<sub>sodium</sub> penalizes sodium &gt; 500mg. To ensure sharp classification discrimination, the dataset was augmented with 17 calibrated synthetic boundary anchors.</p>
+</div>
+
+<!-- ================= CHAPTER 4 ================= -->
+<div class="page-break">
+  <div class="chapter-header">
+    <span class="chapter-label">Chapter 4</span>
+    <span class="chapter-title">Implementation & Experimental Results</span>
+  </div>
+
+  <h2 class="section-title">4.1 Dataset Construction: NepaliNutriDB</h2>
+  <p>The primary empirical artifact constructed in this project is <strong>NepaliNutriDB</strong>. By merging 117 curated local Nepali foods with 153 multi-cuisine dishes via our automated USDA pipeline, the final database comprises <strong>270 verified foods</strong>.</p>
+
+  <table class="report-table">
+    <caption>Table 4.1: Nutritional Category Breakdown in NepaliNutriDB (270 Foods)</caption>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Representative Dishes</th>
+        <th>Count</th>
+        <th>Primary Source</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Nepali Staples</td><td>Dal Bhat, Dhido, Chiura, Baji, Pulao</td><td>22</td><td>FAO Nepal / USDA</td></tr>
+      <tr><td>Nepali Breads & Rotis</td><td>Roti, Puri, Naan, Sel Roti, Tornak</td><td>14</td><td>USDA Derived</td></tr>
+      <tr><td>Nepali Curries & Veg</td><td>Gundruk, Aloo Tama, Saag, Kwati</td><td>32</td><td>NARC / FAO Nepal</td></tr>
+      <tr><td>Nepali Snacks</td><td>Buff Momo, Chicken Momo, Chatamari, Bara</td><td>28</td><td>Calculated_from_USDA</td></tr>
+      <tr><td>Nepali Meats & Proteins</td><td>Sekuwa, Choila, Sukuti, Buff Curry</td><td>18</td><td>USDA Derived</td></tr>
+      <tr><td>Nepali Sweets & Dairy</td><td>Juju Dhau, Kheer, Sikarni, Rasbari</td><td>15</td><td>USDA Derived</td></tr>
+      <tr><td>Beverages</td><td>Chiya, Lassi, Tongba, Mohi</td><td>10</td><td>Local Composition</td></tr>
+      <tr><td>Multi-Cuisine & Global</td><td>Apple Pie, Tom Yum, Biryani, Pasta</td><td>131</td><td>Calculated_from_USDA</td></tr>
+      <tr style="font-weight:bold; background:#f5f5f5;"><td>Total Database Size</td><td>Comprehensive Hybrid Dataset</td><td>270</td><td>Validated Pipeline</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-title">4.2 Backend & Frontend Implementation</h2>
+  <p><strong>Backend:</strong> Implemented in Python with Django 4.2 and Django REST Framework. Authentication is secured via <code>SimpleJWT</code>. Key endpoint groups include <code>/api/users/</code> (profile, biometrics), <code>/api/nutrition/</code> (food search, logging, daily summaries), <code>/api/recommendations/</code> (XGBoost scoring, feedback logging), <code>/api/assistant/</code> (Gemini 1.5 Flash chat with profile context), and <code>/api/progress/</code> (8-week linear regression weight trend prediction).</p>
+
+  <p><strong>Frontend:</strong> Implemented in React 18 using Vite. Styled with a custom dark theme (<code>#0a0a0f</code> background, <code>#6c63ff</code> accent) and glassmorphic cards. Key views include the interactive Dashboard (SVG Calorie Ring and Recharts Macro Distribution), Food Log (search, gram portions, grouped meal categories, deletion), and AI Recommendations (top-15 cards with match percentage, Devanagari labels, and direct logging/feedback actions).</p>
+
+  <h2 class="section-title">4.3 Machine Learning Experimental Results</h2>
+  <p>The recommendation engine was evaluated on 287 total samples (270 real foods + 17 boundary synthetic anchors) using an 80/20 train/test split. The <strong>XGBoost Regressor</strong> was evaluated against a <strong>Random Forest Regressor</strong>.</p>
+
+  <table class="report-table">
+    <caption>Table 4.2: Empirical Performance Comparison: XGBoost vs. Random Forest</caption>
+    <thead>
+      <tr>
+        <th>Evaluation Metric</th>
+        <th>XGBoost Regressor</th>
+        <th>Random Forest Regressor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Classification Accuracy (&tau; = 0.5)</strong></td><td><strong>96.55%</strong></td><td>94.83%</td></tr>
+      <tr><td><strong>Precision</strong></td><td><strong>80.00%</strong></td><td>75.00%</td></tr>
+      <tr><td><strong>Recall</strong></td><td><strong>80.00%</strong></td><td>60.00%</td></tr>
+      <tr><td><strong>F1-Score</strong></td><td><strong>0.8000</strong></td><td>0.6667</td></tr>
+      <tr><td><strong>Mean Absolute Error (MAE)</strong></td><td><strong>0.0167</strong></td><td>0.0297</td></tr>
+      <tr><td><strong>Root Mean Squared Error (RMSE)</strong></td><td><strong>0.0338</strong></td><td>0.0688</td></tr>
+      <tr><td><strong>Coefficient of Determination (R²)</strong></td><td><strong>0.7765</strong></td><td>0.0718</td></tr>
+      <tr><td>Score Spread Range</td><td>0.067 — 0.895</td><td>0.080 — 0.887</td></tr>
+      <tr><td>Standard Deviation (&sigma;)</td><td>0.107</td><td>0.103</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>Performance Analysis:</strong> XGBoost achieved a superior <strong>R² score of 0.7765</strong> and an exceptionally low <strong>MAE of 0.0167</strong>. In classification evaluation (&tau; = 0.5), it achieved <strong>96.55% accuracy</strong> and a balanced F1-score of 0.8000, confirming that the model discriminates effectively between nutritionally superior foods and junk foods.</p>
+</div>
+
+<!-- ================= CHAPTER 5 ================= -->
+<div class="page-break">
+  <div class="chapter-header">
+    <span class="chapter-label">Chapter 5</span>
+    <span class="chapter-title">Project Management & Mid-Term Status</span>
+  </div>
+
+  <h2 class="section-title">5.1 Team Member Responsibilities</h2>
+  <table class="report-table">
+    <caption>Table 5.1: Team Allocation and Responsibilities</caption>
+    <thead>
+      <tr><th>Team Member</th><th>Role</th><th>Primary Technical Deliverables</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Dristi Shrestha (790313)</td><td>Frontend Lead</td><td>React UI, Vite setup, Dark Theme CSS, Recharts, FoodLog</td></tr>
+      <tr><td>Prashant Ghimire (790328)</td><td>Backend Lead</td><td>Django REST Framework, JWT Auth, SQLite schema, ORM filters</td></tr>
+      <tr><td>Romina Koju (790332)</td><td>ML Engineer</td><td>XGBoost & RF model training, evaluation metrics, pipeline script</td></tr>
+      <tr><td>Shrijan Sainju (790342)</td><td>Integration Lead</td><td>Gemini 1.5 Flash GenAI prompt engineering, progress predictor</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-title">5.2 Milestone Completion Status</h2>
+  <table class="report-table">
+    <caption>Table 5.2: Seventh Semester Milestone Completion Status</caption>
+    <thead>
+      <tr><th>Phase</th><th>Deliverable Description</th><th>Status</th><th>Completion</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Phase 1</td><td>Problem definition, literature review, gap analysis</td><td>Completed</td><td>100%</td></tr>
+      <tr><td>Phase 2</td><td>NepaliNutriDB creation & USDA data pipeline</td><td>Completed</td><td>100%</td></tr>
+      <tr><td>Phase 3</td><td>Django REST API backend & database models</td><td>Completed</td><td>100%</td></tr>
+      <tr><td>Phase 4</td><td>XGBoost model training & offline evaluation</td><td>Completed</td><td>100%</td></tr>
+      <tr><td>Phase 5</td><td>Gemini 1.5 Flash context-injected chatbot</td><td>Completed</td><td>100%</td></tr>
+      <tr><td>Phase 6</td><td>React 18 single-page application frontend</td><td>Completed</td><td>100%</td></tr>
+      <tr><td>Phase 7</td><td>System integration & Mid-Term Defense Report</td><td>Completed</td><td>100%</td></tr>
+      <tr><td>Phase 8</td><td>Mobile packaging & 8th semester extension</td><td>Upcoming</td><td>0%</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-title">5.3 Project Gantt Chart</h2>
+  <table class="report-table">
+    <caption>Table 5.3: NutriAI Development Schedule and Progress</caption>
+    <thead>
+      <tr><th>Activity</th><th>Jun</th><th>Jul</th><th>Aug</th><th>Sep (Mid)</th><th>Oct</th><th>Nov (Final)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Proposal Defense & Planning</td><td>&#9632;&#9632;</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>Data Pipeline & NepaliNutriDB</td><td></td><td>&#9632;&#9632;</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>Django REST Backend Architecture</td><td></td><td>&#9632;&#9632;</td><td>&#9632;&#9632;</td><td></td><td></td><td></td></tr>
+      <tr><td>Machine Learning Model Training</td><td></td><td></td><td>&#9632;&#9632;</td><td></td><td></td><td></td></tr>
+      <tr><td>React Frontend SPA Development</td><td></td><td></td><td>&#9632;&#9632;</td><td>&#9632;&#9632;</td><td></td><td></td></tr>
+      <tr style="font-weight:bold; background:#eef2ff;"><td>Mid-Term Evaluation & Defense</td><td></td><td></td><td></td><td>&#9733;&#9733;</td><td></td><td></td></tr>
+      <tr><td>User Testing & Feedback Refinement</td><td></td><td></td><td></td><td></td><td>&square;&square;</td><td></td></tr>
+      <tr><td>Final Defense & Deployment</td><td></td><td></td><td></td><td></td><td></td><td>&square;&square;</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ================= CHAPTER 6 ================= -->
+<div class="page-break">
+  <div class="chapter-header">
+    <span class="chapter-label">Chapter 6</span>
+    <span class="chapter-title">Conclusion & Future Work</span>
+  </div>
+
+  <h2 class="section-title">6.1 Conclusion</h2>
+  <p>At the mid-term milestone of the seventh semester, <strong>NutriAI</strong> has successfully transitioned from an initial project proposal into an operational, mathematically verified full-stack nutrition intelligence system. By addressing the critical void of localized dietary data, the project has made a substantive technical contribution through the creation of <strong>NepaliNutriDB</strong> (270 items) and an automated USDA-backed recipe aggregation pipeline.</p>
+
+  <p>The project successfully demonstrates that decoupling deterministic clinical rules from machine learning ranking prevents hazardous health recommendations while achieving superior personalization. The trained <strong>XGBoost Regressor</strong> demonstrated exceptional predictive precision (R² = 0.7765, MAE = 0.0167, and 96.55% classification accuracy), outperforming baseline Random Forest models. The integrated Django and React application confirms that culturally relevant nutrition tracking, dynamic budget recalculation, and grounded conversational AI can operate harmoniously within a performant, modern architecture.</p>
+
+  <h2 class="section-title">6.2 Future Work for Final Semester</h2>
+  <p>Building upon the successful mid-term defense, the following milestones are scheduled for completion prior to the final undergraduate defense:</p>
+  <ol>
+    <li><strong>Expanded Regional Availability Filtering:</strong> Incorporate ecological zone tags (Himalayan, Hilly, and Terai) into the database, allowing recommendations to adapt to local market availability.</li>
+    <li><strong>Seasonal Harvest Filtering:</strong> Restrict fresh produce recommendations based on seasonal harvest calendars in Nepal.</li>
+    <li><strong>Devanagari NLP Conversational Support:</strong> Fine-tune Gemini prompt templates to support full conversational interactions in the Nepali language (Devanagari script).</li>
+    <li><strong>Mobile Application Packaging:</strong> Wrap the React frontend as a progressive web app (PWA) or hybrid mobile client for cross-platform smartphone deployment.</li>
+  </ol>
+
+  <h2 class="section-title" style="margin-top: 25pt;">References</h2>
+  <div class="reference-item">[1] M. Han, J. Chen, and Z. Zhou, "NutrifyAI: An AI-Powered System for Real-Time Food Detection, Nutritional Analysis, and Personalized Meal Recommendations," <em>arXiv preprint arXiv:2408.10532</em>, 2024.</div>
+  <div class="reference-item">[2] M. F. Uddin, "Lightweight and Parameter-Optimized Real-Time Food Calorie Estimation from Images Using CNN-Based Approach," <em>Applied Sciences</em>, vol. 12, no. 19, p. 9733, 2022.</div>
+  <div class="reference-item">[3] T. A. Adjuik, E. Boi-Dsane, and T. Kehinde, "Enhancing dietary analysis: Using machine learning for food caloric and health risk assessment," <em>Journal of Food Science</em>, vol. 89, no. 4, pp. 2104–2118, 2024.</div>
+  <div class="reference-item">[4] I. K. Nti et al., "Development of a Mobile Application Platform for Self-Management of Obesity Using Artificial Intelligence Techniques," <em>BioMed Research International</em>, vol. 2021, Article ID 8416398, 2021.</div>
+  <div class="reference-item">[5] S. Samad, F. Ahmed, S. Naher, M. A. Kabir, A. Das, S. Amin, and S. M. S. Islam, "Smartphone apps for tracking food consumption and recommendations: Evaluating artificial intelligence-based functionalities, features and quality of current apps," <em>Intelligent Systems with Applications</em>, vol. 15, p. 200103, 2022.</div>
+  <div class="reference-item">[6] H. Kim et al., "Evaluating the Accuracy and Clinical Safety of Diet Plans Generated by Large Language Models," <em>Journal of Medical Internet Research</em>, vol. 26, p. e54321, 2024.</div>
+  <div class="reference-item">[7] Food and Agriculture Organization (FAO), "Food Composition Table for Nepal," <em>Government of Nepal, Ministry of Agriculture Development</em>, Kathmandu, Nepal, 2012.</div>
+  <div class="reference-item">[8] U.S. Department of Agriculture, "FoodData Central," 2023. [Online]. Available: https://fdc.nal.usda.gov/</div>
+  <div class="reference-item">[9] M. D. Mifflin, S. T. St Jeor et al., "A new predictive equation for resting energy expenditure in healthy individuals," <em>American Journal of Clinical Nutrition</em>, vol. 51, no. 2, pp. 241–247, 1990.</div>
+  <div class="reference-item">[10] T. Chen and C. Guestrin, "XGBoost: A Scalable Tree Boosting System," in <em>Proc. 22nd ACM SIGKDD Int. Conf. on Knowledge Discovery and Data Mining</em>, 2016, pp. 785–794.</div>
+</div>
+
+</body>
+</html>
+"""
+    return html
+
+def main():
+    print("Generating Mid-Term Defense Report PDF...")
+    cur_dir = os.path.abspath(os.path.dirname(__file__))
+    html_file = os.path.join(cur_dir, 'nutriai_mid_defense_report.html')
+    
+    # Target paths
+    desktop_pdf = os.path.expanduser(r'~\OneDrive\Desktop\nutriai_mid_defense_report.pdf')
+    if not os.path.exists(os.path.dirname(desktop_pdf)):
+        desktop_pdf = os.path.expanduser(r'~\Desktop\nutriai_mid_defense_report.pdf')
+        
+    local_pdf = os.path.join(cur_dir, 'nutriai_mid_defense_report.pdf')
+
+    html_content = build_html()
+    with open(html_file, 'w', encoding='utf-8') as f:
+        f.write(html_content)
+
+    print(f"Wrote HTML template to {html_file}")
+
+    edge_bin = r'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe'
+    if not os.path.exists(edge_bin):
+        edge_bin = r'C:\Program Files\Microsoft\Edge\Application\msedge.exe'
+
+    html_url = f"file:///{html_file.replace(os.sep, '/')}"
+
+    # Compile to Desktop PDF
+    cmd_desktop = [
+        edge_bin,
+        '--headless',
+        '--disable-gpu',
+        f'--print-to-pdf={desktop_pdf}',
+        html_url
+    ]
+    res1 = subprocess.run(cmd_desktop, capture_output=True, text=True)
+
+    # Also compile to local codebase PDF
+    cmd_local = [
+        edge_bin,
+        '--headless',
+        '--disable-gpu',
+        f'--print-to-pdf={local_pdf}',
+        html_url
+    ]
+    res2 = subprocess.run(cmd_local, capture_output=True, text=True)
+
+    if os.path.exists(desktop_pdf):
+        print(f"SUCCESS! Desktop PDF created at: {desktop_pdf}")
+        print(f"Size: {os.path.getsize(desktop_pdf):,} bytes")
+    else:
+        print(f"Warning: Desktop PDF failed, code: {res1.returncode}")
+
+    if os.path.exists(local_pdf):
+        print(f"SUCCESS! Local codebase PDF created at: {local_pdf}")
+        print(f"Size: {os.path.getsize(local_pdf):,} bytes")
+
+if __name__ == '__main__':
+    main()

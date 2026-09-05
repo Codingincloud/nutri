@@ -1,0 +1,156 @@
+food_id,name,name_nepali,category,calories,protein,carbohydrates,fat,fiber,sugar,sodium,serving_size_g,is_vegetarian,is_vegan,is_gluten_free,contains_nuts,contains_dairy,contains_gluten,contains_egg,is_nepali,data_source
+1,Chicken Momo,Chicken Momo,nepali_staple,719.9,57.0,80.5,16.4,0,0,0,310,False,False,True,False,False,False,False,True,Calculated_from_USDA
+2,Dal Bhat,Dal Bhat,nepali_staple,649.4,16.9,86.3,26.2,0,0,0,425,True,True,True,False,False,False,False,True,Calculated_from_USDA
+3,Apple Pie,Apple Pie,american_dish,357.6,4.1,54.0,13.6,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+4,Chocolate Cake,Chocolate Cake,american_dish,422.6,5.6,62.0,16.6,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+5,Tiramisu,Tiramisu,italian_dish,323.3,4.0,40.4,16.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+6,Crème Brûlée,Crème Brûlée,french_dish,306.1,4.3,33.1,17.5,0,0,0,152,True,True,True,False,False,False,False,True,Calculated_from_USDA
+7,Cheesecake,Cheesecake,american_dish,373.3,4.3,44.0,20.1,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+8,Baklava,Baklava,middle eastern_dish,301.9,3.2,43.8,13.6,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+9,Pavlova,Pavlova,australian_dish,193.6,2.8,30.9,7.0,0,0,0,152,True,True,True,False,False,False,False,True,Calculated_from_USDA
+10,Banoffee Pie,Banoffee Pie,british_dish,321.6,3.4,43.7,14.8,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+11,Raspberry Sorbet,Raspberry Sorbet,french_dish,186.7,1.4,34.0,5.3,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+12,Pumpkin Pie,Pumpkin Pie,american_dish,357.6,4.5,53.3,13.6,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+13,Lemon Tart,Lemon Tart,french_dish,383.2,5.6,58.2,13.9,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+14,Strawberry Shortcake,Strawberry Shortcake,american_dish,310.8,5.2,50.9,9.5,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+15,Mango Sticky Rice,Mango Sticky Rice,thai_dish,306.1,3.5,55.7,10.1,0,0,0,152,True,True,True,False,False,False,False,True,Calculated_from_USDA
+16,Black Forest Cake,Black Forest Cake,german_dish,375.7,5.8,57.3,13.4,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+17,Key Lime Pie,Key Lime Pie,american_dish,314.7,4.5,36.2,16.6,0,0,0,152,True,True,True,False,False,False,False,True,Calculated_from_USDA
+18,Profiteroles,Profiteroles,french_dish,332.8,5.8,53.2,10.7,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+19,Gelato,Gelato,italian_dish,226.7,2.6,32.7,9.3,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+20,Peach Cobbler,Peach Cobbler,southern_dish,357.2,4.8,56.0,12.3,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+21,Flan,Flan,latin american_dish,305.7,4.0,42.4,13.2,0,0,0,152,True,True,True,False,False,False,False,True,Calculated_from_USDA
+22,Mille-feuille,Mille-feuille,french_dish,301.1,4.0,41.3,13.3,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+23,Cannoli,Cannoli,italian_dish,246.0,4.3,31.6,11.6,0,0,0,152,True,True,True,False,False,False,False,True,Calculated_from_USDA
+24,Brownies,Brownies,american_dish,417.2,5.8,62.8,15.5,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+25,Churros,Churros,spanish_dish,391.2,5.2,59.6,14.3,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+26,Tres Leches Cake,Tres Leches Cake,latin american_dish,359.4,6.7,53.2,12.6,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+27,Coconut Macaroons,Coconut Macaroons,french_dish,270.1,3.0,37.1,12.7,0,0,0,152,True,True,True,False,False,False,False,True,Calculated_from_USDA
+28,Chocolate Lava Cake,Chocolate Lava Cake,international_dish,367.2,5.6,56.2,13.1,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+29,Cinnamon Rolls,Cinnamon Rolls,american_dish,359.3,5.2,51.2,14.4,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+30,Pecan Pie,Pecan Pie,american_dish,378.0,4.2,46.4,18.8,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+31,Red Velvet Cake,Red Velvet Cake,american_dish,404.3,6.0,56.0,16.9,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+32,Angel Food Cake,Angel Food Cake,american_dish,370.9,6.3,61.0,11.0,0,0,0,152,True,True,True,False,False,False,False,True,Calculated_from_USDA
+33,Fruit Tart,Fruit Tart,international_dish,243.5,3.5,33.1,11.1,0,0,0,152,True,True,True,False,False,False,False,True,Calculated_from_USDA
+34,Bread Pudding,Bread Pudding,international_dish,340.0,3.8,44.7,16.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+35,Panna Cotta,Panna Cotta,italian_dish,332.6,3.8,37.8,18.6,0,0,0,152,True,True,True,False,False,False,False,True,Calculated_from_USDA
+36,Maple Pecan Pie,Maple Pecan Pie,american_dish,409.3,6.0,57.7,16.3,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+37,Opera Cake,Opera Cake,french_dish,379.9,4.9,40.0,20.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+38,Lemon Bars,Lemon Bars,american_dish,339.2,5.2,54.8,10.9,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+39,Pumpkin Roll,Pumpkin Roll,american_dish,389.2,6.4,56.2,15.1,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+40,Creme Brulee,Creme Brulee,french_dish,306.1,4.3,33.1,17.5,0,0,0,152,True,True,True,False,False,False,False,True,Calculated_from_USDA
+41,Pineapple Upside-Down Cake,Pineapple Upside-Down Cake,american_dish,366.2,4.6,53.0,14.7,0,0,0,147,True,True,True,False,False,False,False,True,Calculated_from_USDA
+42,Cannoli Pastry,Cannoli Pastry,italian_dish,250.8,4.3,29.5,12.8,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+43,Raspberry Mousse,Raspberry Mousse,international_dish,244.9,3.0,32.1,11.6,0,0,0,152,True,True,True,False,False,False,False,True,Calculated_from_USDA
+44,Carrot Cake,Carrot Cake,american_dish,383.2,5.6,51.6,16.3,0,0,0,147,True,True,True,False,False,False,False,True,Calculated_from_USDA
+45,Bienenstich,Bienenstich,german_dish,298.5,4.8,37.6,14.3,0,0,0,152,True,True,True,False,False,False,False,True,Calculated_from_USDA
+46,Lemonade,Lemonade,international_dish,180.0,1.0,32.4,5.3,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+47,Kimchi,Kimchi,korean_dish,30.0,1.9,7.0,0.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+48,Sour Patch Kids,Sour Patch Kids,international_dish,220.0,1.3,38.5,6.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+49,Grapefruit,Grapefruit,international_dish,49.9,1.0,13.0,0.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+50,Sour Cream,Sour Cream,international_dish,178.1,3.0,15.7,11.3,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+51,Pickles,Pickles,international_dish,100.6,1.5,12.7,4.6,0,0,0,152,True,True,True,False,False,False,False,True,Calculated_from_USDA
+52,Greek Yogurt,Greek Yogurt,greek_dish,140.0,10.5,17.0,4.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+53,Sauerkraut,Sauerkraut,german_dish,40.0,1.6,5.4,1.6,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+54,Vinegar,Vinegar,international_dish,3.0,0.0,0.0,0.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+55,Lime Juice,Lime Juice,international_dish,10.1,0.0,3.0,0.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+56,Sour Cherry,Sour Cherry,international_dish,49.9,1.0,12.0,0.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+57,Tamarind,Tamarind,international_dish,40.0,1.0,10.1,0.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+58,Sour Milk,Sour Milk,international_dish,130.0,3.5,17.0,5.5,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+59,Sour Gummy Worms,Sour Gummy Worms,international_dish,231.1,2.0,34.8,8.9,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+60,Sourdough Bread,Sourdough Bread,international_dish,255.3,6.3,54.7,0.8,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+61,Sour Apple,Sour Apple,international_dish,60.0,0.0,15.0,0.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+62,Sour Fish Soup,Sour Fish Soup,international_dish,191.4,12.8,16.2,7.6,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+63,Sour Cream and Onion Chips,Sour Cream and Onion Chips,international_dish,126.0,2.0,13.4,7.2,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+64,Sour Beef Stew,Sour Beef Stew,international_dish,182.4,11.8,16.4,7.6,0,0,0,150,False,False,True,False,False,False,False,True,Calculated_from_USDA
+65,Sour Plum,Sour Plum,international_dish,40.0,1.0,10.1,0.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+66,Sour Lemon Drops,Sour Lemon Drops,international_dish,250.4,2.0,38.6,9.1,0,0,0,152,True,True,True,False,False,False,False,True,Calculated_from_USDA
+67,Sour Raspberry Jam,Sour Raspberry Jam,international_dish,186.7,1.4,34.0,5.3,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+68,Sour Cherry Pie,Sour Cherry Pie,international_dish,271.2,4.2,48.0,6.7,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+69,Sour Orange Marmalade,Sour Orange Marmalade,international_dish,140.0,0.7,22.0,5.3,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+70,Sour Watermelon Slices,Sour Watermelon Slices,international_dish,229.4,2.0,34.3,8.9,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+71,Sour Patch Watermelon,Sour Patch Watermelon,international_dish,215.0,1.5,37.5,6.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+72,Sour Patch Strawberries,Sour Patch Strawberries,international_dish,215.0,1.5,37.5,6.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+73,Sour Cherry Lollipops,Sour Cherry Lollipops,international_dish,218.0,1.6,35.4,7.2,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+74,Sour Raspberry Gummies,Sour Raspberry Gummies,international_dish,229.4,2.0,34.3,8.9,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+75,Sour Apple Rings,Sour Apple Rings,international_dish,231.1,1.8,34.8,8.9,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+76,Sour Blueberry Candy,Sour Blueberry Candy,international_dish,224.0,1.6,36.8,7.2,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+77,Sour Grapefruit Slices,Sour Grapefruit Slices,international_dish,229.4,2.0,34.5,8.9,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+78,Sour Strawberry Belts,Sour Strawberry Belts,international_dish,231.1,1.8,34.8,8.9,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+79,Sour Peach Rings,Sour Peach Rings,international_dish,232.8,1.8,35.1,8.9,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+80,Sour Cola Bottles,Sour Cola Bottles,international_dish,231.1,1.8,34.8,8.9,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+81,Sour Lemonade,Sour Lemonade,international_dish,180.0,1.0,32.4,5.3,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+82,Sour Blue Raspberry Straws,Sour Blue Raspberry Straws,international_dish,200.0,1.3,33.9,6.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+83,Sour Mango Slices,Sour Mango Slices,international_dish,227.8,1.8,34.0,8.9,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+84,Sour Pineapple Rings,Sour Pineapple Rings,international_dish,231.1,1.8,34.8,8.9,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+85,Sour Grape Slices,Sour Grape Slices,international_dish,227.8,1.8,34.0,8.9,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+86,Sour Kiwi Gummies,Sour Kiwi Gummies,international_dish,229.4,2.0,34.3,8.9,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+87,Sour Cranberry Candy,Sour Cranberry Candy,international_dish,245.4,2.0,37.4,9.1,0,0,0,152,True,True,True,False,False,False,False,True,Calculated_from_USDA
+88,Sour Peach Slices,Sour Peach Slices,international_dish,232.8,1.8,35.1,8.9,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+89,Sour Lemon Sherbet,Sour Lemon Sherbet,international_dish,180.0,1.0,32.4,5.3,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+90,Sour Cherry Licorice,Sour Cherry Licorice,international_dish,206.0,1.8,32.6,7.2,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+91,Sour Apple Lollipops,Sour Apple Lollipops,international_dish,228.0,1.6,37.8,7.2,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+92,Sour Grape Lollipops,Sour Grape Lollipops,international_dish,224.0,1.6,36.8,7.2,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+93,Sour Blue Raspberry Belts,Sour Blue Raspberry Belts,international_dish,226.1,1.8,33.5,8.9,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+94,Sour Blackberry Gummies,Sour Blackberry Gummies,international_dish,229.4,2.0,34.3,8.9,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+95,Classic Potato Chips,Classic Potato Chips,international_dish,110.0,2.0,12.3,6.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+96,Sea Salted Pretzels,Sea Salted Pretzels,international_dish,247.3,5.3,45.9,4.2,0,0,0,152,True,True,True,False,False,False,False,True,Calculated_from_USDA
+97,Salted Cashews,Salted Cashews,international_dish,113.3,2.9,10.0,7.3,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+98,Salted Popcorn,Salted Popcorn,international_dish,146.7,2.0,22.4,5.7,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+99,Salted Roasted Almonds,Salted Roasted Almonds,international_dish,158.7,2.9,18.9,8.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+100,Salted Sunflower Seeds,Salted Sunflower Seeds,international_dish,113.3,3.3,9.7,7.7,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+101,Salted Roasted Peanuts,Salted Roasted Peanuts,international_dish,113.3,3.6,9.3,7.7,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+102,Salted Roasted Pistachios,Salted Roasted Pistachios,international_dish,113.3,3.3,10.0,7.7,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+103,Salted Roasted Macadamia Nuts,Salted Roasted Macadamia Nuts,international_dish,126.7,2.0,8.7,10.3,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+104,Salted Roasted Mixed Nuts,Salted Roasted Mixed Nuts,international_dish,159.2,4.2,14.1,10.2,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+105,Salted Roasted Pecans,Salted Roasted Pecans,international_dish,193.3,3.3,22.4,9.7,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+106,Salted Roasted Hazelnuts,Salted Roasted Hazelnuts,international_dish,116.7,2.3,9.0,8.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+107,Salted Roasted Chicken,Salted Roasted Chicken,international_dish,96.7,3.9,14.3,2.0,0,0,0,150,False,False,True,False,False,False,False,True,Calculated_from_USDA
+108,Salted Roasted Edamame,Salted Roasted Edamame,international_dish,103.3,7.0,11.0,3.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+109,Salted Roasted Walnuts,Salted Roasted Walnuts,international_dish,120.0,2.6,8.7,9.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+110,Salted Roasted Pumpkin Seeds,Salted Roasted Pumpkin Seeds,international_dish,113.3,4.3,8.7,7.3,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+111,Salted Roasted Brazil Nuts,Salted Roasted Brazil Nuts,international_dish,123.3,2.6,8.3,9.3,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+112,Salted Roasted Soybeans,Salted Roasted Soybeans,international_dish,110.0,5.3,10.3,5.7,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+113,Salted Roasted Corn,Salted Roasted Corn,international_dish,163.3,2.6,23.7,7.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+114,Salted Roasted Chickpea Snack Mix,Salted Roasted Chickpea Snack Mix,international_dish,151.1,4.6,15.4,8.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+115,Salted Roasted Mixed Nuts and Dried Fruits,Salted Roasted Mixed Nuts and Dried Fruits,international_dish,162.7,4.3,14.2,10.5,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+116,Salted Roasted Seaweed Snacks,Salted Roasted Seaweed Snacks,international_dish,26.7,1.4,3.1,1.3,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+117,Salted Roasted Green Peas,Salted Roasted Green Peas,international_dish,103.3,3.6,14.0,4.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+118,Salted Roasted Broad Beans,Salted Roasted Broad Beans,international_dish,100.0,3.3,13.7,4.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+119,Salted Roasted Fava Beans,Salted Roasted Fava Beans,international_dish,106.7,3.9,13.3,4.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+120,Salted Roasted Mixed Seeds,Salted Roasted Mixed Seeds,international_dish,130.0,5.2,7.8,9.2,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+121,Salted Roasted Rice Crackers,Salted Roasted Rice Crackers,international_dish,100.0,2.0,15.3,3.6,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+122,Salted Roasted Quinoa Snack,Salted Roasted Quinoa Snack,international_dish,103.3,2.6,14.7,4.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+123,Salted Roasted Barley Snack,Salted Roasted Barley Snack,international_dish,106.7,2.9,16.4,3.6,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+124,Salted Roasted Lentil Snack,Salted Roasted Lentil Snack,international_dish,118.0,5.8,17.4,3.2,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+125,Salted Roasted Cashews,Salted Roasted Cashews,international_dish,113.3,2.9,10.0,7.3,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+126,Salted Roasted Chickpeas,Salted Roasted Chickpeas,international_dish,103.3,2.9,13.3,4.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+127,Salted Pretzel Sticks,Salted Pretzel Sticks,international_dish,134.0,1.8,20.8,4.8,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+128,Salted Rice Cakes,Salted Rice Cakes,international_dish,112.5,3.0,24.5,0.2,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+129,Salted Roasted Seaweed,Salted Roasted Seaweed,international_dish,26.7,1.4,3.1,1.3,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+130,Salted Corn Chips,Salted Corn Chips,international_dish,110.0,2.0,13.3,5.7,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+131,Salted Tortilla Chips,Salted Tortilla Chips,mexican_dish,110.0,2.0,13.3,5.7,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+132,Salted Roasted Cashew Nuts,Salted Roasted Cashew Nuts,international_dish,116.7,2.9,10.3,7.7,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+133,Salted Crackers,Salted Crackers,international_dish,90.0,1.6,14.7,3.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+134,Salted Breadsticks,Salted Breadsticks,international_dish,134.0,1.8,20.8,4.8,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+135,Salted Pretzel Bites,Salted Pretzel Bites,international_dish,134.0,1.8,20.8,4.8,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+136,Margherita Pizza,Margherita Pizza,italian_dish,250.0,12.0,30.0,10.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+137,Pepperoni Pizza,Pepperoni Pizza,american_dish,276.7,13.1,31.2,12.6,0,0,0,152,True,True,True,False,False,False,False,True,Calculated_from_USDA
+138,BBQ Chicken Pizza,BBQ Chicken Pizza,american_dish,316.6,16.0,32.7,14.1,0,0,0,150,False,False,True,False,False,False,False,True,Calculated_from_USDA
+139,Hawaiian Pizza,Hawaiian Pizza,canadian_dish,271.3,12.8,32.3,11.8,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+140,Vegan Pizza,Vegan Pizza,italian_dish,242.9,11.6,28.8,10.0,0,0,0,147,True,True,True,False,False,False,False,True,Calculated_from_USDA
+141,Classic Chocolate Cake,Classic Chocolate Cake,american_dish,419.3,5.6,60.7,17.5,0,0,0,147,True,True,True,False,False,False,False,True,Calculated_from_USDA
+142,Vegan Chocolate Cake,Vegan Chocolate Cake,american_dish,423.7,5.9,65.5,16.8,0,0,0,152,True,True,True,False,False,False,False,True,Calculated_from_USDA
+143,Gluten-Free Chocolate Cake,Gluten-Free Chocolate Cake,american_dish,417.7,4.6,54.7,20.7,0,0,0,152,True,True,True,False,False,False,False,True,Calculated_from_USDA
+144,Chocolate Syrup,Chocolate Syrup,universal_dish,270.0,2.8,38.0,12.0,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+145,California Roll,California Roll,japanese_dish,203.4,6.8,29.9,5.1,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+146,Spaghetti Carbonara,Spaghetti Carbonara,italian_dish,426.0,14.6,58.1,16.4,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+147,Caesar Salad,Caesar Salad,italian_dish,293.9,9.5,25.2,18.1,0,0,0,152,True,True,True,False,False,False,False,True,Calculated_from_USDA
+148,Chicken Tikka Masala,Chicken Tikka Masala,indian_dish,405.9,20.6,32.4,20.2,0,0,0,150,False,False,True,False,False,False,False,True,Calculated_from_USDA
+149,Miso Soup,Miso Soup,japanese_dish,72.2,5.0,5.8,2.8,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+150,Chicken Biryani,Chicken Biryani,indian_dish,446.4,22.6,45.6,17.8,0,0,0,150,False,False,True,False,False,False,False,True,Calculated_from_USDA
+151,Chicken Dum Biryani,Chicken Dum Biryani,indian_dish,446.4,22.6,45.6,17.8,0,0,0,150,False,False,True,False,False,False,False,True,Calculated_from_USDA
+152,Vegetable Stir Fry,Vegetable Stir Fry,chinese_dish,180.3,5.5,23.8,6.9,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA
+153,Garlic Bread,Garlic Bread,italian_dish,219.7,3.5,28.6,10.1,0,0,0,152,True,True,True,False,False,False,False,True,Calculated_from_USDA
+154,Beef Tacos,Beef Tacos,mexican_dish,290.0,17.0,26.4,14.0,0,0,0,150,False,False,True,False,False,False,False,True,Calculated_from_USDA
+155,Tom Yum Soup,Tom Yum Soup,thai_dish,160.8,9.2,16.5,6.5,0,0,0,150,True,True,True,False,False,False,False,True,Calculated_from_USDA

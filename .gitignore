@@ -31,11 +31,9 @@ backend/db.sqlite3
 backend/django.log
 *.log
 
-# ── ML models (large binary files) ───────────────
-# Commit train.py but not the trained .pkl files.
-# Teammates regenerate models with: python recommendations/ml/train.py
-backend/recommendations/ml/model.pkl
-backend/recommendations/ml/rf_model.pkl
+# ── ML models (Include pre-trained models so system runs out-of-the-box) ──
+# backend/recommendations/ml/model.pkl (Tracked)
+# backend/recommendations/ml/rf_model.pkl (Tracked)
 backend/recommendations/ml/__pycache__/
 
 # ── Setup/scratch scripts ─────────────────────────
